@@ -47,8 +47,8 @@ namespace nvidiaProfileInspector.UI.ViewModels
             new UpdateChannelOption { Value = "Release", Label = UpdateChannelFormatter.ToDisplayName(UpdateChannel.Release) },
             new UpdateChannelOption { Value = "Prerelease", Label = UpdateChannelFormatter.ToDisplayName(UpdateChannel.Prerelease) }
         };
-        public string GitHubUrl => "https://github.com/Orbmu2k/nvidiaProfileInspector/releases";
-        public string GitHubRepositoryUrl => "https://github.com/Orbmu2k/nvidiaProfileInspector";
+        public string GitHubUrl => "https://github.com/INsincere123/nvidiaProfileInspector_zh/releases";
+        public string GitHubRepositoryUrl => "https://github.com/INsincere123/nvidiaProfileInspector_zh";
 
         public bool IsAutomaticUpdateCheckEnabled
         {

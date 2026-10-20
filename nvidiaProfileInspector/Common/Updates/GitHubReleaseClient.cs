@@ -11,7 +11,7 @@ namespace nvidiaProfileInspector.Common.Updates
 {
     public sealed class GitHubReleaseClient
     {
-        private const string ReleasesUrl = "https://api.github.com/repos/Orbmu2k/nvidiaProfileInspector/releases";
+        private const string ReleasesUrl = "https://api.github.com/repos/INsincere123/nvidiaProfileInspector_zh/releases";
         private readonly string _userAgent;
 
         public GitHubReleaseClient(Version currentVersion)

@@ -32,9 +32,9 @@ namespace nvidiaProfileInspector.Common.Helper
 
         public List<string> HiddenSettingGroups { get; set; } = new List<string>();
 
-        public bool DisableUpdateCheck { get; set; } = false;
+        public bool DisableUpdateCheck { get; set; } = true;
 
-        public bool DisableSplashScreen { get; set; } = false;
+        public bool DisableSplashScreen { get; set; } = true;
 
         public string UpdateChannel { get; set; } = "Release";
 

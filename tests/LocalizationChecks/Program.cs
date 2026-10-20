@@ -55,6 +55,7 @@ internal static class Program
             }
             if (!args.Contains("-mock")) throw new Exception("Checks require -mock");
             ResourcesAndConfiguration(originalDirectory);
+            ForkAndStartupPreferences();
             Search(originalDirectory);
             _checks += ParameterChecks.Run(originalDirectory);
             Console.WriteLine("PASS: " + _checks + " localization/configuration/search checks; no driver writes.");
@@ -140,6 +141,73 @@ internal static class Program
             Check(UpdateChannelFormatter.Parse("Prerelease") == UpdateChannel.Prerelease, "Stable channel token");
             Check(UpdateChannelFormatter.ToSettingsValue(UpdateChannel.Prerelease) == "Prerelease", "Stable persisted channel");
             Check(UpdateChannelFormatter.ToDisplayName(UpdateChannel.Prerelease) == (language == "en" ? "Pre-release" : "预发布版"), "Localized channel label");
+        }
+    }
+
+    private static void ForkAndStartupPreferences()
+    {
+        Console.WriteLine("Checking fork links and startup preferences...");
+        const string repository = "https://github.com/INsincere123/nvidiaProfileInspector_zh";
+        var api = typeof(GitHubReleaseClient).GetField("ReleasesUrl", BindingFlags.NonPublic | BindingFlags.Static);
+        Check((string)api.GetRawConstantValue() == "https://api.github.com/repos/INsincere123/nvidiaProfileInspector_zh/releases", "Fork update API");
+        // LoadSettings returns a new instance when no file exists. Keep the portable
+        // file present here so this isolated test never resolves the user's real config.
+        var defaults = new UserSettings();
+        Check(defaults.DisableUpdateCheck && defaults.DisableSplashScreen, "Fresh configuration disables both startup features");
+        File.WriteAllText("settings.xml", "<UserSettings><Language>en</Language><Theme>MidnightTheme.xaml</Theme></UserSettings>");
+        var legacy = UserSettings.LoadSettings();
+        Check(legacy.DisableUpdateCheck && legacy.DisableSplashScreen, "Missing fields use new defaults");
+        Check(legacy.Language == "en" && legacy.Theme == "MidnightTheme.xaml", "Legacy unrelated settings preserved");
+        foreach (var disabled in new[] { false, true })
+        {
+            File.WriteAllText("settings.xml", "<UserSettings><Language>en</Language><Theme>MidnightTheme.xaml</Theme>"
+                + "<DisableUpdateCheck>" + disabled.ToString().ToLowerInvariant() + "</DisableUpdateCheck>"
+                + "<DisableSplashScreen>" + disabled.ToString().ToLowerInvariant() + "</DisableSplashScreen></UserSettings>");
+            var loaded = UserSettings.LoadSettings();
+            Check(loaded.DisableUpdateCheck == disabled && loaded.DisableSplashScreen == disabled, "Explicit legacy preferences preserved");
+            foreach (var language in new[] { "zh-CN", "en" })
+            {
+                Localizer.Initialize(language);
+                // Supplying an existing release bypasses the dialog's normal network query.
+                var dialog = new nvidiaProfileInspector.UI.Views.Dialogs.AboutDialog(
+                    new UpdateRelease(new Version(3, 0, 2, 0), false, repository + "/releases", null));
+                var vm = (AboutViewModel)dialog.DataContext;
+                Dispatcher.CurrentDispatcher.Invoke(() => { }, DispatcherPriority.ApplicationIdle);
+                Check(vm.GitHubRepositoryUrl == repository && vm.GitHubUrl == repository + "/releases", "Fork About links");
+                Check(vm.Contributors.Any(x => x.Name == "Orbmu2k" && x.ProfileUrl == "https://github.com/Orbmu2k"), "Original author attribution retained");
+                var children = LogicalDescendants(dialog).ToList();
+                foreach (var path in new[] { nameof(vm.IsAutomaticUpdateCheckEnabled), nameof(vm.IsSplashScreenDisabled) })
+                {
+                    var box = children.OfType<System.Windows.Controls.CheckBox>().Single(x =>
+                        System.Windows.Data.BindingOperations.GetBinding(x, System.Windows.Controls.Primitives.ToggleButton.IsCheckedProperty)?.Path.Path == path);
+                    Check(box.IsChecked == (path == nameof(vm.IsAutomaticUpdateCheckEnabled) ? !disabled : disabled), "About checkbox binding: " + path);
+                }
+                Check(children.OfType<System.Windows.Controls.TextBlock>().Any(x => x.Text == repository.Substring(8)), "Visible repository text matches fork");
+                var commands = children.OfType<System.Windows.Controls.Button>().Select(x => x.Command).ToList();
+                Check(commands.Contains(vm.OpenGitHubCommand) && commands.Contains(vm.OpenGitHubRepositoryCommand), "Both About link buttons bound");
+                vm.IsAutomaticUpdateCheckEnabled = disabled;
+                vm.IsSplashScreenDisabled = !disabled;
+                var saved = UserSettings.LoadSettings();
+                Check(saved.DisableUpdateCheck == !disabled && saved.DisableSplashScreen == !disabled, "About toggles persist on reload");
+                Check(saved.Language == "en" && saved.Theme == "MidnightTheme.xaml", "About toggles preserve unrelated preferences");
+                new ThemeManager().SetTheme("MidnightTheme.xaml");
+                new MainViewModel(null, null, null, null).SaveSettings(10, 10, 1190, 750, WindowState.Normal);
+                saved = UserSettings.LoadSettings();
+                Check(saved.DisableUpdateCheck == !disabled && saved.DisableSplashScreen == !disabled, "Theme/window saves preserve startup preferences");
+                // Restore the original combination for the other language's dialog.
+                saved.DisableUpdateCheck = disabled;
+                saved.DisableSplashScreen = disabled;
+                saved.SaveSettings();
+            }
+        }
+    }
+
+    private static System.Collections.Generic.IEnumerable<DependencyObject> LogicalDescendants(DependencyObject parent)
+    {
+        foreach (var child in LogicalTreeHelper.GetChildren(parent).OfType<DependencyObject>())
+        {
+            yield return child;
+            foreach (var descendant in LogicalDescendants(child)) yield return descendant;
         }
     }
 

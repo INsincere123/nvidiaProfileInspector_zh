@@ -137,7 +137,8 @@
                                 <TextBlock
                                     FontSize="11"
                                     Foreground="{DynamicResource TextSecondaryBrush}"
-                                    Text="github.com/Orbmu2k/nvidiaProfileInspector"
+                                    Text="github.com/INsincere123/nvidiaProfileInspector_zh"
+                                    TextWrapping="Wrap"
                                     TextDecorations="Underline" />
                             </Button>
                         </StackPanel>

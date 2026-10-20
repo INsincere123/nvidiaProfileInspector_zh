@@ -414,6 +414,120 @@
         <Value raw="0x00000000" original="0x00000000 Off" translated="0x00000000 关闭" />
       </Values>
     </Setting>
+    <Setting id="0x00432F84" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>RTX HDR - Driver Flags</Original>
+        <Translated>RTX HDR - 驱动标志</Translated>
+      </Name>
+      <Description>
+        <Original>Allows reducing deband strength to preserve details &amp; enable indicator.
+When any driver flags are set HDR will be applied via driver instead of through NVOverlay (driver doesn't support customizing brightness/contrast/saturation)</Original>
+        <Translated>允许降低去色带强度以保留细节，并启用指示器。
+设置任意驱动标志后，HDR 将通过驱动而非 NVOverlay 应用（驱动方式不支持自定义亮度、对比度和饱和度）。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Off (0x00)" translated="关闭 (0x00)" />
+        <Value raw="0x00000006" original="Enabled via driver (No Debanding) (0x06)" translated="通过驱动启用（无去色带）(0x06)" />
+        <Value raw="0x0000000A" original="Enabled via driver (Medium Debanding) (0x0A)" translated="通过驱动启用（中等去色带）(0x0A)" />
+        <Value raw="0x00000002" original="Enabled via driver (VeryHigh Debanding) (0x02)" translated="通过驱动启用（极高去色带）(0x02)" />
+        <Value raw="0x00000003" original="Enabled + Indicator (VeryHigh) (0x03)" translated="启用 + 指示器（极高）(0x03)" />
+        <Value raw="0x00000023" original="Enabled + Indicator + Debug (VeryHigh) (0x23)" translated="启用 + 指示器 + 调试（极高）(0x23)" />
+      </Values>
+    </Setting>
+    <Setting id="0x00DD48FB" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>RTX HDR - Enable</Original>
+        <Translated>RTX HDR - 启用</Translated>
+      </Name>
+      <Description>
+        <Original>Enables or disables RTX HDR processing for the profile.</Original>
+        <Translated>为此配置启用或禁用 RTX HDR 处理。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Off" translated="关闭" />
+        <Value raw="0x00000001" original="On" translated="开启" />
+      </Values>
+    </Setting>
+    <Setting id="0x00DD48FC" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>RTX HDR - Peak Brightness</Original>
+        <Translated>RTX HDR - 峰值亮度</Translated>
+      </Name>
+      <Description>
+        <Original>Sets the target peak brightness used by RTX HDR tone mapping.</Original>
+        <Translated>设置 RTX HDR 色调映射使用的目标峰值亮度。</Translated>
+      </Description>
+      <Values />
+    </Setting>
+    <Setting id="0x00DD48FD" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>RTX HDR - Middle Grey</Original>
+        <Translated>RTX HDR - 中间灰</Translated>
+      </Name>
+      <Description>
+        <Original>Sets the RTX HDR middle-grey reference used for tone mapping.</Original>
+        <Translated>设置 RTX HDR 色调映射使用的中间灰参考值。</Translated>
+      </Description>
+      <Values />
+    </Setting>
+    <Setting id="0x00DD48FE" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>RTX HDR - Contrast</Original>
+        <Translated>RTX HDR - 对比度</Translated>
+      </Name>
+      <Description>
+        <Original>Sets the RTX HDR contrast adjustment applied by the profile.</Original>
+        <Translated>设置此配置应用的 RTX HDR 对比度调整值。</Translated>
+      </Description>
+      <Values />
+    </Setting>
+    <Setting id="0x00DD48FF" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>RTX HDR - Saturation</Original>
+        <Translated>RTX HDR - 饱和度</Translated>
+      </Name>
+      <Description>
+        <Original>Sets the RTX HDR saturation adjustment applied after tone mapping.</Original>
+        <Translated>设置 RTX HDR 在色调映射之后应用的饱和度调整值。</Translated>
+      </Description>
+      <Values />
+    </Setting>
+    <Setting id="0x00980880" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>RTX Dynamic Vibrance - Enable</Original>
+        <Translated>RTX 动态亮丽 - 启用</Translated>
+      </Name>
+      <Description>
+        <Original>Enables or disables the RTX Dynamic Vibrance post-processing path.</Original>
+        <Translated>启用或禁用 RTX 动态亮丽 (RTX Dynamic Vibrance) 后处理路径。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Off" translated="关闭" />
+        <Value raw="0x00000001" original="On" translated="开启" />
+      </Values>
+    </Setting>
+    <Setting id="0x00ABAB13" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>RTX Dynamic Vibrance - Saturation Boost</Original>
+        <Translated>RTX 动态亮丽 - 饱和度增强</Translated>
+      </Name>
+      <Description>
+        <Original>Sets the additional saturation boost applied by RTX Dynamic Vibrance.</Original>
+        <Translated>设置 RTX 动态亮丽应用的额外饱和度增强值。</Translated>
+      </Description>
+      <Values />
+    </Setting>
+    <Setting id="0x00ABAB22" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>RTX Dynamic Vibrance - Intensity</Original>
+        <Translated>RTX 动态亮丽 - 强度</Translated>
+      </Name>
+      <Description>
+        <Original>Sets the RTX Dynamic Vibrance intensity value applied by the profile.</Original>
+        <Translated>设置此配置应用的 RTX 动态亮丽强度值。</Translated>
+      </Description>
+      <Values />
+    </Setting>
     <Setting id="0x10AFB76C" type="Dword" source="CustomSettingNames.xml">
       <Name>
         <Original>DLSS - Override Performance to be Ultra Performance</Original>
@@ -454,6 +568,225 @@
       <Values>
         <Value raw="0x00000000" original="Off" translated="关闭" />
       </Values>
+    </Setting>
+    <Setting id="0x00AC8497" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Shader Cache - Cache Size</Original>
+        <Translated>着色器缓存 - 大小</Translated>
+      </Name>
+      <Description>
+        <Original>Selects the maximum shader cache size allowed for this profile.</Original>
+        <Translated>选择此配置允许使用的最大着色器缓存大小。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Off" translated="关闭" />
+        <Value raw="0xFFFFFFFF" original="Unlimited" translated="无限制" />
+      </Values>
+    </Setting>
+    <Setting id="0x208F3F2E" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Shader Cache - Enabled (OpenGL)</Original>
+        <Translated>着色器缓存 - 启用 (OpenGL)</Translated>
+      </Name>
+      <Description>
+        <Original>Enables or disables the OpenGL shader cache for this profile.</Original>
+        <Translated>为此配置启用或禁用 OpenGL 着色器缓存。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Disabled" translated="禁用" />
+        <Value raw="0x00000001" original="Enabled" translated="启用" />
+      </Values>
+    </Setting>
+    <Setting id="0x000F00BA" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>rBAR - Enable</Original>
+        <Translated>rBAR - 启用</Translated>
+      </Name>
+      <Description>
+        <Original>Enables or disables profile-controlled Resizable BAR behavior.</Original>
+        <Translated>启用或禁用由配置控制的 Resizable BAR 行为。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Disabled" translated="禁用" />
+        <Value raw="0x00000001" original="Enabled" translated="启用" />
+      </Values>
+    </Setting>
+    <Setting id="0x000BFA21" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>rBAR - Enable v2</Original>
+        <Translated>rBAR - 启用 v2</Translated>
+      </Name>
+      <Description>
+        <Original>Disabled turns off all reBAR settings, Enabled uses all the reBAR settings, Auto uses driver recommended settings.</Original>
+        <Translated>“禁用”会关闭所有 reBAR 设置；“启用”会使用所有 reBAR 设置；“自动”会使用驱动推荐的设置。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Disabled" translated="禁用" />
+        <Value raw="0x00000001" original="Auto" translated="自动" />
+        <Value raw="0x00000002" original="Enabled" translated="启用" />
+      </Values>
+    </Setting>
+    <Setting id="0x000F00BB" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>rBAR - Options</Original>
+        <Translated>rBAR - 选项</Translated>
+      </Name>
+      <Description>
+        <Original>Defines the primary Resizable BAR option bitfield used by the driver.</Original>
+        <Translated>定义驱动使用的主要 Resizable BAR 选项位域。</Translated>
+      </Description>
+      <Values />
+    </Setting>
+    <Setting id="0x00E942FC" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>rBAR - Intel CPU Exclusion</Original>
+        <Translated>rBAR - Intel CPU 排除</Translated>
+      </Name>
+      <Description>
+        <Original>Stores the Intel CPU exclusion mask used by the Resizable BAR policy logic.</Original>
+        <Translated>保存 Resizable BAR 策略逻辑使用的 Intel CPU 排除掩码。</Translated>
+      </Description>
+      <Values />
+    </Setting>
+    <Setting id="0x000F00FF" type="Qword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>rBAR - Size Limit</Original>
+        <Translated>rBAR - 大小限制</Translated>
+      </Name>
+      <Description>
+        <Original>Default Size Limit value for most of the whitelisted games is '1GB', some games MAY benefit of a higher size bar.</Original>
+        <Translated>大多数白名单游戏的默认大小限制为“1GB”；部分游戏可能受益于更大的 BAR 空间。</Translated>
+      </Description>
+      <Values />
+    </Setting>
+    <Setting id="0x000F00BE" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>rBAR - Flags (0x000F00BE)</Original>
+        <Translated>rBAR - 标志 (0x000F00BE)</Translated>
+      </Name>
+      <Description>
+        <Original>Stores auxiliary Resizable BAR driver flags for advanced compatibility handling.</Original>
+        <Translated>保存用于高级兼容性处理的辅助 Resizable BAR 驱动标志。</Translated>
+      </Description>
+      <Values />
+    </Setting>
+    <Setting id="0x000F00BF" type="String" source="CustomSettingNames.xml">
+      <Name>
+        <Original>rBAR - Flags (0x000F00BF)</Original>
+        <Translated>rBAR - 标志 (0x000F00BF)</Translated>
+      </Name>
+      <Description>
+        <Original>Stores secondary Resizable BAR driver flags for advanced compatibility handling.</Original>
+        <Translated>保存用于高级兼容性处理的另一组 Resizable BAR 驱动标志。</Translated>
+      </Description>
+      <Values />
+    </Setting>
+    <Setting id="0x008DF510" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>GSYNC - Support Indicator Overlay</Original>
+        <Translated>G-SYNC - 支持状态指示浮层</Translated>
+      </Name>
+      <Description>
+        <Original>Controls the on-screen overlay that reports whether the current presentation path supports G-SYNC.</Original>
+        <Translated>控制用于显示当前呈现路径是否支持 G-SYNC 的屏幕浮层。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Off" translated="关闭" />
+        <Value raw="0x00000004" original="On" translated="开启" />
+      </Values>
+    </Setting>
+    <Setting id="0x00DE429A" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Raytracing - (DXR) Enabled</Original>
+        <Translated>光线追踪 - 启用 (DXR)</Translated>
+      </Name>
+      <Description>
+        <Original>Enables or disables DirectX Raytracing support for this profile.</Original>
+        <Translated>为此配置启用或禁用 DirectX 光线追踪支持。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="RT Disabled" translated="禁用光线追踪" />
+        <Value raw="0x00000001" original="Default" translated="默认" />
+      </Values>
+    </Setting>
+    <Setting id="0x20BC1A2B" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Raytracing - (Vulkan RT) Enabled</Original>
+        <Translated>光线追踪 - 启用 (Vulkan RT)</Translated>
+      </Name>
+      <Description>
+        <Original>Enables or disables Vulkan ray tracing support for this profile.</Original>
+        <Translated>为此配置启用或禁用 Vulkan 光线追踪支持。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="RT Disabled" translated="禁用光线追踪" />
+        <Value raw="0x00000001" original="Default" translated="默认" />
+      </Values>
+    </Setting>
+    <Setting id="0x1075D972" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>NVIDIA Ansel - Enabled</Original>
+        <Translated>NVIDIA Ansel - 启用</Translated>
+      </Name>
+      <Description>
+        <Original>Enables or disables NVIDIA Ansel support for the profile. Ansel is a photo mode for supported games developed by NVIDIA, allowing the use of a free camera to take photos of a game. The mode is also able to increase the graphical fidelity of a game so players do not have to change settings manually as they engage or disengage the photo mode.</Original>
+        <Translated>为此配置启用或禁用 NVIDIA Ansel 支持。Ansel 是 NVIDIA 为受支持游戏开发的拍照模式，允许使用自由相机拍摄游戏画面。此模式还可提高游戏的画面精细度，使玩家在进入或退出拍照模式时无需手动更改设置。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Off" translated="关闭" />
+        <Value raw="0x00000001" original="On" translated="开启" />
+      </Values>
+    </Setting>
+    <Setting id="0x809D5F60" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>NVIDIA App Overlay - Flags</Original>
+        <Translated>NVIDIA App 浮层 - 标志</Translated>
+      </Name>
+      <Description>
+        <Original>Controls NVIDIA App Overlay (formerly ShadowPlay) capture flags.</Original>
+        <Translated>控制 NVIDIA App 浮层（原 ShadowPlay）的捕获标志。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Off" translated="关闭" />
+        <Value raw="0x00000001" original="Whitelist app for desktop capture" translated="将应用程序加入桌面捕获白名单" />
+        <Value raw="0x10000000" original="Disable NVIDIA App statistics" translated="禁用 NVIDIA App 统计信息" />
+      </Values>
+    </Setting>
+    <Setting id="0x00598928" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Sharpening Filter - Enabled</Original>
+        <Translated>锐化滤镜 - 启用</Translated>
+      </Name>
+      <Description>
+        <Original>Enables or disables the driver image sharpening filter.</Original>
+        <Translated>启用或禁用驱动图像锐化滤镜。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Off" translated="关闭" />
+        <Value raw="0x00000001" original="On" translated="开启" />
+      </Values>
+    </Setting>
+    <Setting id="0x002ED8CD" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Sharpening - Value</Original>
+        <Translated>锐化 - 强度</Translated>
+      </Name>
+      <Description>
+        <Original>Sets the sharpening intensity applied by the driver image sharpening filter.</Original>
+        <Translated>设置驱动图像锐化滤镜应用的锐化强度。</Translated>
+      </Description>
+      <Values />
+    </Setting>
+    <Setting id="0x002ED8CE" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Sharpening - Ignore Film Grain</Original>
+        <Translated>锐化 - 忽略胶片颗粒</Translated>
+      </Name>
+      <Description>
+        <Original>Controls how strongly detected film grain is excluded from the driver sharpening pass.</Original>
+        <Translated>控制驱动锐化处理在多大程度上排除检测到的胶片颗粒。</Translated>
+      </Description>
+      <Values />
     </Setting>
     <Setting id="0x10835002" type="Dword" source="CustomSettingNames.xml">
       <Name>
@@ -511,6 +844,168 @@
         <Value raw="0x00000001" original="High quality becomes quality" translated="将高质量替代为质量" />
       </Values>
     </Setting>
+    <Setting id="0x0098C1AC" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Antialiasing - MFAA Enabled</Original>
+        <Translated>抗锯齿 - 启用 MFAA</Translated>
+      </Name>
+      <Description>
+        <Original>Enables or disables multi-frame sampled antialiasing for this profile.</Original>
+        <Translated>为此配置启用或禁用多帧采样抗锯齿。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Off" translated="关闭" />
+        <Value raw="0x00000001" original="On" translated="开启" />
+      </Values>
+    </Setting>
+    <Setting id="0x0064B541" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Prefered Refreshrate</Original>
+        <Translated>首选刷新率</Translated>
+      </Name>
+      <Description>
+        <Original>Selects the preferred display refresh-rate policy used for this profile.</Original>
+        <Translated>选择此配置使用的首选显示刷新率策略。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Use the 3D application setting" translated="使用 3D 应用程序设置" />
+        <Value raw="0x00000001" original="Highest available" translated="最高可用刷新率" />
+      </Values>
+    </Setting>
+    <Setting id="0x10029538" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>GSYNC - Indicator Overlay</Original>
+        <Translated>G-SYNC - 运行状态指示浮层</Translated>
+      </Name>
+      <Description>
+        <Original>Controls the on-screen overlay that reports active G-SYNC status.</Original>
+        <Translated>控制用于显示 G-SYNC 当前运行状态的屏幕浮层。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Off" translated="关闭" />
+        <Value raw="0x00000001" original="On" translated="开启" />
+      </Values>
+    </Setting>
+    <Setting id="0x1194F158" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>GSYNC - Application Mode</Original>
+        <Translated>G-SYNC - 应用程序模式</Translated>
+      </Name>
+      <Description>
+        <Original>Selects the G-SYNC operating mode advertised to the application.</Original>
+        <Translated>选择向应用程序报告的 G-SYNC 运行模式。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Off" translated="关闭" />
+        <Value raw="0x00000001" original="Fullscreen only" translated="仅全屏" />
+        <Value raw="0x00000002" original="Fullscreen and Windowed" translated="全屏和窗口模式" />
+      </Values>
+    </Setting>
+    <Setting id="0x1094F1F7" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>GSYNC - Global Mode</Original>
+        <Translated>G-SYNC - 全局模式</Translated>
+      </Name>
+      <Description>
+        <Original>Selects the global G-SYNC operating mode for this profile.</Original>
+        <Translated>选择此配置的全局 G-SYNC 运行模式。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Off" translated="关闭" />
+        <Value raw="0x00000001" original="Fullscreen only" translated="仅全屏" />
+        <Value raw="0x00000002" original="Fullscreen and Windowed" translated="全屏和窗口模式" />
+      </Values>
+    </Setting>
+    <Setting id="0x1094F157" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>GSYNC - Global Feature</Original>
+        <Translated>G-SYNC - 全局功能</Translated>
+      </Name>
+      <Description>
+        <Original>Globally enables or disables G-SYNC support for this profile.</Original>
+        <Translated>为此配置全局启用或禁用 G-SYNC 支持。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Off" translated="关闭" />
+        <Value raw="0x00000001" original="On" translated="开启" />
+      </Values>
+    </Setting>
+    <Setting id="0x10A879CF" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>GSYNC - Application State</Original>
+        <Translated>G-SYNC - 应用程序状态</Translated>
+      </Name>
+      <Description>
+        <Original>Controls the effective G-SYNC state applied when the profile is active.</Original>
+        <Translated>控制此配置生效时应用的 G-SYNC 有效状态。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Allow" translated="允许" />
+        <Value raw="0x00000001" original="Force Off" translated="强制关闭" />
+        <Value raw="0x00000002" original="Disallow" translated="不允许" />
+        <Value raw="0x00000003" original="Utra Low Motion Blur" translated="超低运动模糊" />
+        <Value raw="0x00000004" original="Fixed Refresh Rate" translated="固定刷新率" />
+      </Values>
+    </Setting>
+    <Setting id="0x10A879AC" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>GSYNC - Application Requested State</Original>
+        <Translated>G-SYNC - 应用程序请求状态</Translated>
+      </Name>
+      <Description>
+        <Original>Controls the application-requested G-SYNC state.</Original>
+        <Translated>控制应用程序请求的 G-SYNC 状态。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Allow" translated="允许" />
+        <Value raw="0x00000001" original="Force Off" translated="强制关闭" />
+        <Value raw="0x00000002" original="Disallow" translated="不允许" />
+        <Value raw="0x00000003" original="Utra Low Motion Blur" translated="超低运动模糊" />
+        <Value raw="0x00000004" original="Fixed Refresh Rate" translated="固定刷新率" />
+      </Values>
+    </Setting>
+    <Setting id="0x103BCCB5" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Prevent Anisotropic Filtering</Original>
+        <Translated>禁止各向异性过滤</Translated>
+      </Name>
+      <Description>
+        <Original>Prevents the application or driver from enabling anisotropic filtering for this profile.</Original>
+        <Translated>阻止应用程序或驱动为此配置启用各向异性过滤。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Off" translated="关闭" />
+        <Value raw="0x00000001" original="On" translated="开启" />
+      </Values>
+    </Setting>
+    <Setting id="0x00198FFF" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Shader Cache - Enabled</Original>
+        <Translated>着色器缓存 - 启用</Translated>
+      </Name>
+      <Description>
+        <Original>Enables or disables the Direct3D shader cache for this profile.</Original>
+        <Translated>为此配置启用或禁用 Direct3D 着色器缓存。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Off" translated="关闭" />
+        <Value raw="0x00000001" original="On" translated="开启" />
+      </Values>
+    </Setting>
+    <Setting id="0x000858F7" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Antialiasing Fix (DX9)</Original>
+        <Translated>抗锯齿修正 (DX9)</Translated>
+      </Name>
+      <Description>
+        <Original>Enables or disables the Direct3D 9 antialiasing fix path for applications that require profile-based AA handling.</Original>
+        <Translated>为需要通过配置处理抗锯齿的应用程序启用或禁用 Direct3D 9 抗锯齿修正路径。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="On" translated="开启" />
+        <Value raw="0x00000001" original="Off" translated="关闭" />
+      </Values>
+    </Setting>
     <Setting id="0x101AE763" type="Dword" source="CustomSettingNames.xml">
       <Name>
         <Original>Vertical Sync - Smooth AFR Behavior</Original>
@@ -539,6 +1034,82 @@
         <Value raw="0x00000001" original="On" translated="开启" />
       </Values>
     </Setting>
+    <Setting id="0x002CF156" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Flip Indicator</Original>
+        <Translated>翻转指示器</Translated>
+      </Name>
+      <Description>
+        <Original>Selects the debug overlay mode used to display flip-model and presentation status information.</Original>
+        <Translated>选择用于显示翻转模型和呈现状态信息的调试浮层模式。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Disabled" translated="禁用" />
+        <Value raw="0x00000001" original="GRAPH_FLIP_FPS - FPS graph, measured on display hw flip" translated="GRAPH_FLIP_FPS - FPS 图表，在显示硬件翻转时测量" />
+        <Value raw="0x00000002" original="GRAPH_PRESENT_FPS - FPS graph, measured when the user mode driver starts processing present" translated="GRAPH_PRESENT_FPS - FPS 图表，在用户态驱动开始处理呈现时测量" />
+        <Value raw="0x00000004" original="GRAPH_APP_PRESENT_FPS - FPS graph, measured on app present" translated="GRAPH_APP_PRESENT_FPS - FPS 图表，在应用程序提交呈现时测量" />
+        <Value raw="0x00000008" original="DISPLAY_PAGING - Add red paging indicator bars to the GRAPH_PRESENT_FPS graph" translated="DISPLAY_PAGING - 在 GRAPH_PRESENT_FPS 图表中添加红色分页指示条" />
+        <Value raw="0x00000010" original="DISPLAY_APP_THREAD_WAIT - Add app thread wait time indiator bars to the GRAPH_APP_PRESENT_FPS graph" translated="DISPLAY_APP_THREAD_WAIT - 在 GRAPH_APP_PRESENT_FPS 图表中添加应用程序线程等待时间指示条" />
+        <Value raw="0x000001FF" original="Enabled - Enable everything" translated="启用 - 启用全部功能" />
+      </Values>
+    </Setting>
+    <Setting id="0x1074C972" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Antialiasing - FXAA Enabled</Original>
+        <Translated>抗锯齿 - 启用 FXAA</Translated>
+      </Name>
+      <Description>
+        <Original>Enables or disables driver-forced FXAA for this profile.</Original>
+        <Translated>为此配置启用或禁用驱动强制的 FXAA。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Off" translated="关闭" />
+        <Value raw="0x00000001" original="On" translated="开启" />
+      </Values>
+    </Setting>
+    <Setting id="0x1068FB9C" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Antialiasing - FXAA Indicator Overlay</Original>
+        <Translated>抗锯齿 - FXAA 指示浮层</Translated>
+      </Name>
+      <Description>
+        <Original>Controls the on-screen overlay that indicates when FXAA is active.</Original>
+        <Translated>控制用于指示 FXAA 已生效的屏幕浮层。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Off" translated="关闭" />
+        <Value raw="0x00000001" original="On" translated="开启" />
+      </Values>
+    </Setting>
+    <Setting id="0x1034CB89" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Antialiasing - FXAA Enabled (predefined by NVIDIA)</Original>
+        <Translated>抗锯齿 - 启用 FXAA（NVIDIA 预定义）</Translated>
+      </Name>
+      <Description>
+        <Original>Controls the predefined FXAA state applied by the driver profile.</Original>
+        <Translated>控制驱动配置应用的预定义 FXAA 状态。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Disallowed" translated="不允许" />
+        <Value raw="0x00000001" original="Allowed" translated="允许" />
+      </Values>
+    </Setting>
+    <Setting id="0x2089BF6C" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Antialiasing - Line Gamma</Original>
+        <Translated>抗锯齿 - 线条伽马</Translated>
+      </Name>
+      <Description>
+        <Original>Selects the line gamma adjustment mode used during antialiasing.</Original>
+        <Translated>选择抗锯齿处理期间使用的线条伽马调整模式。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Disabled" translated="禁用" />
+        <Value raw="0x00000010" original="Default" translated="默认" />
+        <Value raw="0x00000023" original="Enabled" translated="启用" />
+      </Values>
+    </Setting>
     <Setting id="0x00738E8F" type="Dword" source="CustomSettingNames.xml">
       <Name>
         <Original>Texture Filtering - LOD Bias (DX)</Original>
@@ -560,6 +1131,210 @@
         <Translated>为此配置设置 OpenGL 纹理 LOD 偏移覆盖值。</Translated>
       </Description>
       <Values />
+    </Setting>
+    <Setting id="0x00D55F7D" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Antialiasing - Compatibility (DX9)</Original>
+        <Translated>抗锯齿 - 兼容性 (DX9)</Translated>
+      </Name>
+      <Description>
+        <Original>Defines the Direct3D 9 antialiasing compatibility bitfield used for application-specific AA behavior.</Original>
+        <Translated>定义用于应用程序特定抗锯齿行为的 Direct3D 9 抗锯齿兼容性位域。</Translated>
+      </Description>
+      <Values />
+    </Setting>
+    <Setting id="0x00E32F8A" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Antialiasing - Compatibility (DX1x)</Original>
+        <Translated>抗锯齿 - 兼容性 (DX1x)</Translated>
+      </Name>
+      <Description>
+        <Original>Defines the Direct3D 10 and Direct3D 11 antialiasing compatibility bitfield used for application-specific AA behavior.</Original>
+        <Translated>定义用于应用程序特定抗锯齿行为的 Direct3D 10 和 Direct3D 11 抗锯齿兼容性位域。</Translated>
+      </Description>
+      <Values />
+    </Setting>
+    <Setting id="0x002C7F45" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Ambient Occlusion - Compatibility</Original>
+        <Translated>环境光遮蔽 - 兼容性</Translated>
+      </Name>
+      <Description>
+        <Original>Defines the ambient occlusion compatibility bitfield used for application-specific driver workarounds.</Original>
+        <Translated>定义用于应用程序特定驱动兼容性处理的环境光遮蔽兼容性位域。</Translated>
+      </Description>
+      <Values />
+    </Setting>
+    <Setting id="0x107D639D" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Antialiasing - Gamma Correction</Original>
+        <Translated>抗锯齿 - 伽马校正</Translated>
+      </Name>
+      <Description>
+        <Original>Enables or disables gamma-correct antialiasing resolve behavior.</Original>
+        <Translated>启用或禁用带伽马校正的抗锯齿解析行为。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Off" translated="关闭" />
+        <Value raw="0x00000002" original="On" translated="开启" />
+      </Values>
+    </Setting>
+    <Setting id="0x10ECDB82" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Antialiasing (MSAA) - Behavior Flags</Original>
+        <Translated>抗锯齿 (MSAA) - 行为标志</Translated>
+      </Name>
+      <Description>
+        <Original>Controls advanced MSAA behavior flags and application-compatibility overrides.</Original>
+        <Translated>控制高级 MSAA 行为标志及应用程序兼容性覆盖设置。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="None" translated="无" />
+        <Value raw="0x00000001" original="Treat 'Override any application setting' as 'Application-controlled'" translated="将“覆盖任何应用程序设置”视为“由应用程序控制”" />
+        <Value raw="0x00000002" original="Treat 'Override any application setting' as 'Enhance the application setting'" translated="将“覆盖任何应用程序设置”视为“增强应用程序设置”" />
+        <Value raw="0x00000003" original="Disable 'Override any application setting'" translated="禁用“覆盖任何应用程序设置”" />
+        <Value raw="0x00000004" original="Treat 'Enhance the application setting' as 'Application-controlled'" translated="将“增强应用程序设置”视为“由应用程序控制”" />
+        <Value raw="0x00000008" original="Treat 'Enhance the application setting' as 'Override any application setting'" translated="将“增强应用程序设置”视为“覆盖任何应用程序设置”" />
+        <Value raw="0x0000000C" original="Disable 'Enhance the application setting'" translated="禁用“增强应用程序设置”" />
+        <Value raw="0x00040000" original="Disable Antialiasing at NVIDIA Control Panel" translated="禁用 NVIDIA 控制面板中的抗锯齿" />
+      </Values>
+    </Setting>
+    <Setting id="0x107EFC5B" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Antialiasing (MSAA) - Mode</Original>
+        <Translated>抗锯齿 (MSAA) - 模式</Translated>
+      </Name>
+      <Description>
+        <Original>Selects whether MSAA is application-controlled, enhanced, or fully overridden by the driver.</Original>
+        <Translated>选择 MSAA 由应用程序控制、由驱动增强，还是由驱动完全覆盖。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Application-controlled" translated="由应用程序控制" />
+        <Value raw="0x00000001" original="Override any application setting" translated="覆盖任何应用程序设置" />
+        <Value raw="0x00000002" original="Enhance the application setting" translated="增强应用程序设置" />
+      </Values>
+    </Setting>
+    <Setting id="0x10D773D2" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Antialiasing (MSAA) - Setting</Original>
+        <Translated>抗锯齿 (MSAA) - 设置</Translated>
+      </Name>
+      <Description>
+        <Original>Selects the MSAA sample pattern and quality level applied by the driver.</Original>
+        <Translated>选择驱动应用的 MSAA 采样模式和质量级别。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Application-controlled / Off" translated="由应用程序控制 / 关闭" />
+        <Value raw="0x0000000E" original="2x [2x Multisampling]" translated="2x [2x 多重采样]" />
+        <Value raw="0x0000000F" original="2xQ [2x Quincunx (blurred)]" translated="2xQ [2x Quincunx（模糊）]" />
+        <Value raw="0x00000010" original="4x [4x Multisampling]" translated="4x [4x 多重采样]" />
+        <Value raw="0x00000026" original="8x [8x CSAA (4 color + 4 cv samples)]" translated="8x [8x CSAA（4 个颜色样本 + 4 个 cv 样本）]" />
+        <Value raw="0x00000027" original="16x [16x CSAA (4 color + 12 cv samples)]" translated="16x [16x CSAA（4 个颜色样本 + 12 个 cv 样本）]" />
+        <Value raw="0x00000025" original="8xQ [8x Multisampling]" translated="8xQ [8x 多重采样]" />
+        <Value raw="0x00000028" original="16xQ [16x CSAA (8 color + 8 cv samples)]" translated="16xQ [16x CSAA（8 个颜色样本 + 8 个 cv 样本）]" />
+        <Value raw="0x0000001D" original="32x [32x CSAA (8 color + 24 cv samples)]" translated="32x [32x CSAA（8 个颜色样本 + 24 个 cv 样本）]" />
+        <Value raw="0x00000001" original="2x1 [2x1 Supersampling (D3D only)]" translated="2x1 [2x1 超级采样（仅 D3D）]" />
+        <Value raw="0x00000002" original="1x2 [1x2 Supersampling (D3D only)]" translated="1x2 [1x2 超级采样（仅 D3D）]" />
+        <Value raw="0x00000005" original="2x2 [2x2 Supersampling (D3D only)]" translated="2x2 [2x2 超级采样（仅 D3D）]" />
+        <Value raw="0x0000000A" original="3x3 [3x3 Supersampling (D3D only)]" translated="3x3 [3x3 超级采样（仅 D3D）]" />
+        <Value raw="0x0000000C" original="4x4 [4x4 Supersampling (D3D only)]" translated="4x4 [4x4 超级采样（仅 D3D）]" />
+        <Value raw="0x00000013" original="4xS [Combined: 1x2 SS + 2x MS (D3D only)]" translated="4xS [混合：1x2 SS + 2x MS（仅 D3D）]" />
+        <Value raw="0x00000018" original="8xS [Combined: 1x2 SS + 4x MS]" translated="8xS [混合：1x2 SS + 4x MS]" />
+        <Value raw="0x00000019" original="8xSQ [Combined: 2x2 SS + 2x MS]" translated="8xSQ [混合：2x2 SS + 2x MS]" />
+        <Value raw="0x00000017" original="12xS [Combined: 2x2 SS + 4x OGMS (D3D only)]" translated="12xS [混合：2x2 SS + 4x OGMS（仅 D3D）]" />
+        <Value raw="0x0000001A" original="16xS [Combined: 2x2 SS + 4x MS]" translated="16xS [混合：2x2 SS + 4x MS]" />
+        <Value raw="0x00000029" original="32xS [Combined: 2x2 SS + 8x MS]" translated="32xS [混合：2x2 SS + 8x MS]" />
+      </Values>
+    </Setting>
+    <Setting id="0x10FC2D9C" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Antialiasing - Transparency Multisampling</Original>
+        <Translated>抗锯齿 - 透明度多重采样</Translated>
+      </Name>
+      <Description>
+        <Original>Controls whether transparency multisampling is used for alpha-tested geometry.</Original>
+        <Translated>控制是否对使用 Alpha 测试的几何体使用透明度多重采样。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Disabled" translated="禁用" />
+        <Value raw="0x00000004" original="Enabled" translated="启用" />
+      </Values>
+    </Setting>
+    <Setting id="0x10D48A85" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Antialiasing - Transparency Supersampling</Original>
+        <Translated>抗锯齿 - 透明度超级采样</Translated>
+      </Name>
+      <Description>
+        <Original>Selects the transparency supersampling mode for alpha-tested geometry.</Original>
+        <Translated>选择对使用 Alpha 测试的几何体应用的透明度超级采样模式。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Off / Multisampling" translated="关闭 / 多重采样" />
+        <Value raw="0x00000023" original="Supersampling" translated="超级采样" />
+        <Value raw="0x00000014" original="2x Supersampling" translated="2x 超级采样" />
+        <Value raw="0x00000024" original="4x Supersampling" translated="4x 超级采样" />
+        <Value raw="0x00000034" original="8x Supersampling" translated="8x 超级采样" />
+        <Value raw="0x00000018" original="2x Sparse Grid Supersampling" translated="2x 稀疏网格超级采样" />
+        <Value raw="0x00000028" original="4x Sparse Grid Supersampling" translated="4x 稀疏网格超级采样" />
+        <Value raw="0x00000038" original="8x Sparse Grid Supersampling" translated="8x 稀疏网格超级采样" />
+      </Values>
+    </Setting>
+    <Setting id="0x10D2BB16" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Anisotropic Filtering - Mode</Original>
+        <Translated>各向异性过滤 - 模式</Translated>
+      </Name>
+      <Description>
+        <Original>Selects whether anisotropic filtering is application-controlled or forced by the driver.</Original>
+        <Translated>选择各向异性过滤由应用程序控制，还是由驱动强制应用。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Application-controlled" translated="由应用程序控制" />
+        <Value raw="0x00000001" original="User-defined / Off" translated="用户定义 / 关闭" />
+      </Values>
+    </Setting>
+    <Setting id="0x101E61A9" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Anisotropic Filtering - Setting</Original>
+        <Translated>各向异性过滤 - 级别</Translated>
+      </Name>
+      <Description>
+        <Original>Selects the anisotropic filtering level applied when the driver forces AF.</Original>
+        <Translated>选择驱动强制应用各向异性过滤 (AF) 时使用的级别。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Off [Point]" translated="关闭 [点采样]" />
+        <Value raw="0x00000001" original="Off [Linear]" translated="关闭 [线性采样]" />
+      </Values>
+    </Setting>
+    <Setting id="0x0084CD70" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Anisotropic Filter - Optimization</Original>
+        <Translated>各向异性过滤 - 优化</Translated>
+      </Name>
+      <Description>
+        <Original>Enables or disables the driver anisotropic filtering optimization path.</Original>
+        <Translated>启用或禁用驱动各向异性过滤优化路径。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Off" translated="关闭" />
+        <Value raw="0x00000001" original="On" translated="开启" />
+      </Values>
+    </Setting>
+    <Setting id="0x00E73211" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Anisotropic Filter - Sample Optimization</Original>
+        <Translated>各向异性过滤 - 采样优化</Translated>
+      </Name>
+      <Description>
+        <Original>Enables or disables sample-count optimizations for anisotropic filtering.</Original>
+        <Translated>启用或禁用各向异性过滤的采样数量优化。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Off" translated="关闭" />
+        <Value raw="0x00000001" original="On" translated="开启" />
+      </Values>
     </Setting>
     <Setting id="0x0019BB68" type="Dword" source="CustomSettingNames.xml">
       <Name>
@@ -605,6 +1380,35 @@
         <Value raw="0x00000001" original="Off" translated="关闭" />
       </Values>
     </Setting>
+    <Setting id="0x00664339" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Ambient Occlusion  - Usage</Original>
+        <Translated>环境光遮蔽 - 启用</Translated>
+      </Name>
+      <Description>
+        <Original>Enables or disables ambient occlusion usage for the profile.</Original>
+        <Translated>为此配置启用或禁用环境光遮蔽。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Disabled" translated="禁用" />
+        <Value raw="0x00000001" original="Enabled" translated="启用" />
+      </Values>
+    </Setting>
+    <Setting id="0x00667329" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Ambient Occlusion - Setting</Original>
+        <Translated>环境光遮蔽 - 设置</Translated>
+      </Name>
+      <Description>
+        <Original>Selects the ambient occlusion quality mode applied when the feature is enabled.</Original>
+        <Translated>选择启用环境光遮蔽时应用的质量模式。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Off" translated="关闭" />
+        <Value raw="0x00000001" original="Performance" translated="性能" />
+        <Value raw="0x00000002" original="Quality" translated="质量" />
+      </Values>
+    </Setting>
     <Setting id="0x007BA09E" type="Dword" source="CustomSettingNames.xml">
       <Name>
         <Original>Maximum Pre-Rendered Frames</Original>
@@ -616,6 +1420,35 @@
       </Description>
       <Values>
         <Value raw="0x00000000" original="Use the 3D application setting" translated="使用 3D 应用程序设置" />
+      </Values>
+    </Setting>
+    <Setting id="0x20C1221E" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Threaded Optimization</Original>
+        <Translated>线程优化</Translated>
+      </Name>
+      <Description>
+        <Original>Selects whether driver worker-thread optimization is disabled, enabled, or left to the driver default.</Original>
+        <Translated>选择禁用、启用驱动工作线程优化，或使用驱动默认设置。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Auto" translated="自动" />
+        <Value raw="0x00000001" original="On" translated="开启" />
+        <Value raw="0x00000002" original="Off" translated="关闭" />
+      </Values>
+    </Setting>
+    <Setting id="0x20FDD1F9" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Triple Buffering</Original>
+        <Translated>三重缓冲</Translated>
+      </Name>
+      <Description>
+        <Original>Enables or disables driver-controlled triple buffering for compatible presentation paths.</Original>
+        <Translated>为兼容的呈现路径启用或禁用由驱动控制的三重缓冲。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Off" translated="关闭" />
+        <Value raw="0x00000001" original="On" translated="开启" />
       </Values>
     </Setting>
     <Setting id="0x00A879CF" type="Dword" source="CustomSettingNames.xml">
@@ -651,6 +1484,34 @@
         <Value raw="0x99941284" original="Adaptive" translated="自适应" />
       </Values>
     </Setting>
+    <Setting id="0x1094F16F" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>PhysX - Indicator Overlay</Original>
+        <Translated>PhysX - 指示浮层</Translated>
+      </Name>
+      <Description>
+        <Original>Controls the on-screen overlay that indicates active PhysX acceleration.</Original>
+        <Translated>控制用于指示 PhysX 加速正在运行的屏幕浮层。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x24545582" original="On" translated="开启" />
+        <Value raw="0x34534064" original="Off" translated="关闭" />
+      </Values>
+    </Setting>
+    <Setting id="0x5067ECC4" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>PhysX - Enable 32-bits GPU Acceleration (RTX 50)</Original>
+        <Translated>PhysX - 启用 32 位 GPU 加速 (RTX 50)</Translated>
+      </Name>
+      <Description>
+        <Original>Controls whether 32-bit PhysX GPU acceleration emulation is enabled for supported RTX 50-series hardware.</Original>
+        <Translated>控制是否为受支持的 RTX 50 系列硬件启用 32 位 PhysX GPU 加速模拟。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Off" translated="关闭" />
+        <Value raw="0x00000001" original="On" translated="开启" />
+      </Values>
+    </Setting>
     <Setting id="0x1057EB71" type="Dword" source="CustomSettingNames.xml">
       <Name>
         <Original>Power Management - Mode</Original>
@@ -664,6 +1525,137 @@
         <Value raw="0x00000000" original="Adaptive" translated="自适应" />
         <Value raw="0x00000001" original="Prefer maximum performance" translated="最高性能优先" />
         <Value raw="0x00000005" original="Optimal performance" translated="最佳性能" />
+      </Values>
+    </Setting>
+    <Setting id="0x50166C5E" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>CUDA - Force P2 State</Original>
+        <Translated>CUDA - 强制 P2 状态</Translated>
+      </Name>
+      <Description>
+        <Original>Controls whether CUDA workloads are forced into the P2 performance state.</Original>
+        <Translated>控制是否强制 CUDA 工作负载使用 P2 性能状态。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Off" translated="关闭" />
+        <Value raw="0x00000001" original="On" translated="开启" />
+      </Values>
+    </Setting>
+    <Setting id="0x10ECECC9" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>CUDA - Sysmem Fallback Policy</Original>
+        <Translated>CUDA - 系统内存回退策略</Translated>
+      </Name>
+      <Description>
+        <Original>Selects how CUDA handles fallback to system memory when local video memory is insufficient.</Original>
+        <Translated>选择 CUDA 在本地显存不足时如何回退到系统内存。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Default" translated="默认" />
+        <Value raw="0x00000001" original="Prefer no sysmem fallback" translated="优先不回退到系统内存" />
+        <Value raw="0x00000002" original="Prefer sysmem fallback" translated="优先回退到系统内存" />
+      </Values>
+    </Setting>
+    <Setting id="0x20FF7493" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Extension Limit (OGL)</Original>
+        <Translated>扩展限制 (OGL)</Translated>
+      </Name>
+      <Description>
+        <Original>Controls whether the OpenGL extension exposure limit is enforced for this profile.</Original>
+        <Translated>控制是否为此配置强制执行 OpenGL 扩展公开数量限制。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Off" translated="关闭" />
+        <Value raw="0x00000001" original="On" translated="开启" />
+      </Values>
+    </Setting>
+    <Setting id="0x200AEBFC" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Multi-Display / Mixed-GPU Acceleration</Original>
+        <Translated>多显示器 / 混合 GPU 加速</Translated>
+      </Name>
+      <Description>
+        <Original>Selects the driver acceleration policy used for multi-display and mixed-GPU environments.</Original>
+        <Translated>选择多显示器和混合 GPU 环境使用的驱动加速策略。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Single display performance mode" translated="单显示器性能模式" />
+        <Value raw="0x00000001" original="Compatibility performance mode" translated="兼容性性能模式" />
+        <Value raw="0x00000003" original="Multi display performance mode" translated="多显示器性能模式" />
+      </Values>
+    </Setting>
+    <Setting id="0x2046B3ED" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Version Override (OGL)</Original>
+        <Translated>版本覆盖 (OGL)</Translated>
+      </Name>
+      <Description>
+        <Original>Overrides the OpenGL version reported to the application.</Original>
+        <Translated>覆盖向应用程序报告的 OpenGL 版本。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Disabled" translated="禁用" />
+        <Value raw="0x00302e31" original="OpenGL Version 1.0" translated="OpenGL 版本 1.0" />
+        <Value raw="0x00312e31" original="OpenGL Version 1.1" translated="OpenGL 版本 1.1" />
+        <Value raw="0x00322e31" original="OpenGL Version 1.2" translated="OpenGL 版本 1.2" />
+        <Value raw="0x00332e31" original="OpenGL Version 1.3" translated="OpenGL 版本 1.3" />
+        <Value raw="0x00342e31" original="OpenGL Version 1.4" translated="OpenGL 版本 1.4" />
+        <Value raw="0x00352e31" original="OpenGL Version 1.5" translated="OpenGL 版本 1.5" />
+        <Value raw="0x00302e32" original="OpenGL Version 2.0" translated="OpenGL 版本 2.0" />
+        <Value raw="0x00312e32" original="OpenGL Version 2.1" translated="OpenGL 版本 2.1" />
+        <Value raw="0x00302e33" original="OpenGL Version 3.0" translated="OpenGL 版本 3.0" />
+        <Value raw="0x00312e33" original="OpenGL Version 3.1" translated="OpenGL 版本 3.1" />
+      </Values>
+    </Setting>
+    <Setting id="0x00A88888" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Multi-Plane Overlay Indicator</Original>
+        <Translated>多平面叠加 (MPO) 指示器</Translated>
+      </Name>
+      <Description>
+        <Original>Controls the debug indicator for multiplane overlay usage.</Original>
+        <Translated>控制用于显示多平面叠加使用状态的调试指示器。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Off" translated="关闭" />
+        <Value raw="0x00000001" original="On" translated="开启" />
+      </Values>
+    </Setting>
+    <Setting id="0x20D690F8" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Vulkan/OpenGL Present Method</Original>
+        <Translated>Vulkan/OpenGL 呈现方式</Translated>
+      </Name>
+      <Description>
+        <Original>Selects the presentation method used for Vulkan and OpenGL swap operations.</Original>
+        <Translated>选择 Vulkan 和 OpenGL 交换操作使用的呈现方式。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Prefer native" translated="优先使用原生方式" />
+        <Value raw="0x00000001" original="Prefer layered on DXGI Swapchain" translated="优先通过 DXGI 交换链分层呈现" />
+        <Value raw="0x00000002" original="Auto" translated="自动" />
+      </Values>
+    </Setting>
+    <Setting id="0x20324987" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Vulkan/OpenGL Present Method - Flags</Original>
+        <Translated>Vulkan/OpenGL 呈现方式 - 标志</Translated>
+      </Name>
+      <Description>
+        <Original>Controls auxiliary flags for the Vulkan and OpenGL presentation method.</Original>
+        <Translated>控制 Vulkan 和 OpenGL 呈现方式的辅助标志。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00080004" original="0x00080004 - Allow promoting DXVK to DXGI/DirectFlip" translated="0x00080004 - 允许将 DXVK 提升为 DXGI/DirectFlip" />
+        <Value raw="0x000802A5" original="0x000802A5 - Treat DXVK as Native" translated="0x000802A5 - 将 DXVK 视为原生方式" />
+        <Value raw="0x00000000" original="Disable - Clear all debug bits" translated="禁用 - 清除所有调试位" />
+        <Value raw="0x00000001" original="DISABLE_FULLSCREEN_OPT - Disable fullscreen optimization" translated="DISABLE_FULLSCREEN_OPT - 禁用全屏优化" />
+        <Value raw="0x00000002" original="DISABLE_THREAD - Disable present thread" translated="DISABLE_THREAD - 禁用呈现线程" />
+        <Value raw="0x00000004" original="ENABLE_DFLIP_ALWAYS - Enable use of direct flip API parameters" translated="ENABLE_DFLIP_ALWAYS - 允许使用直接翻转 API 参数" />
+        <Value raw="0x00000008" original="ENABLE_NON_STEREO - Enable DX present on non-stereo windows" translated="ENABLE_NON_STEREO - 允许在非立体窗口上使用 DX 呈现" />
+        <Value raw="0x00080000" original="0x00080000 - Allow DXVK promotion" translated="0x00080000 - 允许 DXVK 提升" />
+        <Value raw="0x10000000" original="ENABLE_FULLSCREEN_WIN7_STEREO - Enable Win7 fullscreen stereo mechanism" translated="ENABLE_FULLSCREEN_WIN7_STEREO - 启用 Win7 全屏立体显示机制" />
       </Values>
     </Setting>
     <Setting id="0x10E41DF1" type="Dword" source="CustomSettingNames.xml">
@@ -740,6 +1732,22 @@
         <Value raw="0x00000003" original="Up to 4x" translated="最高 4x" />
         <Value raw="0x00000004" original="Up to 5x" translated="最高 5x" />
         <Value raw="0x00000005" original="Up to 6x" translated="最高 6x" />
+      </Values>
+    </Setting>
+    <Setting id="0x00EAD189" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Shader Cache - Pre-compile Shader Options</Original>
+        <Translated>着色器缓存 - 预编译选项</Translated>
+      </Name>
+      <Description>
+        <Original>This setting is NVIDIA Auto Shader Compilation, toggle it on to make CPU compile shaders while system is in idle, the settings controls how much system utilization this can take, from low to high.</Original>
+        <Translated>此设置对应 NVIDIA 自动着色器编译功能。启用后，CPU 会在系统空闲时编译着色器；此设置控制允许使用的系统资源级别，从低到高。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Disabled" translated="禁用" />
+        <Value raw="0x00000001" original="Low" translated="低" />
+        <Value raw="0x00000002" original="Medium" translated="中" />
+        <Value raw="0x00000003" original="High" translated="高" />
       </Values>
     </Setting>
     <Setting id="0x10835006" type="Dword" source="Reference.xml">

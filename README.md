@@ -1,3 +1,5 @@
+[English](README.md) | [简体中文](README.zh-CN.md)
+
 ![NVIDIA Profile Inspector main window](npi_screenshot.png)
 
 # NVIDIA Profile Inspector

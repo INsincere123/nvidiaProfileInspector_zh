@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -42,6 +42,7 @@ internal static class LayoutChecks
             var windows = new Dictionary<string, Window>
             {
                 ["Main"] = new MainWindow(disableInitialScan: true) { DataContext = ParameterPreview() },
+                ["MainExtended"] = new MainWindow(disableInitialScan: true) { DataContext = ParameterPreview(true) },
                 ["Splash"] = new SplashWindow(),
                 ["Message"] = new MessageBoxView { DataContext = new MessageBoxViewModel(Localizer.Get("LanguageRestartMessage"), Localizer.Get("LanguageRestartTitle"), MessageBoxButton.YesNoCancel, MessageBoxImage.Information) },
                 ["Input"] = new InputDialog(Localizer.Get("Create_Profile_dccc9c"), Localizer.Get("Enter_a_unique_name_for_your_b3deab"), "Sample profile", true),
@@ -81,24 +82,26 @@ internal static class LayoutChecks
         bootstrapper.Dispose();
         Console.WriteLine("Rendered " + count + " offline WPF layouts for " + language + ": " + output);
     }
-    private static MainViewModel ParameterPreview()
+    private static MainViewModel ParameterPreview(bool extended = false)
     {
         var source = CustomSettingNames.FactoryLoadFromString(EmbeddedResourceHelper.GetFileAsString("nvidiaProfileInspector.CustomSettingNames.xml"));
         var meta = new CustomSettingMetaService(source);
-        var ids = new uint[] { 0x10E41E01, 0x10E41E04, 0x104596A2, 0x1057EB71, 0x00CE2691, 0x00A879CF };
+        var ids = extended ? new uint[] { 0x00432F84, 0x00DD48FB, 0x00AC8497, 0x000F00FF, 0x1094F1F7, 0x10D773D2, 0x50166C5E, 0x20324987 } : new uint[] { 0x10E41E01, 0x10E41E04, 0x104596A2, 0x1057EB71, 0x00CE2691, 0x00A879CF };
         var model = new MainViewModel(null, null, null, null);
         model.Settings.Clear();
         foreach (var setting in source.Settings.Where(x => ids.Contains(x.SettingId)).OrderBy(x => x.GroupName).ThenBy(x => x.UserfriendlyName))
         {
-            var values = meta.GetDwordValues(setting.SettingId);
+            var qwords = setting.FallbackType == "QWORD" ? meta.GetQwordValues(setting.SettingId) : null;
+            var values = qwords == null ? meta.GetDwordValues(setting.SettingId) : null;
             model.Settings.Add(new SettingItemViewModel(new SettingItem
             {
                 SettingId = setting.SettingId, SettingText = setting.UserfriendlyName, GroupName = setting.GroupName,
-                ValueText = values.FirstOrDefault()?.ValueName ?? "0x00000000", State = SettingState.NotAssiged
-            }) { DwordValues = values });
+                ValueText = qwords?.LastOrDefault()?.ValueName ?? values?.FirstOrDefault()?.ValueName ?? "0x00000000", State = SettingState.NotAssiged
+            }) { DwordValues = values, QwordValues = qwords });
         }
         model.FilterText = " "; // Publish group headers after adding the source-derived rows.
-        model.SettingDescription = ParameterLocalizer.Description(0x10E41E01, source.Settings.Single(x => x.SettingId == 0x10E41E01).Description);
+        var descriptionId = extended ? 0x00432F84u : 0x10E41E01u;
+        model.SettingDescription = ParameterLocalizer.Description(descriptionId, source.Settings.Single(x => x.SettingId == descriptionId).Description);
         return model;
     }
 
