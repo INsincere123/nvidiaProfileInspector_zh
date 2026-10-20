@@ -19,7 +19,9 @@ namespace nvidiaProfileInspector.UI.ViewModels
             _onExpandedChanged = onExpandedChanged;
         }
 
+        // Name is the original grouping/persistence key; only DisplayName is translated.
         public string Name { get; }
+        public string DisplayName => nvidiaProfileInspector.Localization.ParameterLocalizer.GroupName(Name);
 
         // Discriminators for the shared item container style; SettingItemViewModel exposes the
         // same properties so style triggers bind cleanly on either item type.

@@ -1,4 +1,5 @@
-using L = nvidiaProfileInspector.Localization.Localizer;
+using nvidiaProfileInspector.Localization;
+using System;
 namespace nvidiaProfileInspector.UI.ViewModels
 {
     using nvidiaProfileInspector.Common;
@@ -10,7 +11,12 @@ namespace nvidiaProfileInspector.UI.ViewModels
     public class SettingValueItem
     {
         public string ValueName { get; set; }
+        public string DisplayName { get; set; }
         public SettingMetaSource Source { get; set; }
+
+        public bool MatchesSearch(string query) => string.IsNullOrWhiteSpace(query)
+            || ValueName?.IndexOf(query, StringComparison.OrdinalIgnoreCase) >= 0
+            || DisplayName?.IndexOf(query, StringComparison.OrdinalIgnoreCase) >= 0;
 
         public override string ToString()
         {
@@ -27,6 +33,13 @@ namespace nvidiaProfileInspector.UI.ViewModels
         private bool _isFavorite;
         private List<SettingValueItem> _cachedValueNameItems;
         private string _cachedGroupNameForDisplay;
+        private Dictionary<string, string> _valueDisplays;
+        private string _cachedValueDisplay;
+        private string _cachedValueOriginal;
+        private List<SettingValue<uint>> _dwordValues;
+        private List<SettingValue<ulong>> _qwordValues;
+        private List<SettingValue<string>> _stringValues;
+        private List<SettingValue<byte[]>> _binaryValues;
 
         public SettingItemViewModel(SettingItem item)
         {
@@ -40,7 +53,7 @@ namespace nvidiaProfileInspector.UI.ViewModels
         private void UpdateGroupNameForDisplay()
         {
             if (_isFavorite)
-                _cachedGroupNameForDisplay = L.Get("Favorites_7f6d0c");
+                _cachedGroupNameForDisplay = ParameterLocalizer.FavoritesKey;
             else
                 _cachedGroupNameForDisplay = GroupName;
         }
@@ -51,13 +64,19 @@ namespace nvidiaProfileInspector.UI.ViewModels
 
         private void UpdateDisplayName()
         {
-            var name = IsSettingHidden ? "[H] " + SettingText : SettingText;
+            var translated = ParameterLocalizer.Name(SettingId, SettingText);
+            var name = IsSettingHidden ? "[H] " + translated : translated;
+            var originalName = IsSettingHidden ? "[H] " + SettingText : SettingText;
 
             // Optionally prefix the setting id, unless the name already is the hex id itself.
             if (ShowSettingIdInName && !(SettingText != null && SettingText.StartsWith("0x", System.StringComparison.OrdinalIgnoreCase)))
+            {
                 name = SettingIdHex + " " + name;
+                originalName = SettingIdHex + " " + originalName;
+            }
 
             DisplayName = name;
+            OriginalDisplayName = originalName;
         }
 
         // Recompute the cached display name in place (used when the "show setting id" option
@@ -71,6 +90,9 @@ namespace nvidiaProfileInspector.UI.ViewModels
         private void InvalidateValueNameItems()
         {
             _cachedValueNameItems = null;
+            _valueDisplays = null;
+            _cachedValueDisplay = null;
+            OnPropertyChanged(nameof(ValueDisplay));
             OnPropertyChanged(nameof(ValueNameItems));
         }
 
@@ -80,10 +102,10 @@ namespace nvidiaProfileInspector.UI.ViewModels
             List<SettingValue<string>> stringValues,
             List<SettingValue<byte[]>> binaryValues)
         {
-            DwordValues = dwordValues;
-            QwordValues = qwordValues;
-            StringValues = stringValues;
-            BinaryValues = binaryValues;
+            _dwordValues = dwordValues;
+            _qwordValues = qwordValues;
+            _stringValues = stringValues;
+            _binaryValues = binaryValues;
             InvalidateValueNameItems();
         }
 
@@ -97,29 +119,63 @@ namespace nvidiaProfileInspector.UI.ViewModels
                     if (DwordValues != null)
                     {
                         items.AddRange(DwordValues.Where(v => !string.IsNullOrEmpty(v.ValueName))
-                        .Select(v => new SettingValueItem { ValueName = v.ValueName, Source = v.ValueSource }));
+                        .Select(v => CreateValueItem(v, "Dword", DrsUtil.GetDwordString(v.Value))));
                     }
                     else if (QwordValues != null)
                     {
                         items.AddRange(QwordValues.Where(v => !string.IsNullOrEmpty(v.ValueName))
-                        .Select(v => new SettingValueItem { ValueName = v.ValueName, Source = v.ValueSource }));
+                        .Select(v => CreateValueItem(v, "Qword", DrsUtil.GetQwordString(v.Value))));
                     }
                     else if (StringValues != null)
                     {
                         items.AddRange(StringValues.Where(v => !string.IsNullOrEmpty(v.ValueName))
-                        .Select(v => new SettingValueItem { ValueName = v.ValueName, Source = v.ValueSource }));
+                        .Select(v => CreateValueItem(v, "String", v.Value)));
                     }
                     else if (BinaryValues != null)
                     {
                         items.AddRange(BinaryValues.Where(v => !string.IsNullOrEmpty(v.ValueName))
-                        .Select(v => new SettingValueItem { ValueName = v.ValueName, Source = v.ValueSource }));
+                        .Select(v => CreateValueItem(v, "Binary", DrsUtil.GetBinaryString(v.Value))));
                     }
                     _cachedValueNameItems = items
                         .OrderBy(v => v.Source == SettingMetaSource.CustomSettings ? 0 : 1)
                         .ThenBy(v => v.Source == SettingMetaSource.ReferenceSettings ? 0 : 1)
                         .ToList();
                 }
+                if (_valueDisplays == null)
+                {
+                    _valueDisplays = new Dictionary<string, string>(StringComparer.Ordinal);
+                    foreach (var value in _cachedValueNameItems)
+                    {
+                        if (_valueDisplays.TryGetValue(value.ValueName, out var display) && display != value.DisplayName)
+                            _valueDisplays[value.ValueName] = value.ValueName;
+                        else if (!_valueDisplays.ContainsKey(value.ValueName))
+                            _valueDisplays.Add(value.ValueName, value.DisplayName);
+                    }
+                }
                 return _cachedValueNameItems;
+            }
+        }
+
+        private SettingValueItem CreateValueItem<T>(SettingValue<T> value, string type, string raw) => new SettingValueItem
+        {
+            ValueName = value.ValueName,
+            DisplayName = ParameterLocalizer.ValueName(SettingId, type, raw, value.ValueName),
+            Source = value.ValueSource
+        };
+
+        // This is a presentation cache only. SelectedValue remains the original parser input.
+        public string ValueDisplay
+        {
+            get
+            {
+                if (_cachedValueDisplay == null || _cachedValueOriginal != SelectedValue)
+                {
+                    var values = ValueNameItems;
+                    _cachedValueOriginal = SelectedValue;
+                    _cachedValueDisplay = SelectedValue != null && _valueDisplays.TryGetValue(SelectedValue, out var display)
+                        ? display : SelectedValue;
+                }
+                return _cachedValueDisplay;
             }
         }
 
@@ -156,6 +212,8 @@ namespace nvidiaProfileInspector.UI.ViewModels
         public bool IsSettingHidden => _item.IsSettingHidden;
 
         public string DisplayName { get; private set; }
+        public string OriginalDisplayName { get; private set; }
+        public string NameToolTip => SettingText + "\r\n" + SettingIdHex;
 
         public bool IsUserDefined => State == SettingState.UserdefinedSetting;
         public bool IsNvidiaSetting => State == SettingState.NvidiaSetting;
@@ -193,6 +251,8 @@ namespace nvidiaProfileInspector.UI.ViewModels
                 var wasModified = IsModified;
                 if (SetProperty(ref _selectedValue, value, nameof(SelectedValue)))
                 {
+                    _cachedValueDisplay = null;
+                    OnPropertyChanged(nameof(ValueDisplay));
                     if (wasModified != IsModified)
                         OnPropertyChanged(nameof(IsModified));
                 }
@@ -245,6 +305,9 @@ namespace nvidiaProfileInspector.UI.ViewModels
                     // (e.g. after a source-filter change that changes the resolved name).
                     UpdateGroupNameForDisplay();
                     UpdateDisplayName();
+                    InvalidateValueNameItems();
+                    OnPropertyChanged(nameof(SettingText));
+                    OnPropertyChanged(nameof(NameToolTip));
                     OnPropertyChanged(nameof(DisplayName));
                     OnPropertyChanged(nameof(GroupNameForDisplay));
                     OnPropertyChanged(nameof(IsModified));
@@ -263,9 +326,25 @@ namespace nvidiaProfileInspector.UI.ViewModels
                 OnPropertyChanged(nameof(IsModified));
         }
 
-        public List<SettingValue<uint>> DwordValues { get; set; }
-        public List<SettingValue<ulong>> QwordValues { get; set; }
-        public List<SettingValue<string>> StringValues { get; set; }
-        public List<SettingValue<byte[]>> BinaryValues { get; set; }
+        public List<SettingValue<uint>> DwordValues
+        {
+            get => _dwordValues;
+            set { _dwordValues = value; InvalidateValueNameItems(); }
+        }
+        public List<SettingValue<ulong>> QwordValues
+        {
+            get => _qwordValues;
+            set { _qwordValues = value; InvalidateValueNameItems(); }
+        }
+        public List<SettingValue<string>> StringValues
+        {
+            get => _stringValues;
+            set { _stringValues = value; InvalidateValueNameItems(); }
+        }
+        public List<SettingValue<byte[]>> BinaryValues
+        {
+            get => _binaryValues;
+            set { _binaryValues = value; InvalidateValueNameItems(); }
+        }
     }
 }

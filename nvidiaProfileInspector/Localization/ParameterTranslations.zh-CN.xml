@@ -1,0 +1,768 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ParameterTranslations culture="zh-CN">
+  <Groups>
+    <Group original="01 - Compatibility" translated="01 - 兼容性" />
+    <Group original="02 - Sync and Refresh" translated="02 - 同步与刷新" />
+    <Group original="03 - Antialiasing and Sharpening" translated="03 - 抗锯齿与锐化" />
+    <Group original="04 - Texture Filtering" translated="04 - 纹理过滤" />
+    <Group original="05 - Upscaling and Frame Generation" translated="05 - 超分辨率与帧生成" />
+    <Group original="06 - Rendering Features" translated="06 - 渲染功能" />
+    <Group original="07 - System, Memory and Compute" translated="07 - 系统、内存与计算" />
+    <Group original="08 - SLI and NVLINK" translated="08 - SLI 与 NVLINK" />
+    <Group original="09 - Stereo" translated="09 - 立体视觉" />
+    <Group original="10 - OpenGL" translated="10 - OpenGL" />
+    <Group original="11 - Unknown Driver Settings" translated="11 - 未知驱动设置" />
+  </Groups>
+  <Settings>
+    <Setting id="0x10E41E01" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>DLSS - Enable DLL Override</Original>
+        <Translated>DLSS 超分辨率 - 启用 DLL 覆盖</Translated>
+      </Name>
+      <Description>
+        <Original>If enabled, overrides DLSS-SR with the latest global version installed (${DlssVersion}).\r\nNVIDIA periodically push OTA updates for the override, though it often lags behind the actual latest available online.\r\nOnly DLSS2+ games support the override, certain games may also disallow using it.</Original>
+        <Translated>启用后，将 DLSS-SR 覆盖为当前已安装的最新全局版本 (${DlssVersion})。\r\nNVIDIA 会定期通过 OTA 推送覆盖版本更新，但通常落后于网上实际可用的最新版本。\r\n仅 DLSS2+ 游戏支持覆盖，某些游戏也可能禁止使用此功能。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Off" translated="关闭" />
+        <Value raw="0x00000001" original="On - DLSS-SR overridden by latest installed (${DlssVersion})" translated="开启 - 将 DLSS-SR 覆盖为已安装的最新版本 (${DlssVersion})" />
+      </Values>
+    </Setting>
+    <Setting id="0x00634291" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>DLSS - Forced Model Preset Profile</Original>
+        <Translated>DLSS 超分辨率 - 强制模型预设配置</Translated>
+      </Name>
+      <Description>
+        <Original>If "Forced Preset Letter" has no effect, this setting may need to be changed for the game to apply the custom preset.</Original>
+        <Translated>如果“强制预设字母”没有效果，可能需要更改此设置，游戏才会应用自定义预设。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000001" original="Recommended" translated="推荐" />
+        <Value raw="0x00000002" original="Custom" translated="自定义" />
+      </Values>
+    </Setting>
+    <Setting id="0x10E41E02" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>DLSS-RR - Enable DLL Override</Original>
+        <Translated>DLSS 光线重建 - 启用 DLL 覆盖</Translated>
+      </Name>
+      <Description>
+        <Original>If enabled, overrides DLSS-RR with the latest global version installed (${DlssdVersion}).\r\nNVIDIA periodically push OTA updates for the override, though it often lags behind the actual latest available online.\r\nOnly DLSS2+ games support the override, certain games may also disallow using it.</Original>
+        <Translated>启用后，将 DLSS-RR 覆盖为当前已安装的最新全局版本 (${DlssdVersion})。\r\nNVIDIA 会定期通过 OTA 推送覆盖版本更新，但通常落后于网上实际可用的最新版本。\r\n仅 DLSS2+ 游戏支持覆盖，某些游戏也可能禁止使用此功能。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Off" translated="关闭" />
+        <Value raw="0x00000001" original="On - DLSS-RR overridden by latest installed (${DlssdVersion})" translated="开启 - 将 DLSS-RR 覆盖为已安装的最新版本 (${DlssdVersion})" />
+      </Values>
+    </Setting>
+    <Setting id="0x10E41E03" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>DLSS-FG - Enable DLL Override</Original>
+        <Translated>DLSS 帧生成 - 启用 DLL 覆盖</Translated>
+      </Name>
+      <Description>
+        <Original>If enabled, overrides DLSS-FG with the latest global version installed (${DlssgVersion}).\r\nNVIDIA periodically push OTA updates for the override, though it often lags behind the actual latest available online.\r\nOnly DLSS2+ games support the override, certain games may also disallow using it.</Original>
+        <Translated>启用后，将 DLSS-FG 覆盖为当前已安装的最新全局版本 (${DlssgVersion})。\r\nNVIDIA 会定期通过 OTA 推送覆盖版本更新，但通常落后于网上实际可用的最新版本。\r\n仅 DLSS2+ 游戏支持覆盖，某些游戏也可能禁止使用此功能。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Off" translated="关闭" />
+        <Value raw="0x00000001" original="On - DLSS-FG overridden by latest installed (${DlssgVersion})" translated="开启 - 将 DLSS-FG 覆盖为已安装的最新版本 (${DlssgVersion})" />
+      </Values>
+    </Setting>
+    <Setting id="0x10E41DF3" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>DLSS - Forced Preset Letter</Original>
+        <Translated>DLSS 超分辨率 - 强制预设字母</Translated>
+      </Name>
+      <Description>
+        <Original>NOTE: "DLSS - Forced Model Preset Profile" setting may need to be changed for this to apply on certain games.\r\nIf set, overrides the DLSS preset/model used across all quality levels (may not be desirable on some levels).</Original>
+        <Translated>注意：在某些游戏中，可能需要更改“DLSS 超分辨率 - 强制模型预设配置”才能使此设置生效。\r\n设置后，将覆盖所有画质级别使用的 DLSS 预设/模型（某些级别可能不适合这样设置）。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00FFFFFF" original="Use recommended preset" translated="使用推荐预设" />
+        <Value raw="0x00000001" original="Preset A (CNN)" translated="预设 A (CNN)" />
+        <Value raw="0x00000002" original="Preset B (CNN)" translated="预设 B (CNN)" />
+        <Value raw="0x00000003" original="Preset C (CNN)" translated="预设 C (CNN)" />
+        <Value raw="0x00000004" original="Preset D (CNN)" translated="预设 D (CNN)" />
+        <Value raw="0x00000005" original="Preset E (CNN)" translated="预设 E (CNN)" />
+        <Value raw="0x00000006" original="Preset F (CNN)" translated="预设 F (CNN)" />
+        <Value raw="0x00000007" original="Preset G (unused)" translated="预设 G (未使用)" />
+        <Value raw="0x00000008" original="Preset H (unused)" translated="预设 H (未使用)" />
+        <Value raw="0x00000009" original="Preset I (unused)" translated="预设 I (未使用)" />
+        <Value raw="0x0000000A" original="Preset J (Transformer Gen 1)" translated="预设 J (Transformer 第 1 代)" />
+        <Value raw="0x0000000B" original="Preset K (Transformer Gen 1)" translated="预设 K (Transformer 第 1 代)" />
+        <Value raw="0x0000000C" original="Preset L (Transformer Gen 2)" translated="预设 L (Transformer 第 2 代)" />
+        <Value raw="0x0000000D" original="Preset M (Transformer Gen 2)" translated="预设 M (Transformer 第 2 代)" />
+        <Value raw="0x0000000E" original="Preset N" translated="预设 N" />
+        <Value raw="0x0000000F" original="Preset O" translated="预设 O" />
+      </Values>
+    </Setting>
+    <Setting id="0x10E41DF7" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>DLSS-RR - Forced Preset Letter</Original>
+        <Translated>DLSS 光线重建 - 强制预设字母</Translated>
+      </Name>
+      <Description>
+        <Original>Forces a specific DLSS Ray Reconstruction model preset when the application honors preset overrides.</Original>
+        <Translated>在应用程序允许覆盖预设时，强制使用指定的 DLSS 光线重建模型预设。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00FFFFFF" original="Use recommended preset" translated="使用推荐预设" />
+        <Value raw="0x00000001" original="Preset A (CNN)" translated="预设 A (CNN)" />
+        <Value raw="0x00000002" original="Preset B (CNN)" translated="预设 B (CNN)" />
+        <Value raw="0x00000003" original="Preset C (CNN)" translated="预设 C (CNN)" />
+        <Value raw="0x00000004" original="Preset D (Transformer Gen 1)" translated="预设 D (Transformer 第 1 代)" />
+        <Value raw="0x00000005" original="Preset E (Transformer Gen 1)" translated="预设 E (Transformer 第 1 代)" />
+        <Value raw="0x00000006" original="Preset F (Transformer Gen 2)" translated="预设 F (Transformer 第 2 代)" />
+        <Value raw="0x00000007" original="Preset G" translated="预设 G" />
+        <Value raw="0x00000008" original="Preset H" translated="预设 H" />
+        <Value raw="0x00000009" original="Preset I" translated="预设 I" />
+        <Value raw="0x0000000A" original="Preset J" translated="预设 J" />
+        <Value raw="0x0000000B" original="Preset K" translated="预设 K" />
+        <Value raw="0x0000000C" original="Preset L" translated="预设 L" />
+        <Value raw="0x0000000D" original="Preset M" translated="预设 M" />
+        <Value raw="0x0000000E" original="Preset N" translated="预设 N" />
+        <Value raw="0x0000000F" original="Preset O" translated="预设 O" />
+      </Values>
+    </Setting>
+    <Setting id="0x10E41E04" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>DLSS-NR - Enable DLL Override</Original>
+        <Translated>DLSS-NR 神经渲染 - 启用 DLL 覆盖</Translated>
+      </Name>
+      <Description>
+        <Original>If enabled, overrides DLSS-NR with the latest global version installed (${DlssnrVersion}).\r\nNVIDIA periodically push OTA updates for the override, though it often lags behind the actual latest available online.\r\nOnly DLSS2+ games support the override, certain games may also disallow using it.</Original>
+        <Translated>启用后，将 DLSS-NR 覆盖为当前已安装的最新全局版本 (${DlssnrVersion})。\r\nNVIDIA 会定期通过 OTA 推送覆盖版本更新，但通常落后于网上实际可用的最新版本。\r\n仅 DLSS2+ 游戏支持覆盖，某些游戏也可能禁止使用此功能。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Off" translated="关闭" />
+        <Value raw="0x00000001" original="On - DLSS-NR overridden by latest installed (${DlssnrVersion})" translated="开启 - 将 DLSS-NR 覆盖为已安装的最新版本 (${DlssnrVersion})" />
+      </Values>
+    </Setting>
+    <Setting id="0x10E41E05" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>DLSS-NR - Enable Streamline Override</Original>
+        <Translated>DLSS-NR 神经渲染 - 启用 Streamline 覆盖</Translated>
+      </Name>
+      <Description>
+        <Original>If enabled, overrides Streamline DLSS-NR with the latest global version installed.\r\nNVIDIA periodically push OTA updates for the override, though it often lags behind the actual latest available online.\r\nOnly DLSS2+ games support the override, certain games may also disallow using it.</Original>
+        <Translated>启用后，将 Streamline DLSS-NR 覆盖为当前已安装的最新全局版本。\r\nNVIDIA 会定期通过 OTA 推送覆盖版本更新，但通常落后于网上实际可用的最新版本。\r\n仅 DLSS2+ 游戏支持覆盖，某些游戏也可能禁止使用此功能。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Off" translated="关闭" />
+        <Value raw="0x00000001" original="On - Streamline DLSS-NR overridden by latest installed" translated="开启 - 将 Streamline DLSS-NR 覆盖为已安装的最新版本" />
+      </Values>
+    </Setting>
+    <Setting id="0x10E41DF8" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>DLSS-NR - Forced Preset Letter</Original>
+        <Translated>DLSS-NR 神经渲染 - 强制预设字母</Translated>
+      </Name>
+      <Description>
+        <Original>Forces a specific DLSS Neural Rendering model preset when the application honors preset overrides.</Original>
+        <Translated>在应用程序允许覆盖预设时，强制使用指定的 DLSS 神经渲染模型预设。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00FFFFFF" original="Use recommended preset" translated="使用推荐预设" />
+        <Value raw="0x00000001" original="Preset A" translated="预设 A" />
+        <Value raw="0x00000002" original="Preset B" translated="预设 B" />
+        <Value raw="0x00000003" original="Preset C" translated="预设 C" />
+        <Value raw="0x00000004" original="Preset D" translated="预设 D" />
+        <Value raw="0x00000005" original="Preset E" translated="预设 E" />
+        <Value raw="0x00000006" original="Preset F" translated="预设 F" />
+        <Value raw="0x00000007" original="Preset G" translated="预设 G" />
+        <Value raw="0x00000008" original="Preset H" translated="预设 H" />
+        <Value raw="0x00000009" original="Preset I" translated="预设 I" />
+        <Value raw="0x0000000A" original="Preset J" translated="预设 J" />
+        <Value raw="0x0000000B" original="Preset K" translated="预设 K" />
+        <Value raw="0x0000000C" original="Preset L" translated="预设 L" />
+        <Value raw="0x0000000D" original="Preset M" translated="预设 M" />
+        <Value raw="0x0000000E" original="Preset N" translated="预设 N" />
+        <Value raw="0x0000000F" original="Preset O" translated="预设 O" />
+      </Values>
+    </Setting>
+    <Setting id="0x10E41E06" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>DLSS - Enable Streamline Override</Original>
+        <Translated>DLSS 超分辨率 - 启用 Streamline 覆盖</Translated>
+      </Name>
+      <Values>
+        <Value raw="0x00000000" original="Off" translated="关闭" />
+        <Value raw="0x00000001" original="On" translated="开启" />
+      </Values>
+    </Setting>
+    <Setting id="0x10E41DF6" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>DLSS-FG - Scene Auto Change Detection</Original>
+        <Translated>DLSS 帧生成 - 场景自动切换检测</Translated>
+      </Name>
+      <Description>
+        <Original>Auto Scene Change Detection aims to automatically prevent Frame Generation from producing difficult-to-create frames between a substantial scene change. It does this by analyzing the in-game camera orientation on every input DLSS Frame Generation frame pair.</Original>
+        <Translated>场景自动切换检测旨在避免帧生成在场景发生较大变化时生成难以处理的过渡帧。它会分析每一对 DLSS 帧生成输入帧中的游戏相机朝向。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Default" translated="默认" />
+        <Value raw="0x00000001" original="Disable" translated="禁用" />
+        <Value raw="0x00000002" original="Detection Method" translated="检测方法" />
+      </Values>
+    </Setting>
+    <Setting id="0x104596A1" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>DLSS-FG - Full-Screen Menu Detection</Original>
+        <Translated>DLSS 帧生成 - 全屏菜单检测</Translated>
+      </Name>
+      <Description>
+        <Original>Controls the full-screen menu detection mode used by DLSS Frame Generation heuristics.</Original>
+        <Translated>控制 DLSS 帧生成启发式处理所使用的全屏菜单检测模式。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000001" original="Allow (0x1)" translated="允许 (0x1)" />
+        <Value raw="0x00000002" original="Force Enable (0x101)" translated="强制启用 (0x101)" />
+      </Values>
+    </Setting>
+    <Setting id="0x104596A2" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>DLSS-FG - Full-Screen Menu Override Coverage Threshold (float)</Original>
+        <Translated>DLSS 帧生成 - 全屏菜单覆盖率阈值 (float)</Translated>
+      </Name>
+      <Description>
+        <Original>Sets the screen-coverage threshold used by the DLSS Frame Generation full-screen menu override heuristic.</Original>
+        <Translated>设置 DLSS 帧生成全屏菜单覆盖启发式处理所使用的屏幕覆盖率阈值。</Translated>
+      </Description>
+      <Values />
+    </Setting>
+    <Setting id="0x104596A3" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>DLSS-FG - Full-Screen Menu Override Alpha Threshold (float)</Original>
+        <Translated>DLSS 帧生成 - 全屏菜单 Alpha 阈值 (float)</Translated>
+      </Name>
+      <Description>
+        <Original>Sets the alpha threshold used by the DLSS Frame Generation full-screen menu override heuristic.</Original>
+        <Translated>设置 DLSS 帧生成全屏菜单覆盖启发式处理所使用的 Alpha 阈值。</Translated>
+      </Description>
+      <Values />
+    </Setting>
+    <Setting id="0x10AFB768" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>DLSS - Forced Quality Level</Original>
+        <Translated>DLSS 超分辨率 - 强制画质级别</Translated>
+      </Name>
+      <Description>
+        <Original>Forces a predefined DLSS Super Resolution quality level for the profile.</Original>
+        <Translated>为此配置强制使用预定义的 DLSS 超分辨率画质级别。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Performance" translated="性能" />
+        <Value raw="0x00000001" original="Balanced" translated="平衡" />
+        <Value raw="0x00000002" original="Quality" translated="质量" />
+        <Value raw="0x00000005" original="Ultra Performance" translated="超级性能" />
+        <Value raw="0x00000006" original="Custom" translated="自定义" />
+      </Values>
+    </Setting>
+    <Setting id="0x10BD9423" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>DLSS-RR - Forced Quality Level</Original>
+        <Translated>DLSS 光线重建 - 强制画质级别</Translated>
+      </Name>
+      <Description>
+        <Original>Forces a predefined DLSS Ray Reconstruction quality level for the profile.</Original>
+        <Translated>为此配置强制使用预定义的 DLSS 光线重建画质级别。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Performance" translated="性能" />
+        <Value raw="0x00000001" original="Balanced" translated="平衡" />
+        <Value raw="0x00000002" original="Quality" translated="质量" />
+        <Value raw="0x00000005" original="Ultra Performance" translated="超级性能" />
+        <Value raw="0x00000006" original="Custom" translated="自定义" />
+      </Values>
+    </Setting>
+    <Setting id="0x10E41DF5" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>DLSS - Forced Scaling Ratio</Original>
+        <Translated>DLSS 超分辨率 - 强制缩放比例</Translated>
+      </Name>
+      <Description>
+        <Original>Set up 'DLSS - Forced Quality Level: Custom' before choosing the custom value.</Original>
+        <Translated>选择自定义值之前，请先将“DLSS 超分辨率 - 强制画质级别”设为“自定义”。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Off" translated="关闭" />
+        <Value raw="0x00000021" original="33% (Ultra Performance)" translated="33% (超级性能)" />
+        <Value raw="0x00000032" original="50% (Performance)" translated="50% (性能)" />
+        <Value raw="0x0000003A" original="58% (Balanced)" translated="58% (平衡)" />
+        <Value raw="0x00000043" original="67% (Quality)" translated="67% (质量)" />
+        <Value raw="0x0000004D" original="77% (Ultra Quality)" translated="77% (超高质量)" />
+        <Value raw="0x00000064" original="100% (DLAA)" translated="100% (DLAA)" />
+      </Values>
+    </Setting>
+    <Setting id="0x10C7D4A2" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>DLSS-RR - Forced Scaling Ratio</Original>
+        <Translated>DLSS 光线重建 - 强制缩放比例</Translated>
+      </Name>
+      <Description>
+        <Original>Set up 'DLSS-RR - Forced Quality Level: Custom' before choosing the custom value.</Original>
+        <Translated>选择自定义值之前，请先将“DLSS 光线重建 - 强制画质级别”设为“自定义”。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Off" translated="关闭" />
+        <Value raw="0x00000021" original="33% (Ultra Performance)" translated="33% (超级性能)" />
+        <Value raw="0x00000032" original="50% (Performance)" translated="50% (性能)" />
+        <Value raw="0x0000003A" original="58% (Balanced)" translated="58% (平衡)" />
+        <Value raw="0x00000043" original="67% (Quality)" translated="67% (质量)" />
+        <Value raw="0x0000004D" original="77% (Ultra Quality)" translated="77% (超高质量)" />
+        <Value raw="0x00000064" original="100% (DLAA)" translated="100% (DLAA)" />
+      </Values>
+    </Setting>
+    <Setting id="0x104D6667" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>DLSS-MFG - Fixed Frame Generation Count</Original>
+        <Translated>DLSS 多帧生成 - 固定帧生成数量</Translated>
+      </Name>
+      <Description>
+        <Original>Selects the multi-frame generation cadence used by supported DLSS Frame Generation implementations.</Original>
+        <Translated>选择受支持的 DLSS 帧生成实现所使用的多帧生成节奏。</Translated>
+      </Description>
+      <Values />
+    </Setting>
+    <Setting id="0xB0D384C0" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Smooth Motion - Enable</Original>
+        <Translated>平滑动态 - 启用</Translated>
+      </Name>
+      <Description>
+        <Original>Enables or disables Smooth Motion for the profile.</Original>
+        <Translated>为此配置启用或禁用平滑动态。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Off" translated="关闭" />
+        <Value raw="0x00000001" original="On" translated="开启" />
+      </Values>
+    </Setting>
+    <Setting id="0xB0CC0875" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Smooth Motion - Enabled APIs</Original>
+        <Translated>平滑动态 - 允许的 API</Translated>
+      </Name>
+      <Description>
+        <Original>If the setting doesn't exist in profile (greyed out) all APIs will be allowed, if setting exists and is set to 0, no APIs are allowed</Original>
+        <Translated>如果配置中不存在此设置（显示为灰色），则允许所有 API；如果此设置存在且设为 0，则不允许任何 API。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="0x00000000 None" translated="0x00000000 无" />
+        <Value raw="0x00000001" original="0x00000001 Allow DX12" translated="0x00000001 允许 DX12" />
+        <Value raw="0x00000002" original="0x00000002 Allow DX11" translated="0x00000002 允许 DX11" />
+        <Value raw="0x00000003" original="0x00000003 Allow DX12+DX11" translated="0x00000003 允许 DX12+DX11" />
+        <Value raw="0x00000004" original="0x00000004 Allow Vulkan" translated="0x00000004 允许 Vulkan" />
+        <Value raw="0x00000005" original="0x00000005 Allow DX12+Vulkan" translated="0x00000005 允许 DX12+Vulkan" />
+        <Value raw="0x00000006" original="0x00000006 Allow DX11+Vulkan" translated="0x00000006 允许 DX11+Vulkan" />
+        <Value raw="0x00000007" original="0x00000007 Allow All (DX12+DX11+Vulkan)" translated="0x00000007 允许全部 (DX12+DX11+Vulkan)" />
+      </Values>
+    </Setting>
+    <Setting id="0xB053C379" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Smooth Motion - Debug Log Level</Original>
+        <Translated>平滑动态 - 调试日志级别</Translated>
+      </Name>
+      <Description>
+        <Original>Logs written to C:\NvPresent\</Original>
+        <Translated>日志写入 C:\NvPresent\</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Off" translated="关闭" />
+      </Values>
+    </Setting>
+    <Setting id="0xB01B8B02" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Smooth Motion - Debug Bars</Original>
+        <Translated>平滑动态 - 调试条</Translated>
+      </Name>
+      <Description>
+        <Original>Draws colored bars on generated frames.</Original>
+        <Translated>在生成的帧上绘制彩色条。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Off" translated="关闭" />
+        <Value raw="0x00000001" original="On" translated="开启" />
+      </Values>
+    </Setting>
+    <Setting id="0xB03A4546" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Smooth Motion - Flip Metering 0</Original>
+        <Translated>平滑动态 - Flip Metering 0</Translated>
+      </Name>
+      <Description>
+        <Original>Shows "HW Flip Metering Supported via public queue" in log file when set.</Original>
+        <Translated>设置后，日志文件中会显示“HW Flip Metering Supported via public queue”。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="0x00000000 Off" translated="0x00000000 关闭" />
+        <Value raw="0xFFFFFFFF" original="0xFFFFFFFF On" translated="0xFFFFFFFF 开启" />
+      </Values>
+    </Setting>
+    <Setting id="0xB03A4547" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Smooth Motion - Flip Metering 1</Original>
+        <Translated>平滑动态 - Flip Metering 1</Translated>
+      </Name>
+      <Description>
+        <Original>May change HW flip metering to "App queue" if set.</Original>
+        <Translated>设置后，可能会将硬件 Flip Metering 更改为“App queue”。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="0x00000000 Off" translated="0x00000000 关闭" />
+      </Values>
+    </Setting>
+    <Setting id="0x10AFB76C" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>DLSS - Override Performance to be Ultra Performance</Original>
+        <Translated>DLSS 超分辨率 - 将性能模式覆盖为超级性能</Translated>
+      </Name>
+      <Description>
+        <Original>Remaps the Performance quality selection to use the Ultra Performance path.</Original>
+        <Translated>将“性能”画质选项映射为使用“超级性能”处理路径。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Off" translated="关闭" />
+        <Value raw="0x00000001" original="On" translated="开启" />
+      </Values>
+    </Setting>
+    <Setting id="0x10E41DF4" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>DLSS - Override DLSS modes to be DLAA</Original>
+        <Translated>DLSS 超分辨率 - 将 DLSS 模式覆盖为 DLAA</Translated>
+      </Name>
+      <Description>
+        <Original>Redirects DLSS Super Resolution quality modes to operate as DLAA-style full-resolution rendering.</Original>
+        <Translated>将 DLSS 超分辨率画质模式重定向为类似 DLAA 的全分辨率渲染。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Off" translated="关闭" />
+        <Value raw="0x00000001" original="On" translated="开启" />
+      </Values>
+    </Setting>
+    <Setting id="0x10835005" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Frame Rate Limiter - Background Application</Original>
+        <Translated>帧率限制 - 后台应用程序</Translated>
+      </Name>
+      <Description>
+        <Original>Sets the frame-rate cap applied when the profiled application is running in the background.</Original>
+        <Translated>设置应用程序在后台运行时的帧率上限。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Off" translated="关闭" />
+      </Values>
+    </Setting>
+    <Setting id="0x10835002" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Frame Rate Limiter V3</Original>
+        <Translated>帧率限制器 V3</Translated>
+      </Name>
+      <Description>
+        <Original>Sets the foreground frame-rate cap applied by the third-generation driver frame limiter.</Original>
+        <Translated>设置第三代驱动帧率限制器应用于前台程序的帧率上限。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Off" translated="关闭" />
+      </Values>
+    </Setting>
+    <Setting id="0x0005F543" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Ultra Low Latency - CPL State</Original>
+        <Translated>超低延迟 - 控制面板状态</Translated>
+      </Name>
+      <Description>
+        <Original>This setting just keeps track of ULL setting for the nvidia control panel. No need to change it.</Original>
+        <Translated>此设置仅用于记录 NVIDIA 控制面板中的超低延迟 (ULL) 设置，无需更改。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Off" translated="关闭" />
+        <Value raw="0x00000001" original="On" translated="开启" />
+        <Value raw="0x00000002" original="Ultra" translated="超高" />
+      </Values>
+    </Setting>
+    <Setting id="0x10835000" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Ultra Low Latency - Enabled</Original>
+        <Translated>超低延迟 - 启用</Translated>
+      </Name>
+      <Description>
+        <Original>Enables or disables the driver Ultra Low Latency scheduling path for this profile. Also recommended to set up "Maximum Pre-rendered Frames" flag to 1.</Original>
+        <Translated>为此配置启用或禁用驱动的超低延迟调度路径。同时建议将“最大预渲染帧数”设为 1。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Off" translated="关闭" />
+        <Value raw="0x00000001" original="On" translated="开启" />
+      </Values>
+    </Setting>
+    <Setting id="0x00CE2692" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Texture Filtering - Quality Substitution</Original>
+        <Translated>纹理过滤 - 质量替代</Translated>
+      </Name>
+      <Description>
+        <Original>Controls whether the selected texture filtering quality preset is replaced by a profile override.</Original>
+        <Translated>控制是否用配置覆盖值替代所选的纹理过滤质量预设。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="No Substitution" translated="不替代" />
+        <Value raw="0x00000001" original="High quality becomes quality" translated="将高质量替代为质量" />
+      </Values>
+    </Setting>
+    <Setting id="0x101AE763" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Vertical Sync - Smooth AFR Behavior</Original>
+        <Translated>垂直同步 - 平滑 AFR 行为</Translated>
+      </Name>
+      <Description>
+        <Original>Controls how vertical synchronization behaves when smooth AFR multi-GPU pacing is active.</Original>
+        <Translated>控制启用平滑 AFR 多 GPU 帧节奏时的垂直同步行为。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Off" translated="关闭" />
+        <Value raw="0x00000001" original="On" translated="开启" />
+      </Values>
+    </Setting>
+    <Setting id="0x00638E8F" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Texture Filtering - LOD Bias Auto-Adjust (for SGSSAA)</Original>
+        <Translated>纹理过滤 - 自动调整 LOD 偏移 (SGSSAA)</Translated>
+      </Name>
+      <Description>
+        <Original>Enables automatic negative LOD bias adjustment when sparse grid supersampling is active.</Original>
+        <Translated>在启用稀疏网格超级采样时，自动调整负 LOD 偏移。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Off" translated="关闭" />
+        <Value raw="0x00000001" original="On" translated="开启" />
+      </Values>
+    </Setting>
+    <Setting id="0x00738E8F" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Texture Filtering - LOD Bias (DX)</Original>
+        <Translated>纹理过滤 - LOD 偏移 (DX)</Translated>
+      </Name>
+      <Description>
+        <Original>Sets the Direct3D texture LOD bias override for this profile.</Original>
+        <Translated>为此配置设置 Direct3D 纹理 LOD 偏移覆盖值。</Translated>
+      </Description>
+      <Values />
+    </Setting>
+    <Setting id="0x20403F79" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Texture Filtering - LOD Bias (OGL)</Original>
+        <Translated>纹理过滤 - LOD 偏移 (OGL)</Translated>
+      </Name>
+      <Description>
+        <Original>Sets the OpenGL texture LOD bias override for this profile.</Original>
+        <Translated>为此配置设置 OpenGL 纹理 LOD 偏移覆盖值。</Translated>
+      </Description>
+      <Values />
+    </Setting>
+    <Setting id="0x0019BB68" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Texture Filtering - Negative LOD bias</Original>
+        <Translated>纹理过滤 - 负 LOD 偏移</Translated>
+      </Name>
+      <Description>
+        <Original>Controls whether negative texture LOD bias is clamped or allowed.</Original>
+        <Translated>控制允许还是钳制负纹理 LOD 偏移。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Allow" translated="允许" />
+        <Value raw="0x00000001" original="Clamp" translated="钳制" />
+      </Values>
+    </Setting>
+    <Setting id="0x00CE2691" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Texture Filtering - Quality</Original>
+        <Translated>纹理过滤 - 质量</Translated>
+      </Name>
+      <Description>
+        <Original>Selects the global texture filtering quality preset.</Original>
+        <Translated>选择全局纹理过滤质量预设。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Quality" translated="质量" />
+        <Value raw="0x0000000A" original="Performance" translated="性能" />
+        <Value raw="0x00000014" original="High performance" translated="高性能" />
+        <Value raw="0xFFFFFFF6" original="High quality" translated="高质量" />
+      </Values>
+    </Setting>
+    <Setting id="0x002ECAF2" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Texture Filtering - Trilinear Optimization</Original>
+        <Translated>纹理过滤 - 三线性优化</Translated>
+      </Name>
+      <Description>
+        <Original>Enables or disables the trilinear filtering optimization path.</Original>
+        <Translated>启用或禁用三线性过滤优化路径。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="On ( will be ignored if using high quality )" translated="开启（使用高质量时会被忽略）" />
+        <Value raw="0x00000001" original="Off" translated="关闭" />
+      </Values>
+    </Setting>
+    <Setting id="0x007BA09E" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Maximum Pre-Rendered Frames</Original>
+        <Translated>最大预渲染帧数</Translated>
+      </Name>
+      <Description>
+        <Original>Sets the maximum number of frames the CPU may queue ahead of GPU execution.</Original>
+        <Translated>设置 CPU 在 GPU 执行之前最多可以提前排队的帧数。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Use the 3D application setting" translated="使用 3D 应用程序设置" />
+      </Values>
+    </Setting>
+    <Setting id="0x00A879CF" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Vertical Sync</Original>
+        <Translated>垂直同步</Translated>
+      </Name>
+      <Description>
+        <Original>Selects the vertical synchronization mode applied by the driver.</Original>
+        <Translated>选择驱动应用的垂直同步模式。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x08416747" original="Force off" translated="强制关闭" />
+        <Value raw="0x47814940" original="Force on" translated="强制开启" />
+        <Value raw="0x18888888" original="Fast Sync" translated="快速同步" />
+        <Value raw="0x60925292" original="Use the 3D application setting" translated="使用 3D 应用程序设置" />
+        <Value raw="0x32610244" original="1/2 Refresh Rate" translated="1/2 刷新率" />
+        <Value raw="0x71271021" original="1/3 Refresh Rate" translated="1/3 刷新率" />
+        <Value raw="0x13245256" original="1/4 Refresh Rate" translated="1/4 刷新率" />
+      </Values>
+    </Setting>
+    <Setting id="0x005A375C" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Vertical Sync - Tear Control</Original>
+        <Translated>垂直同步 - 撕裂控制</Translated>
+      </Name>
+      <Description>
+        <Original>Controls tear handling for the vertical synchronization path.</Original>
+        <Translated>控制垂直同步路径对画面撕裂的处理方式。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x96861077" original="Standard" translated="标准" />
+        <Value raw="0x99941284" original="Adaptive" translated="自适应" />
+      </Values>
+    </Setting>
+    <Setting id="0x1057EB71" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>Power Management - Mode</Original>
+        <Translated>电源管理 - 模式</Translated>
+      </Name>
+      <Description>
+        <Original>Selects the GPU power-management policy used while this profile is active.</Original>
+        <Translated>选择此配置生效时使用的 GPU 电源管理策略。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000000" original="Adaptive" translated="自适应" />
+        <Value raw="0x00000001" original="Prefer maximum performance" translated="最高性能优先" />
+        <Value raw="0x00000005" original="Optimal performance" translated="最佳性能" />
+      </Values>
+    </Setting>
+    <Setting id="0x10E41DF1" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>DLSS-FG - Forced Preset Letter</Original>
+        <Translated>DLSS 帧生成 - 强制预设字母</Translated>
+      </Name>
+      <Description>
+        <Original>NOTE: "DLSS - Forced Model Preset Profile" setting may need to be changed for this to apply on certain games.\r\nIf set, overrides the DLSS preset/model used across all quality levels (may not be desirable on some levels).</Original>
+        <Translated>注意：在某些游戏中，可能需要更改“DLSS 超分辨率 - 强制模型预设配置”才能使此设置生效。\r\n设置后，将覆盖所有画质级别使用的 DLSS 预设/模型（某些级别可能不适合这样设置）。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00FFFFFE" original="Use recommended preset" translated="使用推荐预设" />
+        <Value raw="0x00000001" original="Preset A (Default Preset)" translated="预设 A (默认预设)" />
+        <Value raw="0x00000002" original="Preset B (UI Focus)" translated="预设 B (侧重 UI)" />
+        <Value raw="0x00000003" original="Preset C (Performance Focus)" translated="预设 C (侧重性能)" />
+        <Value raw="0x00000004" original="Preset D" translated="预设 D" />
+        <Value raw="0x00000005" original="Preset E" translated="预设 E" />
+        <Value raw="0x00000006" original="Preset F" translated="预设 F" />
+        <Value raw="0x00000007" original="Preset G" translated="预设 G" />
+        <Value raw="0x00000008" original="Preset H" translated="预设 H" />
+        <Value raw="0x00000009" original="Preset I" translated="预设 I" />
+        <Value raw="0x0000000A" original="Preset J" translated="预设 J" />
+        <Value raw="0x0000000B" original="Preset K" translated="预设 K" />
+        <Value raw="0x0000000C" original="Preset L" translated="预设 L" />
+        <Value raw="0x0000000D" original="Preset M" translated="预设 M" />
+        <Value raw="0x0000000E" original="Preset N" translated="预设 N" />
+        <Value raw="0x0000000F" original="Preset O" translated="预设 O" />
+        <Value raw="0x00000010" original="Preset P" translated="预设 P" />
+        <Value raw="0x00000011" original="Preset Q" translated="预设 Q" />
+        <Value raw="0x00000012" original="Preset R" translated="预设 R" />
+        <Value raw="0x00000013" original="Preset S" translated="预设 S" />
+        <Value raw="0x00000014" original="Preset T" translated="预设 T" />
+        <Value raw="0x00000015" original="Preset U" translated="预设 U" />
+        <Value raw="0x00000016" original="Preset V" translated="预设 V" />
+        <Value raw="0x00000017" original="Preset W" translated="预设 W" />
+        <Value raw="0x00000018" original="Preset X" translated="预设 X" />
+        <Value raw="0x00000019" original="Preset Y" translated="预设 Y" />
+        <Value raw="0x0000001A" original="Preset Z" translated="预设 Z" />
+        <Value raw="0x00FFFFFF" original="Use latest available" translated="使用最新可用预设" />
+      </Values>
+    </Setting>
+    <Setting id="0x10308298" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>DLSS-FG - Forced Mode</Original>
+        <Translated>DLSS 帧生成 - 强制模式</Translated>
+      </Name>
+      <Description>
+        <Original>This sets up the mode for Frame Generation. Dynamic mode requires driver 595.97 or newer for all features.</Original>
+        <Translated>设置帧生成的运行模式。动态模式的完整功能需要 595.97 或更新版本的驱动。</Translated>
+      </Description>
+      <Values>
+        <Value raw="0x00000002" original="Fixed" translated="固定" />
+        <Value raw="0x00000004" original="Dynamic" translated="动态" />
+      </Values>
+    </Setting>
+    <Setting id="0x10CF4125" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>DLSS-MFG - Target Dynamic Frame Rate</Original>
+        <Translated>DLSS 多帧生成 - 动态目标帧率</Translated>
+      </Name>
+      <Values>
+        <Value raw="0x01000000" original="Max Refresh Rate" translated="最大刷新率" />
+      </Values>
+    </Setting>
+    <Setting id="0x10562D0F" type="Dword" source="CustomSettingNames.xml">
+      <Name>
+        <Original>DLSS-MFG - Dynamic Frame Generation Count</Original>
+        <Translated>DLSS 多帧生成 - 动态帧生成数量</Translated>
+      </Name>
+      <Values>
+        <Value raw="0x00000001" original="Up to 2x" translated="最高 2x" />
+        <Value raw="0x00000002" original="Up to 3x" translated="最高 3x" />
+        <Value raw="0x00000003" original="Up to 4x" translated="最高 4x" />
+        <Value raw="0x00000004" original="Up to 5x" translated="最高 5x" />
+        <Value raw="0x00000005" original="Up to 6x" translated="最高 6x" />
+      </Values>
+    </Setting>
+    <Setting id="0x10835006" type="Dword" source="Reference.xml">
+      <Name>
+        <Original>Background Application Max Frame Rate For Nvcpl</Original>
+        <Translated>后台应用程序最大帧率 (NVCPL)</Translated>
+      </Name>
+      <Description>
+        <Original>Background Application Max Frame Rate for NVCPL</Original>
+        <Translated>NVIDIA 控制面板 (NVCPL) 中的后台应用程序最大帧率。</Translated>
+      </Description>
+      <Values />
+    </Setting>
+    <Setting id="0x1083500A" type="Dword" source="Reference.xml">
+      <Name>
+        <Original>Frame Rate Limiter For Nvcpl</Original>
+        <Translated>控制面板帧率限制器 (NVCPL)</Translated>
+      </Name>
+      <Description>
+        <Original>Framerate Limiter FPS only for NVCPL to maintain the previous slider value when the FRL_FPS is set to Disabled.</Original>
+        <Translated>仅供 NVIDIA 控制面板 (NVCPL) 使用的 FPS 帧率限制值，用于在 FRL_FPS 设为 Disabled 时保留先前的滑块值。</Translated>
+      </Description>
+      <Values />
+    </Setting>
+  </Settings>
+</ParameterTranslations>

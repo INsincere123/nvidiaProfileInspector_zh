@@ -64,7 +64,7 @@ namespace nvidiaProfileInspector.UI.ViewModels
             if (e.Item is SettingItemViewModel item)
             {
                 e.Accepted = Localization.SettingSearch.Matches(item.SettingId, item.DisplayName,
-                    item.AlternateNames, item.SettingIdHex, _filterText);
+                    item.AlternateNames, item.SettingIdHex, _filterText, item.SettingText);
             }
         }
 

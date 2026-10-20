@@ -45,6 +45,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Localization\ParameterTranslations.zh-CN.xml" />
+    <EmbeddedResource Include="Localization\ParameterTranslations.zh-CN.xml">
+      <WithCulture>false</WithCulture>
+      <LogicalName>nvidiaProfileInspector.Localization.ParameterTranslations.zh-CN.xml</LogicalName>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomSettingNames.xml">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>

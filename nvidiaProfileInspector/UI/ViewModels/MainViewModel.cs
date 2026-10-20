@@ -884,7 +884,7 @@ namespace nvidiaProfileInspector.UI.ViewModels
                     return true;
 
                 return nvidiaProfileInspector.Localization.SettingSearch.Matches(item.SettingId, item.DisplayName,
-                    item.AlternateNames, item.SettingIdHex, _filterText);
+                    item.AlternateNames, item.SettingIdHex, _filterText, item.SettingText);
             }
             return false;
         }
@@ -895,7 +895,7 @@ namespace nvidiaProfileInspector.UI.ViewModels
             {
                 var stored = UserSettings.LoadSettings()?.HiddenSettingGroups;
                 _hiddenSettingGroups = stored != null
-                    ? new HashSet<string>(stored)
+                    ? new HashSet<string>(stored.Select(nvidiaProfileInspector.Localization.ParameterLocalizer.NormalizeGroupKey))
                     : new HashSet<string>();
             }
             return _hiddenSettingGroups;
@@ -945,7 +945,7 @@ namespace nvidiaProfileInspector.UI.ViewModels
                 var settings = UserSettings.LoadSettings();
                 if (settings != null)
                 {
-                    settings.HiddenSettingGroups.Remove(header.Name);
+                    settings.HiddenSettingGroups.RemoveAll(key => nvidiaProfileInspector.Localization.ParameterLocalizer.NormalizeGroupKey(key) == header.Name);
                     if (!header.IsExpanded)
                         settings.HiddenSettingGroups.Add(header.Name);
                     settings.SaveSettings();
@@ -964,7 +964,7 @@ namespace nvidiaProfileInspector.UI.ViewModels
             }
 
             var description = _metaService.GetDescription(_selectedSetting.SettingId);
-            description = DlssHelper.ReplaceDlssVersions(description ?? "");
+            description = nvidiaProfileInspector.Localization.ParameterLocalizer.Description(_selectedSetting.SettingId, description);
             if (!string.IsNullOrEmpty(_selectedSetting.AlternateNames))
                 description = L.Format("Alternate_names_0_1_618fc8", _selectedSetting.AlternateNames, description);
 
@@ -1123,7 +1123,7 @@ namespace nvidiaProfileInspector.UI.ViewModels
                 .OrderByDescending(x => x.IsFavorite)
                 .ThenBy(x => string.IsNullOrEmpty(x.GroupNameForDisplay) ? 1 : 0)
                 .ThenBy(x => x.GroupNameForDisplay)
-                .ThenBy(x => x.DisplayName)
+                .ThenBy(x => x.OriginalDisplayName)
                 .ToList();
 
             Settings.IncrementalPatchSettingsListOrdered(sortedSettings, (s1, s2) => s1.SettingId == s2.SettingId);
@@ -1699,7 +1699,7 @@ namespace nvidiaProfileInspector.UI.ViewModels
 
             foreach (var item in Settings.Where(x => x.IsUserDefined))
             {
-                sb.AppendLine($"{item.DisplayName,-40} {item.SelectedValue}");
+                sb.AppendLine($"{item.OriginalDisplayName,-40} {item.SelectedValue}");
             }
 
             Clipboard.SetText(sb.ToString());
@@ -1776,7 +1776,7 @@ namespace nvidiaProfileInspector.UI.ViewModels
                 .OrderByDescending(x => x.IsFavorite)
                 .ThenBy(x => string.IsNullOrEmpty(x.GroupNameForDisplay) ? 1 : 0)
                 .ThenBy(x => x.GroupNameForDisplay)
-                .ThenBy(x => x.DisplayName)
+                .ThenBy(x => x.OriginalDisplayName)
                 .ToList();
 
             Settings.IncrementalPatchSettingsListOrdered(sortedSettings, (s1, s2) => s1.SettingId == s2.SettingId);

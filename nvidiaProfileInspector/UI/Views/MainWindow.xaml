@@ -36,7 +36,8 @@
                     Stretch="Uniform" />
                 <TextBlock
                     FontFamily="{DynamicResource SettingsFontFamily}"
-                    Text="{Binding ValueName, Mode=OneWay}"
+                    Text="{Binding DisplayName, Mode=OneWay}"
+                    ToolTip="{Binding ValueName}"
                     TextTrimming="CharacterEllipsis"
                     TextWrapping="NoWrap" />
             </StackPanel>
@@ -1621,7 +1622,8 @@
                                                         FontSize="12"
                                                         FontWeight="Bold"
                                                         Foreground="{DynamicResource NvidiaGreenBrush}"
-                                                        Text="{Binding Name}" />
+                                                        Text="{Binding DisplayName}"
+                                                        ToolTip="{Binding Name}" />
                                                 </DockPanel>
                                             </Border>
                                             <ControlTemplate.Triggers>
@@ -1683,13 +1685,13 @@
 
                                             <TextBlock
                                                 x:Name="SettingNameText"
+                                                TextTrimming="CharacterEllipsis"
                                                 Grid.Column="2"
                                                 Margin="12,0"
                                                 VerticalAlignment="Center"
                                                 Foreground="{Binding State, Converter={StaticResource StateToSettingIconColorConverter}, Mode=OneWay}"
                                                 Text="{Binding DisplayName, Mode=OneWay}"
-                                                ToolTip="{Binding SettingIdHex, Mode=OneWay}"
-                                                ToolTipService.IsEnabled="{Binding DataContext.IsDevMode, RelativeSource={RelativeSource AncestorType=Window}}">
+                                                ToolTip="{Binding NameToolTip, Mode=OneWay}">
                                                 <TextBlock.InputBindings>
                                                     <MouseBinding
                                                         Command="{Binding DataContext.CopySettingIdCommand, RelativeSource={RelativeSource AncestorType=Window}}"
@@ -1714,11 +1716,13 @@
                                             Visibility="Collapsed" />
                                         <TextBlock
                                             x:Name="DisplayText"
+                                            TextTrimming="CharacterEllipsis"
                                             Grid.Column="0"
                                             Margin="12,0"
                                             VerticalAlignment="Center"
                                             Foreground="{Binding State, Converter={StaticResource StateToColorConverter}, Mode=OneWay}"
-                                            Text="{Binding SelectedValue, Mode=OneWay}"
+                                            Text="{Binding ValueDisplay, Mode=OneWay}"
+                                            ToolTip="{Binding SelectedValue}"
                                             TextWrapping="NoWrap" />
                                         <Button
                                             x:Name="RestoreButton"

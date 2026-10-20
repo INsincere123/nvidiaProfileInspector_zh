@@ -9,6 +9,9 @@ namespace nvidiaProfileInspector.Localization
     {
         private static readonly Dictionary<uint, string> ChineseAliases = new Dictionary<uint, string>
         {
+            [0x10E41E04] = "DLSS-NR 神经渲染 DLL 覆盖",
+            [0x10E41E05] = "DLSS-NR 神经渲染 Streamline 覆盖",
+            [0x10E41DF8] = "DLSS-NR 神经渲染 预设字母",
             [0x10E41E01] = "DLSS 超分辨率 超分 超采样 DLL 覆盖",
             [0x00634291] = "DLSS 超分辨率 模型预设配置",
             [0x10E41DF3] = "DLSS 超分辨率 预设字母",
@@ -58,10 +61,10 @@ namespace nvidiaProfileInspector.Localization
         };
 
         public static bool Matches(uint settingId, string displayName, string alternateNames,
-            string settingIdHex, string query)
+            string settingIdHex, string query, string originalName = null)
         {
             if (string.IsNullOrWhiteSpace(query)) return true;
-            return Contains(displayName, query) || Contains(alternateNames, query)
+            return Contains(displayName, query) || Contains(originalName, query) || Contains(alternateNames, query)
                 || Contains(settingIdHex, query)
                 || (ChineseAliases.TryGetValue(settingId, out var aliases) && Contains(aliases, query));
         }

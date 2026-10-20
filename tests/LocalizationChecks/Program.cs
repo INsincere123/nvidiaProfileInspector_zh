@@ -53,8 +53,10 @@ internal static class Program
                 Preview(args);
                 return 0;
             }
+            if (!args.Contains("-mock")) throw new Exception("Checks require -mock");
             ResourcesAndConfiguration(originalDirectory);
             Search(originalDirectory);
+            _checks += ParameterChecks.Run(originalDirectory);
             Console.WriteLine("PASS: " + _checks + " localization/configuration/search checks; no driver writes.");
             return 0;
         }

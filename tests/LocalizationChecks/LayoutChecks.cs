@@ -8,6 +8,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using nvidiaProfileInspector;
 using nvidiaProfileInspector.Common.Helper;
+using nvidiaProfileInspector.Common;
+using nvidiaProfileInspector.Common.CustomSettings;
+using nvidiaProfileInspector.Common.Meta;
 using nvidiaProfileInspector.Common.Updates;
 using nvidiaProfileInspector.Localization;
 using nvidiaProfileInspector.Native.NVAPI2;
@@ -38,7 +41,7 @@ internal static class LayoutChecks
             bootstrapper.Resolve<ThemeManager>().SetTheme(theme);
             var windows = new Dictionary<string, Window>
             {
-                ["Main"] = new MainWindow(disableInitialScan: true) { DataContext = new MainViewModel(null, null, null, null) },
+                ["Main"] = new MainWindow(disableInitialScan: true) { DataContext = ParameterPreview() },
                 ["Splash"] = new SplashWindow(),
                 ["Message"] = new MessageBoxView { DataContext = new MessageBoxViewModel(Localizer.Get("LanguageRestartMessage"), Localizer.Get("LanguageRestartTitle"), MessageBoxButton.YesNoCancel, MessageBoxImage.Information) },
                 ["Input"] = new InputDialog(Localizer.Get("Create_Profile_dccc9c"), Localizer.Get("Enter_a_unique_name_for_your_b3deab"), "Sample profile", true),
@@ -78,4 +81,25 @@ internal static class LayoutChecks
         bootstrapper.Dispose();
         Console.WriteLine("Rendered " + count + " offline WPF layouts for " + language + ": " + output);
     }
+    private static MainViewModel ParameterPreview()
+    {
+        var source = CustomSettingNames.FactoryLoadFromString(EmbeddedResourceHelper.GetFileAsString("nvidiaProfileInspector.CustomSettingNames.xml"));
+        var meta = new CustomSettingMetaService(source);
+        var ids = new uint[] { 0x10E41E01, 0x10E41E04, 0x104596A2, 0x1057EB71, 0x00CE2691, 0x00A879CF };
+        var model = new MainViewModel(null, null, null, null);
+        model.Settings.Clear();
+        foreach (var setting in source.Settings.Where(x => ids.Contains(x.SettingId)).OrderBy(x => x.GroupName).ThenBy(x => x.UserfriendlyName))
+        {
+            var values = meta.GetDwordValues(setting.SettingId);
+            model.Settings.Add(new SettingItemViewModel(new SettingItem
+            {
+                SettingId = setting.SettingId, SettingText = setting.UserfriendlyName, GroupName = setting.GroupName,
+                ValueText = values.FirstOrDefault()?.ValueName ?? "0x00000000", State = SettingState.NotAssiged
+            }) { DwordValues = values });
+        }
+        model.FilterText = " "; // Publish group headers after adding the source-derived rows.
+        model.SettingDescription = ParameterLocalizer.Description(0x10E41E01, source.Settings.Single(x => x.SettingId == 0x10E41E01).Description);
+        return model;
+    }
+
 }

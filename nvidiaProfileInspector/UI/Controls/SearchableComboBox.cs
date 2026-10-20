@@ -119,6 +119,12 @@ namespace nvidiaProfileInspector.UI.Controls
 
         protected override void OnSelectionChanged(SelectionChangedEventArgs e)
         {
+            // Removing the selected item while searching is not a user commit. ComboBox's
+            // base handler would clear Text and push an empty value through the binding,
+            // discarding an unsaved edit before the user selects a search result.
+            if (_isApplyingFilter && DeferSelectionUntilCommit && IsEditable)
+                return;
+
             base.OnSelectionChanged(e);
             SyncDisplayedText();
         }
@@ -319,8 +325,7 @@ namespace nvidiaProfileInspector.UI.Controls
                         {
                             if (item is SettingValueItem svi)
                             {
-                                return !string.IsNullOrEmpty(svi.ValueName) &&
-                                    svi.ValueName.ToLower().Contains(FilterText.ToLower());
+                                return svi.MatchesSearch(FilterText);
                             }
                             return item?.ToString()?.ToLower().Contains(FilterText.ToLower()) ?? false;
                         })
