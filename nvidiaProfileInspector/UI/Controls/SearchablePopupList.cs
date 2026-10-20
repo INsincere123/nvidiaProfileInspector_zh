@@ -1,3 +1,4 @@
+using L = nvidiaProfileInspector.Localization.Localizer;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
@@ -22,7 +23,7 @@ namespace nvidiaProfileInspector.UI.Controls
 
         public static readonly DependencyProperty PlaceholderProperty =
             DependencyProperty.Register(nameof(Placeholder), typeof(string), typeof(SearchablePopupList),
-                new PropertyMetadata("Search..."));
+                new PropertyMetadata(L.Get("Search_6d7a30")));
 
         public static readonly DependencyProperty FilterTextProperty =
             DependencyProperty.Register(nameof(FilterText), typeof(string), typeof(SearchablePopupList),

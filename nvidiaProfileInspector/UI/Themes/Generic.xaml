@@ -1,5 +1,6 @@
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:loc="clr-namespace:nvidiaProfileInspector.Localization"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:controls="clr-namespace:nvidiaProfileInspector.UI.Controls">
 
@@ -75,7 +76,7 @@
                                         x:Name="MinimizeButton"
                                         Grid.Column="0"
                                         Style="{StaticResource WindowButtonStyle}"
-                                        ToolTip="Minimize"
+                                        ToolTip="{loc:Text Minimize_1c5b76}"
                                         Visibility="{TemplateBinding ShowMinimizeButton,
                                                                      Converter={StaticResource BoolToVisibilityConverter}}">
                                         <Path
@@ -95,7 +96,7 @@
                                         x:Name="CloseButton"
                                         Grid.Column="2"
                                         Style="{StaticResource CloseWindowButtonStyle}"
-                                        ToolTip="Close"
+                                        ToolTip="{loc:Text Close_bbfa77}"
                                         Visibility="{TemplateBinding ShowCloseButton,
                                                                      Converter={StaticResource BoolToVisibilityConverter}}">
                                         <Path

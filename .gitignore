@@ -364,3 +364,17 @@ FodyWeavers.xsd
 /nul
 .dotnet
 /.claude
+
+# Local Codebase Memory index
+/.codebase-memory/
+
+# Portable runtime preferences and update-check overrides
+/settings.xml
+/nvidiaProfileInspector/settings.xml
+/DisableUpdateCheck.txt
+/nvidiaProfileInspector/DisableUpdateCheck.txt
+
+# Runtime exports (keep source metadata and intentional .nip fixtures trackable)
+/CustomSettingNames.xml
+/CustomProfiles_*.nip
+/nvidiaProfileInspector/CustomProfiles_*.nip

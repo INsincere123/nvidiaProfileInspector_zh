@@ -25,7 +25,7 @@ namespace nvidiaProfileInspector.Common.Updates
 
         public static string ToDisplayName(UpdateChannel channel)
         {
-            return channel == UpdateChannel.Prerelease ? "Pre-release" : "Release";
+            return channel == UpdateChannel.Prerelease ? Localization.Localizer.Get("Pre_release_963080") : Localization.Localizer.Get("Release_d41f56");
         }
     }
 }

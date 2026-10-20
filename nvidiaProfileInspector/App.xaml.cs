@@ -1,3 +1,4 @@
+using L = nvidiaProfileInspector.Localization.Localizer;
 namespace nvidiaProfileInspector
 {
     using nvidiaProfileInspector.Common;
@@ -37,6 +38,12 @@ namespace nvidiaProfileInspector
         private bool HasArgument(IEnumerable<string> args, string name)
         {
             return args.Any(_ => string.Equals(_, name, StringComparison.InvariantCultureIgnoreCase));
+        }
+
+        public App()
+        {
+            // Initialize before generated InitializeComponent loads shared styles.
+            L.Initialize(UserSettings.LoadSettings().Language);
         }
 
         protected override async void OnStartup(StartupEventArgs e)
@@ -149,7 +156,7 @@ namespace nvidiaProfileInspector
                 return true;
 
             CloseStartupSplashScreen();
-            MessageBoxViewModel.Show("No compatible NVIDIA Driver was detected on your system. Your NVIDIA GPU might be disabled.", "NVIDIA PROFILE INSPECTOR", MessageBoxButton.OK, MessageBoxImage.Error);
+            MessageBoxViewModel.Show(L.Get("No_compatible_NVIDIA_Driver_was_detected_623d05"), "NVIDIA PROFILE INSPECTOR", MessageBoxButton.OK, MessageBoxImage.Error);
             Shutdown();
             return false;
         }
@@ -302,13 +309,13 @@ namespace nvidiaProfileInspector
                     return;
 
                 if (string.IsNullOrWhiteSpace(report))
-                    MessageBoxViewModel.Show("Profile(s) imported successfully!", "Import", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBoxViewModel.Show(L.Get("Profile_s_imported_successfully_b13032"), L.Get("Import_d6fbc9"), MessageBoxButton.OK, MessageBoxImage.Information);
                 else
-                    MessageBoxViewModel.Show($"Some profile(s) could not be imported!\r\n\r\n{report}", "Import Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBoxViewModel.Show(L.Format("Some_profile_s_could_not_be_0051ad", report), L.Get("Import_Warning_4111d1"), MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             catch (Exception ex)
             {
-                MessageBoxViewModel.Show($"Import Error: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBoxViewModel.Show(L.Format("Import_Error_0_f44201", ex.Message), L.Get("Error_7f2f6a"), MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -432,7 +439,7 @@ namespace nvidiaProfileInspector
                 return;
             }
 
-            MessageBoxViewModel.Show("NVIDIA PROFILE INSPECTOR is already running.", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBoxViewModel.Show(L.Get("NVIDIA_PROFILE_INSPECTOR_is_already_running_809830"), L.Get("Info_4b631f"), MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         internal static string BuildImportFilesMessage(IEnumerable<string> filePaths, ProfileImportMode? forcedMode)
@@ -559,11 +566,11 @@ namespace nvidiaProfileInspector
                 File.WriteAllText(_logFilePath, logContent.ToString());
 
                 // Show error message with link to log file
-                var message = $"An unexpected error occurred:\n\n{exception.Message}\n\n" +
-                             $"A detailed crash log has been created at:\n{_logFilePath}\n\n" +
-                             $"Would you like to open the log file location?";
+                var message = L.Format("An_unexpected_error_occurred_0_99d35a", exception.Message) +
+                             L.Format("A_detailed_crash_log_has_been_d86027", _logFilePath) +
+                             L.Get("Would_you_like_to_open_the_abdc28");
 
-                var result = MessageBoxViewModel.Show(message, "Error", MessageBoxButton.YesNo, MessageBoxImage.Error);
+                var result = MessageBoxViewModel.Show(message, L.Get("Error_7f2f6a"), MessageBoxButton.YesNo, MessageBoxImage.Error);
 
                 if (result == MessageBoxResult.Yes)
                 {
@@ -579,8 +586,8 @@ namespace nvidiaProfileInspector
             {
                 // If logging fails, show basic error
                 MessageBox.Show(
-                    $"An unexpected error occurred:\n\n{exception.Message}\n\n{ex.Message}",
-                    "Error",
+                    L.Format("An_unexpected_error_occurred_0_1_5e8701", exception.Message, ex.Message),
+                    L.Get("Error_7f2f6a"),
                     MessageBoxButton.OK,
                     MessageBoxImage.Error);
             }

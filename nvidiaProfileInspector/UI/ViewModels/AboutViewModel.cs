@@ -1,3 +1,4 @@
+using L = nvidiaProfileInspector.Localization.Localizer;
 namespace nvidiaProfileInspector.UI.ViewModels
 {
     using nvidiaProfileInspector.Common.Helper;
@@ -9,6 +10,14 @@ namespace nvidiaProfileInspector.UI.ViewModels
     using System.Threading.Tasks;
     using System.Windows;
     using System.Windows.Input;
+
+    public sealed class UpdateChannelOption
+    {
+        public string Value { get; set; }
+        public string Label { get; set; }
+        // The custom combo template presents SelectionBoxItem directly.
+        public override string ToString() => Label;
+    }
 
     public class Contributor
     {
@@ -24,16 +33,20 @@ namespace nvidiaProfileInspector.UI.ViewModels
         private bool _isSplashScreenDisabled;
         private bool _isUpdateAvailable;
         private bool _isUpdating;
-        private string _latestVersionText = "Not checked";
+        private string _latestVersionText = L.Get("Not_checked_22705e");
         private string _selectedUpdateChannel;
-        private string _updateStatusText = "Choose a channel and check for updates.";
+        private string _updateStatusText = L.Get("Choose_a_channel_and_check_for_8133c0");
         private UpdateCheckResult _lastUpdateCheckResult;
         private readonly AppUpdateService _updateService = new AppUpdateService();
         private int _updateCheckGeneration;
 
         public string Version { get; }
         public ObservableCollection<Contributor> Contributors { get; } = new ObservableCollection<Contributor>();
-        public ObservableCollection<string> UpdateChannels { get; } = new ObservableCollection<string> { "Release", "Pre-release" };
+        public ObservableCollection<UpdateChannelOption> UpdateChannels { get; } = new ObservableCollection<UpdateChannelOption>
+        {
+            new UpdateChannelOption { Value = "Release", Label = UpdateChannelFormatter.ToDisplayName(UpdateChannel.Release) },
+            new UpdateChannelOption { Value = "Prerelease", Label = UpdateChannelFormatter.ToDisplayName(UpdateChannel.Prerelease) }
+        };
         public string GitHubUrl => "https://github.com/Orbmu2k/nvidiaProfileInspector/releases";
         public string GitHubRepositoryUrl => "https://github.com/Orbmu2k/nvidiaProfileInspector";
 
@@ -77,8 +90,8 @@ namespace nvidiaProfileInspector.UI.ViewModels
                     settings.SaveSettings();
                     _lastUpdateCheckResult = null;
                     IsUpdateAvailable = false;
-                    LatestVersionText = "Checking...";
-                    UpdateStatusText = "Checking GitHub releases...";
+                    LatestVersionText = L.Get("Checking_494d0f");
+                    UpdateStatusText = L.Get("Checking_GitHub_releases_3d176d");
                     OnPropertyChanged(nameof(CanInstallUpdate));
                     _ = RefreshUpdateStatusAsync();
                 }
@@ -132,7 +145,7 @@ namespace nvidiaProfileInspector.UI.ViewModels
             Version = $"{version.Major}.{version.Minor}.{version.Build}.{version.Revision}";
 
             var settings = UserSettings.LoadSettings();
-            _selectedUpdateChannel = UpdateChannelFormatter.ToDisplayName(UpdateChannelFormatter.Parse(settings.UpdateChannel));
+            _selectedUpdateChannel = UpdateChannelFormatter.ToSettingsValue(UpdateChannelFormatter.Parse(settings.UpdateChannel));
             _isAutomaticUpdateCheckEnabled = !settings.DisableUpdateCheck;
             _isSplashScreenDisabled = settings.DisableSplashScreen;
 
@@ -143,8 +156,8 @@ namespace nvidiaProfileInspector.UI.ViewModels
             }
             else
             {
-                LatestVersionText = "Checking...";
-                UpdateStatusText = "Checking GitHub releases...";
+                LatestVersionText = L.Get("Checking_494d0f");
+                UpdateStatusText = L.Get("Checking_GitHub_releases_3d176d");
                 _ = RefreshUpdateStatusAsync();
             }
 
@@ -169,7 +182,7 @@ namespace nvidiaProfileInspector.UI.ViewModels
             var channel = GetSelectedUpdateChannel();
             try
             {
-                UpdateStatusText = "Checking GitHub releases...";
+                UpdateStatusText = L.Get("Checking_GitHub_releases_3d176d");
                 var result = await _updateService.CheckAsync(channel);
                 if (generation != _updateCheckGeneration)
                     return;
@@ -189,7 +202,7 @@ namespace nvidiaProfileInspector.UI.ViewModels
             IsUpdating = true;
             try
             {
-                UpdateStatusText = "Preparing update package...";
+                UpdateStatusText = L.Get("Preparing_update_package_ec8ed4");
                 if (_lastUpdateCheckResult == null || !_lastUpdateCheckResult.CanInstall)
                 {
                     _lastUpdateCheckResult = await _updateService.CheckAsync(GetSelectedUpdateChannel());
@@ -200,15 +213,15 @@ namespace nvidiaProfileInspector.UI.ViewModels
                 }
 
                 await _updateService.PrepareInstallAsync(_lastUpdateCheckResult.LatestRelease);
-                UpdateStatusText = "Update downloaded. Restarting application...";
+                UpdateStatusText = L.Get("Update_downloaded_Restarting_application_d3e897");
                 Application.Current.Shutdown();
             }
             catch (Exception ex)
             {
-                UpdateStatusText = "Update failed.";
+                UpdateStatusText = L.Get("Update_failed_19a995");
                 MessageBoxViewModel.Show(
-                    $"The update could not be installed.\r\n\r\n{ex.Message}",
-                    "Update failed",
+                    L.Format("The_update_could_not_be_installed_aae0c1", ex.Message),
+                    L.Get("Update_failed_4de04c"),
                     MessageBoxButton.OK,
                     MessageBoxImage.Error);
             }
@@ -226,8 +239,8 @@ namespace nvidiaProfileInspector.UI.ViewModels
         private void ApplyUpdateCheckResult(UpdateCheckResult result)
         {
             IsUpdateAvailable = result?.IsUpdateAvailable == true;
-            LatestVersionText = result?.LatestRelease?.DisplayText ?? "Unavailable";
-            UpdateStatusText = result?.StatusMessage ?? "Could not read release information.";
+            LatestVersionText = result?.LatestRelease?.DisplayText ?? L.Get("Unavailable_2c9c1f");
+            UpdateStatusText = result?.StatusMessage ?? L.Get("Could_not_read_release_information_79f9a4");
             OnPropertyChanged(nameof(CanInstallUpdate));
         }
 
@@ -236,28 +249,28 @@ namespace nvidiaProfileInspector.UI.ViewModels
             Contributors.Add(new Contributor
             {
                 Name = "Orbmu2k",
-                Role = "Chief Architect (Emeritus)",
+                Role = L.Get("Chief_Architect_Emeritus_8fccc7"),
                 AvatarUrl = "https://github.com/Orbmu2k.png",
                 ProfileUrl = "https://github.com/Orbmu2k"
             });
             Contributors.Add(new Contributor
             {
                 Name = "emoose",
-                Role = "Lead Developer",
+                Role = L.Get("Lead_Developer_f82e5e"),
                 AvatarUrl = "https://github.com/emoose.png",
                 ProfileUrl = "https://github.com/emoose"
             });
             Contributors.Add(new Contributor
             {
                 Name = "Warkratos",
-                Role = "Developer & Driver Settings Researcher",
+                Role = L.Get("Developer_Driver_Settings_Researcher_3c1760"),
                 AvatarUrl = "https://github.com/warkratos.png",
                 ProfileUrl = "https://github.com/warkratos"
             });
             Contributors.Add(new Contributor
             {
                 Name = "DarkStarSword",
-                Role = "Contributor",
+                Role = L.Get("Contributor_eab0e9"),
                 AvatarUrl = "https://github.com/DarkStarSword.png",
                 ProfileUrl = "https://github.com/DarkStarSword"
             });

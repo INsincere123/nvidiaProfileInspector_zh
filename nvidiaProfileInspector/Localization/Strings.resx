@@ -1,0 +1,927 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms</value>
+  </resheader>
+  <data name="0_known_1_in_profiles_2_1ba09b" xml:space="preserve">
+    <value>{0} known ({1} in profiles / {2} seen)</value>
+  </data>
+  <data name="0_known_settings_e027d1" xml:space="preserve">
+    <value>{0} known settings</value>
+  </data>
+  <data name="0_profiles_4bef05" xml:space="preserve">
+    <value>{0} profiles</value>
+  </data>
+  <data name="0_restored_to_NVIDIA_default_4841f7" xml:space="preserve">
+    <value>"{0}" restored to NVIDIA default.</value>
+  </data>
+  <data name="A_detailed_crash_log_has_been_d86027" xml:space="preserve">
+    <value>A detailed crash log has been created at:
+{0}
+
+</value>
+  </data>
+  <data name="A_newer_version_is_available_but_871bc1" xml:space="preserve">
+    <value>A newer version is available, but it does not contain a supported update package.</value>
+  </data>
+  <data name="A_newer_version_is_ready_to_b2a0a3" xml:space="preserve">
+    <value>A newer version is ready to install.</value>
+  </data>
+  <data name="About_6b21fb" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="About_NVIDIA_PROFILE_INSPECTOR_d5e657" xml:space="preserve">
+    <value>About NVIDIA PROFILE INSPECTOR</value>
+  </data>
+  <data name="Acrylic_f39ce1" xml:space="preserve">
+    <value>Acrylic</value>
+  </data>
+  <data name="Actions_c3cd63" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="Add_Application_b4f9f2" xml:space="preserve">
+    <value>Add Application</value>
+  </data>
+  <data name="Add_a_new_application_to_this_c64533" xml:space="preserve">
+    <value>Add a new application to this profile</value>
+  </data>
+  <data name="Add_predefined_app_list_to_common_e138b2" xml:space="preserve">
+    <value>Add predefined app list to common values</value>
+  </data>
+  <data name="Add_raw_value_to_common_values_4d75a3" xml:space="preserve">
+    <value>Add raw value to common values</value>
+  </data>
+  <data name="Add_setting_ID_to_name_7fabb1" xml:space="preserve">
+    <value>Add setting ID to name</value>
+  </data>
+  <data name="All_6a7208" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="All_customized_profiles_exported_successfully_64b7c2" xml:space="preserve">
+    <value>All customized profiles exported successfully!</value>
+  </data>
+  <data name="All_profiles_exported_in_NVIDIA_text_29fae9" xml:space="preserve">
+    <value>All profiles exported in NVIDIA text format!</value>
+  </data>
+  <data name="All_profiles_imported_successfully_0de0b1" xml:space="preserve">
+    <value>All profiles imported successfully!</value>
+  </data>
+  <data name="All_selected_profiles_exported_successfully_e68537" xml:space="preserve">
+    <value>All selected profiles exported successfully!</value>
+  </data>
+  <data name="Allow_a_setting_s_name_and_b13e36" xml:space="preserve">
+    <value>Allow a setting's name and description to come from sources that are currently disabled.</value>
+  </data>
+  <data name="Alternate_names_0_1_618fc8" xml:space="preserve">
+    <value>Alternate names: {0}
+
+{1}</value>
+  </data>
+  <data name="An_unexpected_error_occurred_0_1_5e8701" xml:space="preserve">
+    <value>An unexpected error occurred:
+
+{0}
+
+{1}</value>
+  </data>
+  <data name="An_unexpected_error_occurred_0_99d35a" xml:space="preserve">
+    <value>An unexpected error occurred:
+
+{0}
+
+</value>
+  </data>
+  <data name="Appearance_41def7" xml:space="preserve">
+    <value>Appearance</value>
+  </data>
+  <data name="Application_already_exists_in_this_profile_a5a319" xml:space="preserve">
+    <value>Application already exists in this profile.</value>
+  </data>
+  <data name="Application_already_in_use_by_other_4c622a" xml:space="preserve">
+    <value>Application already in use by other profile</value>
+  </data>
+  <data name="Application_already_in_use_by_profile_a282a5" xml:space="preserve">
+    <value>Application already in use by profile '{0}'</value>
+  </data>
+  <data name="Applications_exe_4f26d6" xml:space="preserve">
+    <value>Applications|*.exe</value>
+  </data>
+  <data name="Apply_Changes_362bcd" xml:space="preserve">
+    <value>Apply Changes</value>
+  </data>
+  <data name="Apply_Launch_016033" xml:space="preserve">
+    <value>Apply &amp; Launch</value>
+  </data>
+  <data name="Apply_all_changes_and_save_e498f2" xml:space="preserve">
+    <value>Apply all changes and save</value>
+  </data>
+  <data name="Apply_bit_changes_9c7ff4" xml:space="preserve">
+    <value>Apply bit changes</value>
+  </data>
+  <data name="Apply_cfea41" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="Apply_changes_and_launch_game_05c939" xml:space="preserve">
+    <value>Apply changes and launch game</value>
+  </data>
+  <data name="Apply_the_edited_value_to_the_324627" xml:space="preserve">
+    <value>Apply the edited value to the current profile, then optionally launch a game executable to test it immediately.</value>
+  </data>
+  <data name="BACKDROP_e3f737" xml:space="preserve">
+    <value>BACKDROP</value>
+  </data>
+  <data name="Bit_Editor_835f28" xml:space="preserve">
+    <value>Bit Editor</value>
+  </data>
+  <data name="Bit_Value_Editor_0_5ce872" xml:space="preserve">
+    <value>Bit Value Editor - {0}</value>
+  </data>
+  <data name="Bit_Value_Editor_bea690" xml:space="preserve">
+    <value>Bit Value Editor</value>
+  </data>
+  <data name="Browse_2f3b5c" xml:space="preserve">
+    <value>Browse</value>
+  </data>
+  <data name="Browse_absolute_path_083435" xml:space="preserve">
+    <value>Browse absolute path...</value>
+  </data>
+  <data name="Browse_for_application_absolute_path_d1bc68" xml:space="preserve">
+    <value>Browse for application absolute path</value>
+  </data>
+  <data name="Browse_for_game_executable_ad9d84" xml:space="preserve">
+    <value>Browse for game executable</value>
+  </data>
+  <data name="CONTRIBUTORS_c00c0a" xml:space="preserve">
+    <value>CONTRIBUTORS</value>
+  </data>
+  <data name="CSN_file_override_2ce552" xml:space="preserve">
+    <value>CSN file override</value>
+  </data>
+  <data name="Cancel_77dfd2" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Cancel_action_d96b34" xml:space="preserve">
+    <value>Cancel action</value>
+  </data>
+  <data name="Cancel_and_close_9fa770" xml:space="preserve">
+    <value>Cancel and close</value>
+  </data>
+  <data name="Channel_879f0b" xml:space="preserve">
+    <value>Channel</value>
+  </data>
+  <data name="Check_Now_90a6ca" xml:space="preserve">
+    <value>Check Now</value>
+  </data>
+  <data name="Check_for_available_updates_on_startup_608257" xml:space="preserve">
+    <value>Check for available updates on startup</value>
+  </data>
+  <data name="Checking_494d0f" xml:space="preserve">
+    <value>Checking...</value>
+  </data>
+  <data name="Checking_GitHub_releases_3d176d" xml:space="preserve">
+    <value>Checking GitHub releases...</value>
+  </data>
+  <data name="Chief_Architect_Emeritus_8fccc7" xml:space="preserve">
+    <value>Chief Architect (Emeritus)</value>
+  </data>
+  <data name="Choose_a_channel_and_check_for_8133c0" xml:space="preserve">
+    <value>Choose a channel and check for updates.</value>
+  </data>
+  <data name="Choose_how_these_0_nip_files_44e5a4" xml:space="preserve">
+    <value>Choose how these {0} .nip files should be imported:</value>
+  </data>
+  <data name="Choose_how_this_nip_file_should_5ac068" xml:space="preserve">
+    <value>Choose how this .nip file should be imported:</value>
+  </data>
+  <data name="Choose_how_you_want_to_export_bb12b6" xml:space="preserve">
+    <value>Choose how you want to export your profiles:</value>
+  </data>
+  <data name="Choose_how_you_want_to_import_717cc4" xml:space="preserve">
+    <value>Choose how you want to import profiles:</value>
+  </data>
+  <data name="Clean_White_6530fa" xml:space="preserve">
+    <value>Clean White</value>
+  </data>
+  <data name="Close_bbfa77" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="Close_without_saving_e45919" xml:space="preserve">
+    <value>Close without saving</value>
+  </data>
+  <data name="Common_CSN_2f2361" xml:space="preserve">
+    <value>Common (CSN)</value>
+  </data>
+  <data name="Compact_1df39a" xml:space="preserve">
+    <value>Compact</value>
+  </data>
+  <data name="Confirm_action_50649c" xml:space="preserve">
+    <value>Confirm action</value>
+  </data>
+  <data name="Confirm_and_save_845c61" xml:space="preserve">
+    <value>Confirm and save</value>
+  </data>
+  <data name="Confirm_no_09cdad" xml:space="preserve">
+    <value>Confirm no</value>
+  </data>
+  <data name="Confirm_yes_71f0ec" xml:space="preserve">
+    <value>Confirm yes</value>
+  </data>
+  <data name="Contributor_eab0e9" xml:space="preserve">
+    <value>Contributor</value>
+  </data>
+  <data name="Copy_af74f7" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="Copy_settings_to_clipboard_7d532f" xml:space="preserve">
+    <value>Copy settings to clipboard</value>
+  </data>
+  <data name="Could_not_read_release_information_79f9a4" xml:space="preserve">
+    <value>Could not read release information.</value>
+  </data>
+  <data name="Count_66e129" xml:space="preserve">
+    <value>Count</value>
+  </data>
+  <data name="Create_Profile_dccc9c" xml:space="preserve">
+    <value>Create Profile</value>
+  </data>
+  <data name="Create_a_new_profile_2037ab" xml:space="preserve">
+    <value>Create a new profile</value>
+  </data>
+  <data name="Current_DWORD_value_ab05f1" xml:space="preserve">
+    <value>Current DWORD value</value>
+  </data>
+  <data name="Current_Profile_exported_successfully_883d3c" xml:space="preserve">
+    <value>Current Profile exported successfully!</value>
+  </data>
+  <data name="Current_Value_4f9931" xml:space="preserve">
+    <value>Current Value</value>
+  </data>
+  <data name="Custom_Settings_Override_dcc6f5" xml:space="preserve">
+    <value>Custom Settings Override</value>
+  </data>
+  <data name="Custom_settings_are_loaded_from_an_3efe1a" xml:space="preserve">
+    <value>Custom settings are loaded from an external CustomSettingNames.xml file</value>
+  </data>
+  <data name="DENSITY_151232" xml:space="preserve">
+    <value>DENSITY</value>
+  </data>
+  <data name="DESCRIPTION_0ceecb" xml:space="preserve">
+    <value>DESCRIPTION</value>
+  </data>
+  <data name="Dark_ae1ef0" xml:space="preserve">
+    <value>Dark</value>
+  </data>
+  <data name="Defaults_428819" xml:space="preserve">
+    <value>Defaults</value>
+  </data>
+  <data name="Delete_Profile_a8ec88" xml:space="preserve">
+    <value>Delete Profile</value>
+  </data>
+  <data name="Delete_f6fdbe" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Delete_the_current_profile_3694b4" xml:space="preserve">
+    <value>Delete the current profile</value>
+  </data>
+  <data name="Description_55f8eb" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Deselect_all_profiles_63ba35" xml:space="preserve">
+    <value>Deselect all profiles</value>
+  </data>
+  <data name="Designer_preview_9645ec" xml:space="preserve">
+    <value>Designer preview</value>
+  </data>
+  <data name="Developer_Driver_Settings_Researcher_3c1760" xml:space="preserve">
+    <value>Developer &amp; Driver Settings Researcher</value>
+  </data>
+  <data name="Disable_splash_screen_on_startup_e0d292" xml:space="preserve">
+    <value>Disable splash screen on startup</value>
+  </data>
+  <data name="Disabled_f4f447" xml:space="preserve">
+    <value>Disabled</value>
+  </data>
+  <data name="Driver_0_2c3737" xml:space="preserve">
+    <value>Driver: {0}</value>
+  </data>
+  <data name="Driver_API_d4a775" xml:space="preserve">
+    <value>Driver API</value>
+  </data>
+  <data name="Driver_Constants_69de72" xml:space="preserve">
+    <value>Driver Constants</value>
+  </data>
+  <data name="Driver_unavailable_91df05" xml:space="preserve">
+    <value>Driver unavailable</value>
+  </data>
+  <data name="Enabled_df174a" xml:space="preserve">
+    <value>Enabled</value>
+  </data>
+  <data name="Enter_a_unique_name_for_your_b3deab" xml:space="preserve">
+    <value>Enter a unique name for your new custom driver profile.</value>
+  </data>
+  <data name="Enter_a_valid_DWORD_value_6abe2a" xml:space="preserve">
+    <value>Enter a valid DWORD value.</value>
+  </data>
+  <data name="Enter_a_valid_QWORD_value_b2ac09" xml:space="preserve">
+    <value>Enter a valid QWORD value.</value>
+  </data>
+  <data name="Enter_a_valid_binary_value_1bff33" xml:space="preserve">
+    <value>Enter a valid binary value.</value>
+  </data>
+  <data name="Error_0_f93e65" xml:space="preserve">
+    <value>Error: {0}</value>
+  </data>
+  <data name="Error_7f2f6a" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="Even_if_a_setting_source_is_b7ceb5" xml:space="preserve">
+    <value>Even if a setting source is off, show its settings when they are active in the current profile (predefined, global, or user value).</value>
+  </data>
+  <data name="Executables_exe_exe_All_files_a31d23" xml:space="preserve">
+    <value>Executables (*.exe)|*.exe|All files (*.*)|*.*</value>
+  </data>
+  <data name="Expected_a_filename_relative_path_UWP_6c1d6d" xml:space="preserve">
+    <value>Expected a filename, relative path, UWP ID, or absolute path.</value>
+  </data>
+  <data name="Expected_a_valid_filename_and_FindFile_fde91b" xml:space="preserve">
+    <value>Expected a valid filename and FindFile string.</value>
+  </data>
+  <data name="Expected_is_a_unique_profile_name_f04bd4" xml:space="preserve">
+    <value>Expected is a unique profile name.</value>
+  </data>
+  <data name="Export_Profiles_6f6f72" xml:space="preserve">
+    <value>Export Profiles</value>
+  </data>
+  <data name="Export_Selected_a2015a" xml:space="preserve">
+    <value>Export Selected</value>
+  </data>
+  <data name="Export_all_customized_profiles_1b1d9f" xml:space="preserve">
+    <value>Export all customized profiles</value>
+  </data>
+  <data name="Export_all_profiles_NVIDIA_Text_Format_e55156" xml:space="preserve">
+    <value>Export all profiles (NVIDIA Text Format)</value>
+  </data>
+  <data name="Export_all_profiles_that_contain_user_5bda53" xml:space="preserve">
+    <value>Export all profiles that contain user-defined or modified settings.</value>
+  </data>
+  <data name="Export_current_profile_including_predefined_abaa3e" xml:space="preserve">
+    <value>Export current profile including predefined</value>
+  </data>
+  <data name="Export_current_profile_only_a307ef" xml:space="preserve">
+    <value>Export current profile only</value>
+  </data>
+  <data name="Export_f3e4fa" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="Export_only_the_settings_you_have_c88cfc" xml:space="preserve">
+    <value>Export only the settings you have changed for the currently selected profile.</value>
+  </data>
+  <data name="Export_profiles_to_file_18c7f8" xml:space="preserve">
+    <value>Export profiles to file</value>
+  </data>
+  <data name="Export_selected_profiles_166370" xml:space="preserve">
+    <value>Export selected profiles</value>
+  </data>
+  <data name="Export_the_current_profile_with_all_c267e7" xml:space="preserve">
+    <value>Export the current profile with all its settings, including those not modified by you.</value>
+  </data>
+  <data name="Export_the_entire_profile_database_in_9a269d" xml:space="preserve">
+    <value>Export the entire profile database in the official NVIDIA text format.</value>
+  </data>
+  <data name="ExternalCustomSettingsWarning" xml:space="preserve">
+    <value>CustomSettingNames.xml is being loaded from the application directory instead of the embedded default resource.
+
+
+
+Local metadata can have outdated or mismatched setting names, descriptions, values and groups, or omit newer embedded settings and fixes.
+
+
+
+If this is not intended, remove or rename the external CustomSettingNames.xml in the application folder to use the embedded defaults.</value>
+  </data>
+  <data name="Favorites_7f6d0c" xml:space="preserve">
+    <value>⭐ Favorites</value>
+  </data>
+  <data name="Filter_scanned_profile_names_593003" xml:space="preserve">
+    <value>Filter scanned profile names</value>
+  </data>
+  <data name="Filter_setting_and_value_sources_99201b" xml:space="preserve">
+    <value>Filter setting and value sources</value>
+  </data>
+  <data name="Game_executable_not_found_2625f7" xml:space="preserve">
+    <value>Game executable not found.</value>
+  </data>
+  <data name="Game_executable_path_135eb5" xml:space="preserve">
+    <value>Game executable path</value>
+  </data>
+  <data name="Glass_745b5a" xml:space="preserve">
+    <value>Glass</value>
+  </data>
+  <data name="GlobalSettingTooltip" xml:space="preserve">
+    <value>Global Setting - Applies to all applications</value>
+  </data>
+  <data name="Global_driver_profile_4b0e2a" xml:space="preserve">
+    <value>Global driver profile</value>
+  </data>
+  <data name="Go_back_e84712" xml:space="preserve">
+    <value>Go back</value>
+  </data>
+  <data name="Import_Error_0_f44201" xml:space="preserve">
+    <value>Import Error: {0}</value>
+  </data>
+  <data name="Import_Profiles_c97e7b" xml:space="preserve">
+    <value>Import Profiles</value>
+  </data>
+  <data name="Import_Warning_4111d1" xml:space="preserve">
+    <value>Import Warning</value>
+  </data>
+  <data name="Import_d6fbc9" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="Import_one_or_more_nip_files_564c74" xml:space="preserve">
+    <value>Import one or more .nip files and merge them into the profile targets named inside the files. Existing target values stay unless the import contains the same setting, in which case the imported value wins.</value>
+  </data>
+  <data name="Import_one_or_more_nip_files_b685fd" xml:space="preserve">
+    <value>Import one or more .nip files and replace each imported profile's current apps and settings with the file contents.</value>
+  </data>
+  <data name="Import_profiles_from_file_a834a0" xml:space="preserve">
+    <value>Import profiles from file</value>
+  </data>
+  <data name="Import_replace_all_driver_profiles_b7d0c1" xml:space="preserve">
+    <value>Import (replace) all driver profiles</value>
+  </data>
+  <data name="Imported_profile_s_were_merged_successfully_1db56b" xml:space="preserve">
+    <value>Imported profile(s) were merged successfully.</value>
+  </data>
+  <data name="Include_predefined_settings_fd7dd5" xml:space="preserve">
+    <value>Include predefined settings</value>
+  </data>
+  <data name="Info_4b631f" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="Inspect_individual_flag_bits_compare_them_a1722e" xml:space="preserve">
+    <value>Inspect individual flag bits, compare them against scanned profiles, and quickly test the value in a game launch.</value>
+  </data>
+  <data name="Install_Update_eb9aa0" xml:space="preserve">
+    <value>Install Update</value>
+  </data>
+  <data name="Invalid_application_name_or_FindFile_string_ae403c" xml:space="preserve">
+    <value>Invalid application name or FindFile string.</value>
+  </data>
+  <data name="Invert_e84469" xml:space="preserve">
+    <value>Invert</value>
+  </data>
+  <data name="Invert_selection_e074f0" xml:space="preserve">
+    <value>Invert selection</value>
+  </data>
+  <data name="Keep_the_existing_values_in_each_708f79" xml:space="preserve">
+    <value>Keep the existing values in each target profile and overwrite only the settings contained in the import.</value>
+  </data>
+  <data name="LanguageMenuTitle" xml:space="preserve">
+    <value>Language / 语言</value>
+  </data>
+  <data name="LanguageRestartMessage" xml:space="preserve">
+    <value>Language preference saved. It will take effect the next time you start the application. Your current edits are preserved.</value>
+  </data>
+  <data name="LanguageRestartTitle" xml:space="preserve">
+    <value>Language / 语言</value>
+  </data>
+  <data name="LanguageSaveFailed" xml:space="preserve">
+    <value>Could not save the language preference.
+
+
+
+{0}</value>
+  </data>
+  <data name="Last_OTA_profile_update_0_g_6e0927" xml:space="preserve">
+    <value>Last OTA profile update: {0:g}</value>
+  </data>
+  <data name="Latest_decd7c" xml:space="preserve">
+    <value>Latest</value>
+  </data>
+  <data name="Lead_Developer_f82e5e" xml:space="preserve">
+    <value>Lead Developer</value>
+  </data>
+  <data name="Let_the_predefined_scan_app_list_ccf4a6" xml:space="preserve">
+    <value>Let the predefined scan (app list) values merge into the matching common values instead of showing as separate rows.</value>
+  </data>
+  <data name="Loading_application_4e6dc1" xml:space="preserve">
+    <value>Loading application</value>
+  </data>
+  <data name="Maximize_35afae" xml:space="preserve">
+    <value>Maximize</value>
+  </data>
+  <data name="Merge_completed_with_warnings_0_040867" xml:space="preserve">
+    <value>Merge completed with warnings:
+
+
+
+{0}</value>
+  </data>
+  <data name="Merge_distinct_values_c54ee5" xml:space="preserve">
+    <value>Merge distinct values</value>
+  </data>
+  <data name="Merge_ea8f0d" xml:space="preserve">
+    <value>Merge</value>
+  </data>
+  <data name="Merge_entries_with_the_same_value_ccc278" xml:space="preserve">
+    <value>Merge entries with the same value from different sources into one (highest-priority name wins).</value>
+  </data>
+  <data name="Merge_imported_profile_s_3c565b" xml:space="preserve">
+    <value>Merge imported profile(s)</value>
+  </data>
+  <data name="Mica_3ccf84" xml:space="preserve">
+    <value>Mica</value>
+  </data>
+  <data name="Mica_Variant_bb8213" xml:space="preserve">
+    <value>Mica Variant</value>
+  </data>
+  <data name="Midnight_558287" xml:space="preserve">
+    <value>Midnight</value>
+  </data>
+  <data name="Minimize_1c5b76" xml:space="preserve">
+    <value>Minimize</value>
+  </data>
+  <data name="Modern_3a4e44" xml:space="preserve">
+    <value>Modern</value>
+  </data>
+  <data name="NVIDIA_PROFILE_INSPECTOR_Profiles_nip_12629c" xml:space="preserve">
+    <value>NVIDIA PROFILE INSPECTOR Profiles|*.nip</value>
+  </data>
+  <data name="NVIDIA_PROFILE_INSPECTOR_is_already_running_809830" xml:space="preserve">
+    <value>NVIDIA PROFILE INSPECTOR is already running.</value>
+  </data>
+  <data name="NVIDIA_Text_Files_txt_4f48bd" xml:space="preserve">
+    <value>NVIDIA Text Files|*.txt</value>
+  </data>
+  <data name="NVIDIA_predefined_profile_1052aa" xml:space="preserve">
+    <value>NVIDIA predefined profile</value>
+  </data>
+  <data name="Name_description_from_inactive_sources_4b5aba" xml:space="preserve">
+    <value>Name &amp; description from inactive sources</value>
+  </data>
+  <data name="Navigate_to_Global_Profile_674438" xml:space="preserve">
+    <value>Navigate to Global Profile</value>
+  </data>
+  <data name="New_6403f2" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="NoUpdateSelected" xml:space="preserve">
+    <value>No update release was selected.</value>
+  </data>
+  <data name="No_816c52" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="No_compatible_NVIDIA_Driver_was_detected_623d05" xml:space="preserve">
+    <value>No compatible NVIDIA Driver was detected on your system. Your NVIDIA GPU might be disabled.</value>
+  </data>
+  <data name="No_release_information_is_available_229f04" xml:space="preserve">
+    <value>No release information is available.</value>
+  </data>
+  <data name="None_6eef66" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="Not_checked_22705e" xml:space="preserve">
+    <value>Not checked</value>
+  </data>
+  <data name="NvidiaSettingTooltip" xml:space="preserve">
+    <value>Nvidia Setting - Defined by NVIDIA driver</value>
+  </data>
+  <data name="OK_9ce3bd" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="OTA_unknown_f52bc6" xml:space="preserve">
+    <value>OTA unknown</value>
+  </data>
+  <data name="Open_GitHub_releases_f0a991" xml:space="preserve">
+    <value>Open GitHub releases</value>
+  </data>
+  <data name="Open_GitHub_repository_76131f" xml:space="preserve">
+    <value>Open GitHub repository</value>
+  </data>
+  <data name="Open_the_Bit_Value_Editor_0d74a7" xml:space="preserve">
+    <value>Open the Bit Value Editor</value>
+  </data>
+  <data name="Please_choose_the_profiles_you_want_95fed3" xml:space="preserve">
+    <value>Please choose the profiles you want to export:</value>
+  </data>
+  <data name="Please_select_at_least_one_profile_081542" xml:space="preserve">
+    <value>Please select at least one profile to export.</value>
+  </data>
+  <data name="Pre_release_963080" xml:space="preserve">
+    <value>Pre-release</value>
+  </data>
+  <data name="Predefined_Scan_89daae" xml:space="preserve">
+    <value>Predefined Scan</value>
+  </data>
+  <data name="Prefix_the_raw_value_to_common_62e0cf" xml:space="preserve">
+    <value>Prefix the raw value to common (CSN) value names, the way the other sources already show it.</value>
+  </data>
+  <data name="Prefix_the_setting_id_to_the_145138" xml:space="preserve">
+    <value>Prefix the setting id to the setting name in the list (double-click a name to copy its id).</value>
+  </data>
+  <data name="Preparing_driver_profiles_and_settings_afb135" xml:space="preserve">
+    <value>Preparing driver profiles and settings...</value>
+  </data>
+  <data name="Preparing_update_package_ec8ed4" xml:space="preserve">
+    <value>Preparing update package...</value>
+  </data>
+  <data name="ProfileFilterPlaceholder" xml:space="preserve">
+    <value>Filter profile names...</value>
+  </data>
+  <data name="Profile_for_0_has_been_selected_6af509" xml:space="preserve">
+    <value>Profile for '{0}' has been selected!</value>
+  </data>
+  <data name="Profile_name_must_be_unique_0beb93" xml:space="preserve">
+    <value>Profile name must be unique.</value>
+  </data>
+  <data name="Profile_not_found_54cd7c" xml:space="preserve">
+    <value>Profile not found!</value>
+  </data>
+  <data name="Profile_s_imported_successfully_b13032" xml:space="preserve">
+    <value>Profile(s) imported successfully!</value>
+  </data>
+  <data name="Profile_s_successfully_imported_696692" xml:space="preserve">
+    <value>Profile(s) successfully imported!</value>
+  </data>
+  <data name="Profile_successfully_deleted_47e3e4" xml:space="preserve">
+    <value>Profile successfully deleted.</value>
+  </data>
+  <data name="Profile_successfully_restored_to_driver_defaults_5e6fe8" xml:space="preserve">
+    <value>Profile successfully restored to driver defaults!</value>
+  </data>
+  <data name="Profiles_0c2a93" xml:space="preserve">
+    <value>Profiles</value>
+  </data>
+  <data name="Really_delete_this_profile_Note_NVIDIA_31ca76" xml:space="preserve">
+    <value>Really delete this profile?
+
+
+
+Note: NVIDIA predefined profiles can not be restored until next driver installation!</value>
+  </data>
+  <data name="Reference_db1c78" xml:space="preserve">
+    <value>Reference</value>
+  </data>
+  <data name="Refresh_56e3ba" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="Refresh_all_profiles_80fa19" xml:space="preserve">
+    <value>Refresh all profiles</value>
+  </data>
+  <data name="Release_d41f56" xml:space="preserve">
+    <value>Release</value>
+  </data>
+  <data name="Releases_8fa41d" xml:space="preserve">
+    <value>Releases</value>
+  </data>
+  <data name="Remove_Application_d7a3e4" xml:space="preserve">
+    <value>Remove Application</value>
+  </data>
+  <data name="Remove_application_0_from_profile_99d227" xml:space="preserve">
+    <value>Remove application '{0}' from profile?</value>
+  </data>
+  <data name="Replace_a7cf7b" xml:space="preserve">
+    <value>Replace</value>
+  </data>
+  <data name="Replace_imported_profile_s_ad5878" xml:space="preserve">
+    <value>Replace imported profile(s)</value>
+  </data>
+  <data name="Reset_44c57a" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="Reset_all_filter_and_value_options_05fbc5" xml:space="preserve">
+    <value>Reset all filter and value options to their defaults</value>
+  </data>
+  <data name="Reset_current_profile_changes_7d56ad" xml:space="preserve">
+    <value>Reset current profile changes</value>
+  </data>
+  <data name="Reset_each_target_0_and_write_011684" xml:space="preserve">
+    <value>Reset each target profile and write only the imported apps and settings.</value>
+  </data>
+  <data name="Reset_setting_to_default_value_e40066" xml:space="preserve">
+    <value>Reset setting to default value</value>
+  </data>
+  <data name="Restore_Down_c9f7ca" xml:space="preserve">
+    <value>Restore Down</value>
+  </data>
+  <data name="Restore_Profile_f7a9e7" xml:space="preserve">
+    <value>Restore Profile</value>
+  </data>
+  <data name="Restore_defaults_894a58" xml:space="preserve">
+    <value>Restore defaults</value>
+  </data>
+  <data name="Restore_or_replace_all_profiles_from_89e23e" xml:space="preserve">
+    <value>Restore or replace all profiles from an NVIDIA Text Format file.</value>
+  </data>
+  <data name="Restore_profile_to_NVIDIA_default_settings_f6e542" xml:space="preserve">
+    <value>Restore profile to NVIDIA default settings</value>
+  </data>
+  <data name="Restore_profile_to_NVIDIA_driver_defaults_797e1b" xml:space="preserve">
+    <value>Restore profile to NVIDIA driver defaults?</value>
+  </data>
+  <data name="Review_and_apply_the_current_bitmask_30a843" xml:space="preserve">
+    <value>Review and apply the current bitmask value.</value>
+  </data>
+  <data name="SETTING_SOURCE_22a5da" xml:space="preserve">
+    <value>SETTING SOURCE</value>
+  </data>
+  <data name="STARTUP_b7170d" xml:space="preserve">
+    <value>STARTUP</value>
+  </data>
+  <data name="Scanning_0_80f1d2" xml:space="preserve">
+    <value>Scanning... {0}%</value>
+  </data>
+  <data name="Scanning_profiles_bb618c" xml:space="preserve">
+    <value>Scanning profiles</value>
+  </data>
+  <data name="Scanning_profiles_bdb556" xml:space="preserve">
+    <value>Scanning profiles...</value>
+  </data>
+  <data name="Search_6d7a30" xml:space="preserve">
+    <value>Search...</value>
+  </data>
+  <data name="Search_modified_profiles_08f1a2" xml:space="preserve">
+    <value>Search modified profiles...</value>
+  </data>
+  <data name="Search_profiles_17cd68" xml:space="preserve">
+    <value>Search profiles...</value>
+  </data>
+  <data name="Search_settings_by_name_Ctrl_F_9d900e" xml:space="preserve">
+    <value>Search settings by name (Ctrl+F)</value>
+  </data>
+  <data name="Search_settings_d25add" xml:space="preserve">
+    <value>Search settings...</value>
+  </data>
+  <data name="Search_values_7096b3" xml:space="preserve">
+    <value>Search values...</value>
+  </data>
+  <data name="Select_Application_Absolute_Path_b0f93a" xml:space="preserve">
+    <value>Select Application Absolute Path</value>
+  </data>
+  <data name="Select_Game_9212b4" xml:space="preserve">
+    <value>Select Game</value>
+  </data>
+  <data name="Select_all_profiles_48877a" xml:space="preserve">
+    <value>Select all profiles</value>
+  </data>
+  <data name="Select_multiple_modified_profiles_from_a_3092fe" xml:space="preserve">
+    <value>Select multiple modified profiles from a list to export them into a single file.</value>
+  </data>
+  <data name="Select_profiles_to_export_4049fd" xml:space="preserve">
+    <value>Select profiles to export</value>
+  </data>
+  <data name="SettingLabel" xml:space="preserve">
+    <value>Setting</value>
+  </data>
+  <data name="Setting_ID_0_copied_to_clipboard_91cd52" xml:space="preserve">
+    <value>Setting ID {0} copied to clipboard.</value>
+  </data>
+  <data name="Settings_applied_successfully_37aea4" xml:space="preserve">
+    <value>Settings applied successfully.</value>
+  </data>
+  <data name="Settings_copied_to_clipboard_407492" xml:space="preserve">
+    <value>Settings copied to clipboard!</value>
+  </data>
+  <data name="Show_active_or_modified_settings_only_dc3c69" xml:space="preserve">
+    <value>Show active or modified settings only</value>
+  </data>
+  <data name="Show_active_settings_from_disabled_sources_3bc4d4" xml:space="preserve">
+    <value>Show active settings from disabled sources</value>
+  </data>
+  <data name="Show_all_applications_collapse_to_a_355c48" xml:space="preserve">
+    <value>Show all applications / collapse to a single row</value>
+  </data>
+  <data name="Slate_26d7b2" xml:space="preserve">
+    <value>Slate</value>
+  </data>
+  <data name="Some_profile_s_could_not_be_0051ad" xml:space="preserve">
+    <value>Some profile(s) could not be imported!
+
+
+
+{0}</value>
+  </data>
+  <data name="Some_profile_s_could_not_imported_8e08b0" xml:space="preserve">
+    <value>Some profile(s) could not imported!
+
+
+
+{0}</value>
+  </data>
+  <data name="THEME_d91e30" xml:space="preserve">
+    <value>THEME</value>
+  </data>
+  <data name="Test_Area_a46eab" xml:space="preserve">
+    <value>Test Area</value>
+  </data>
+  <data name="The_selected_release_does_not_contain_ba3d9c" xml:space="preserve">
+    <value>The selected release does not contain a downloadable update package.</value>
+  </data>
+  <data name="The_update_could_not_be_installed_aae0c1" xml:space="preserve">
+    <value>The update could not be installed.
+
+
+
+{0}</value>
+  </data>
+  <data name="To_link_a_new_application_enter_ae862f" xml:space="preserve">
+    <value>To link a new application, enter its filename (e.g. game.exe), relative path, or UWP ID. If you need to link a specific file location, use the browse button for an absolute path.</value>
+  </data>
+  <data name="Toggle_Favorite_f2b402" xml:space="preserve">
+    <value>Toggle Favorite</value>
+  </data>
+  <data name="UPDATES_ea763e" xml:space="preserve">
+    <value>UPDATES</value>
+  </data>
+  <data name="Unavailable_2c9c1f" xml:space="preserve">
+    <value>Unavailable</value>
+  </data>
+  <data name="UnsupportedUpdatePackage" xml:space="preserve">
+    <value>The selected update package format is not supported.</value>
+  </data>
+  <data name="Update_available_21f186" xml:space="preserve">
+    <value>Update available</value>
+  </data>
+  <data name="Update_downloaded_Restarting_application_d3e897" xml:space="preserve">
+    <value>Update downloaded. Restarting application...</value>
+  </data>
+  <data name="Update_failed_19a995" xml:space="preserve">
+    <value>Update failed.</value>
+  </data>
+  <data name="Update_failed_4de04c" xml:space="preserve">
+    <value>Update failed</value>
+  </data>
+  <data name="UserSettingTooltip" xml:space="preserve">
+    <value>User-defined Setting - Custom setting added by user</value>
+  </data>
+  <data name="User_created_profile_fb1707" xml:space="preserve">
+    <value>User-created profile</value>
+  </data>
+  <data name="VALUE_SOURCE_e86206" xml:space="preserve">
+    <value>VALUE SOURCE</value>
+  </data>
+  <data name="Value_2139d7" xml:space="preserve">
+    <value>Value:</value>
+  </data>
+  <data name="Value_applied_to_profile_eb57d8" xml:space="preserve">
+    <value>Value applied to profile.</value>
+  </data>
+  <data name="Version_03283e" xml:space="preserve">
+    <value>Version </value>
+  </data>
+  <data name="View_Modified_Profiles_ac9cd5" xml:space="preserve">
+    <value>View Modified Profiles</value>
+  </data>
+  <data name="View_Profile_685ed0" xml:space="preserve">
+    <value>View Profile</value>
+  </data>
+  <data name="Waiting_for_the_modified_profiles_scan_abe7e0" xml:space="preserve">
+    <value>Waiting for the modified profiles scan to finish...</value>
+  </data>
+  <data name="WarningTitle" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="Would_you_like_to_create_a_2f0b70" xml:space="preserve">
+    <value>Would you like to create a new profile for this application?</value>
+  </data>
+  <data name="Would_you_like_to_open_the_abdc28" xml:space="preserve">
+    <value>Would you like to open the log file location?</value>
+  </data>
+  <data name="Yes_5397e0" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="You_are_already_on_the_latest_ec9db9" xml:space="preserve">
+    <value>You are already on the latest version for this channel.</value>
+  </data>
+  <data name="SelectProfiles" xml:space="preserve">
+    <value>Select Profiles</value>
+  </data>
+  <data name="LanguageEnglish" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="ImportProfileFailed" xml:space="preserve">
+    <value>Failed to import profile '{0}'</value>
+  </data>
+  <data name="MergeProfileFailed" xml:space="preserve">
+    <value>Failed to merge import into profile '{0}'</value>
+  </data>
+  <data name="ApplicationConflict" xml:space="preserve">
+    <value>- application '{0}' is already in use by profile '{1}'</value>
+  </data>
+  <data name="ImportRenameHint" xml:space="preserve">
+    <value>Hint: If just the profile name has been changed by nvidia, consider to manually modify the profile name inside the import file using a text editor.</value>
+  </data>
+  <data name="MergeConflictHint" xml:space="preserve">
+    <value>Hint: Remove conflicting applications from the other profile first, then retry the merge.</value>
+  </data>
+</root>

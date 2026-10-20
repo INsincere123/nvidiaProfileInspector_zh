@@ -10,6 +10,14 @@ namespace nvidiaProfileInspector.Common.Helper
 {
     public class UserSettings
     {
+        private string _language = "zh-CN";
+
+        public string Language
+        {
+            get => _language;
+            set => _language = Localization.Localizer.NormalizeLanguage(value);
+        }
+
         public int WindowTop { get; set; }
 
         public int WindowLeft { get; set; }

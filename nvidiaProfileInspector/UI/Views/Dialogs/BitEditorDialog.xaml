@@ -1,13 +1,14 @@
 <Window
     x:Class="nvidiaProfileInspector.UI.Views.Dialogs.BitEditorDialog"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:loc="clr-namespace:nvidiaProfileInspector.Localization"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:controls="clr-namespace:nvidiaProfileInspector.UI.Controls"
     xmlns:converters="clr-namespace:nvidiaProfileInspector.UI.Converters;assembly=nvidiaProfileInspector"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:vm="clr-namespace:nvidiaProfileInspector.UI.ViewModels"
-    Title="Bit Value Editor"
+    Title="{loc:Text Bit_Value_Editor_bea690}"
     Width="1241"
     Height="864"
     MinHeight="864"
@@ -81,7 +82,7 @@
                     FontSize="18"
                     FontWeight="SemiBold"
                     Foreground="{DynamicResource TextPrimaryBrush}"
-                    Text="Bit Value Editor" />
+                    Text="{loc:Text Bit_Value_Editor_bea690}" />
 
                 <StackPanel
                     Grid.Column="1"
@@ -92,7 +93,7 @@
                     <Button
                         Click="Close_Click"
                         Style="{StaticResource CloseWindowButtonStyle}"
-                        ToolTip="Close">
+                        ToolTip="{loc:Text Close_bbfa77}">
                         <Path
                             Width="10"
                             Height="10"
@@ -119,16 +120,16 @@
                 Margin="0,0,0,16"
                 FontSize="13"
                 Foreground="{DynamicResource TextSecondaryBrush}"
-                Text="Inspect individual flag bits, compare them against scanned profiles, and quickly test the value in a game launch."
+                Text="{loc:Text Inspect_individual_flag_bits_compare_them_a1722e}"
                 TextWrapping="Wrap" />
 
             <controls:SearchableTextBox
                 x:Name="FilterTextBox"
                 Grid.Row="1"
                 Margin="0,0,0,12"
-                Placeholder="Filter profile names..."
+                Placeholder="{loc:Text ProfileFilterPlaceholder}"
                 Text="{Binding FilterText, UpdateSourceTrigger=PropertyChanged}"
-                ToolTip="Filter scanned profile names" />
+                ToolTip="{loc:Text Filter_scanned_profile_names_593003}" />
 
             <Grid Grid.Row="2" MinHeight="360">
                 <Grid.RowDefinitions>
@@ -184,7 +185,7 @@
                                     </DataTemplate>
                                 </GridViewColumn.CellTemplate>
                             </GridViewColumn>
-                            <GridViewColumn Header="Enabled">
+                            <GridViewColumn Header="{loc:Text Enabled_df174a}">
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>
                                         <CheckBox
@@ -194,21 +195,21 @@
                                     </DataTemplate>
                                 </GridViewColumn.CellTemplate>
                             </GridViewColumn>
-                            <GridViewColumn Header="Description">
+                            <GridViewColumn Header="{loc:Text Description_55f8eb}">
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>
                                         <TextBlock Text="{Binding MaskDescription}" />
                                     </DataTemplate>
                                 </GridViewColumn.CellTemplate>
                             </GridViewColumn>
-                            <GridViewColumn Header="Count">
+                            <GridViewColumn Header="{loc:Text Count_66e129}">
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>
                                         <TextBlock Text="{Binding ProfileCount}" />
                                     </DataTemplate>
                                 </GridViewColumn.CellTemplate>
                             </GridViewColumn>
-                            <GridViewColumn Header="Profiles">
+                            <GridViewColumn Header="{loc:Text Profiles_0c2a93}">
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>
                                         <TextBlock Text="{Binding VisibleProfileNames}" TextTrimming="CharacterEllipsis" />
@@ -280,12 +281,12 @@
                                 FontSize="14"
                                 FontWeight="SemiBold"
                                 Foreground="{DynamicResource TextPrimaryBrush}"
-                                Text="Test Area" />
+                                Text="{loc:Text Test_Area_a46eab}" />
                             <TextBlock
                                 Margin="0,4,0,0"
                                 FontSize="12"
                                 Foreground="{DynamicResource TextSecondaryBrush}"
-                                Text="Apply the edited value to the current profile, then optionally launch a game executable to test it immediately."
+                                Text="{loc:Text Apply_the_edited_value_to_the_324627}"
                                 TextWrapping="Wrap" />
                         </StackPanel>
 
@@ -297,7 +298,7 @@
                             VerticalAlignment="Center"
                             Style="{StaticResource DarkTextBoxStyle}"
                             Text="{Binding GamePath, UpdateSourceTrigger=PropertyChanged}"
-                            ToolTip="Game executable path" />
+                            ToolTip="{loc:Text Game_executable_path_135eb5}" />
                         <Button
                             Grid.Row="1"
                             Grid.Column="1"
@@ -306,7 +307,7 @@
                             Padding="12,6"
                             Click="Browse_Click"
                             Style="{StaticResource DarkButtonStyle}"
-                            ToolTip="Browse for game executable">
+                            ToolTip="{loc:Text Browse_for_game_executable_ad9d84}">
                             <StackPanel Orientation="Horizontal">
                                 <Path
                                     Width="14"
@@ -316,7 +317,7 @@
                                     Data="{DynamicResource IconFolder}"
                                     Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=Button}}"
                                     Stretch="Uniform" />
-                                <TextBlock VerticalAlignment="Center" Text="Browse" />
+                                <TextBlock VerticalAlignment="Center" Text="{loc:Text Browse_2f3b5c}" />
                             </StackPanel>
                         </Button>
                         <Button
@@ -327,7 +328,7 @@
                             Padding="12,6"
                             Command="{Binding ApplyAndLaunchCommand}"
                             Style="{StaticResource AccentButtonStyle}"
-                            ToolTip="Apply changes and launch game">
+                            ToolTip="{loc:Text Apply_changes_and_launch_game_05c939}">
                             <StackPanel Orientation="Horizontal">
                                 <Path
                                     Width="14"
@@ -337,7 +338,7 @@
                                     Data="{DynamicResource IconGame}"
                                     Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=Button}}"
                                     Stretch="Uniform" />
-                                <TextBlock VerticalAlignment="Center" Text="Apply &amp; Launch" />
+                                <TextBlock VerticalAlignment="Center" Text="{loc:Text Apply_Launch_016033}" />
                             </StackPanel>
                         </Button>
                     </Grid>
@@ -366,14 +367,14 @@
                             FontSize="14"
                             FontWeight="SemiBold"
                             Foreground="{DynamicResource TextPrimaryBrush}"
-                            Text="Current Value" />
+                            Text="{loc:Text Current_Value_4f9931}" />
                         <TextBlock
                             Grid.Row="1"
                             Grid.ColumnSpan="2"
                             Margin="0,4,0,0"
                             FontSize="12"
                             Foreground="{DynamicResource TextSecondaryBrush}"
-                            Text="Review and apply the current bitmask value." />
+                            Text="{loc:Text Review_and_apply_the_current_bitmask_30a843}" />
                         <Grid
                             Grid.Row="2"
                             Grid.ColumnSpan="2"
@@ -389,7 +390,7 @@
                                 Margin="0,0,8,0"
                                 VerticalAlignment="Center"
                                 Foreground="{DynamicResource TextSecondaryBrush}"
-                                Text="Value:" />
+                                Text="{loc:Text Value_2139d7}" />
                             <TextBox
                                 x:Name="CurrentValueTextBox"
                                 Grid.Column="1"
@@ -398,14 +399,14 @@
                                 IsReadOnly="True"
                                 Style="{StaticResource DarkTextBoxStyle}"
                                 Text="{Binding CurrentValueHex, Mode=OneWay}"
-                                ToolTip="Current DWORD value" />
+                                ToolTip="{loc:Text Current_DWORD_value_ab05f1}" />
                             <Button
                                 Grid.Column="2"
                                 MinWidth="96"
                                 Padding="12,6"
                                 Command="{Binding ApplyCommand}"
                                 Style="{StaticResource AccentButtonStyle}"
-                                ToolTip="Apply bit changes">
+                                ToolTip="{loc:Text Apply_bit_changes_9c7ff4}">
                                 <StackPanel Orientation="Horizontal">
                                     <Path
                                         Width="14"
@@ -415,7 +416,7 @@
                                         Data="{DynamicResource IconApply}"
                                         Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=Button}}"
                                         Stretch="Uniform" />
-                                    <TextBlock VerticalAlignment="Center" Text="Apply" />
+                                    <TextBlock VerticalAlignment="Center" Text="{loc:Text Apply_cfea41}" />
                                 </StackPanel>
                             </Button>
                             <Button
@@ -425,9 +426,9 @@
                                 Margin="8,0,0,0"
                                 Padding="12,6"
                                 Click="Close_Click"
-                                Content="Close"
+                                Content="{loc:Text Close_bbfa77}"
                                 Style="{StaticResource DarkButtonStyle}"
-                                ToolTip="Close without saving" />
+                                ToolTip="{loc:Text Close_without_saving_e45919}" />
                         </Grid>
                     </Grid>
                 </Border>

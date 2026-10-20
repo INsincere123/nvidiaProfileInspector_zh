@@ -1,3 +1,4 @@
+using L = nvidiaProfileInspector.Localization.Localizer;
 using nvidiaProfileInspector.UI.ViewModels;
 using System;
 using System.Collections;
@@ -29,7 +30,7 @@ namespace nvidiaProfileInspector.UI.Controls
 
         public static readonly DependencyProperty PlaceholderProperty =
         DependencyProperty.Register(nameof(Placeholder), typeof(string), typeof(SearchableComboBox),
-        new PropertyMetadata("Search..."));
+        new PropertyMetadata(L.Get("Search_6d7a30")));
 
         public static readonly DependencyProperty FilterTextProperty =
         DependencyProperty.Register(nameof(FilterText), typeof(string), typeof(SearchableComboBox),

@@ -1,3 +1,4 @@
+using L = nvidiaProfileInspector.Localization.Localizer;
 using Microsoft.Win32;
 using nvidiaProfileInspector.TinyIoc;
 using nvidiaProfileInspector.UI.ViewModels;
@@ -89,8 +90,8 @@ namespace nvidiaProfileInspector.UI.Views.Dialogs
 
         private void ShowProfileSelectionView()
         {
-            this.Title = "Select Profiles";
-            this.SubtitleTextBlock.Text = "Please choose the profiles you want to export:";
+            this.Title = L.Get("SelectProfiles");
+            this.SubtitleTextBlock.Text = L.Get("Please_choose_the_profiles_you_want_95fed3");
             this.SubtitleTextBlock.Visibility = Visibility.Visible;
 
             if (_selectionViewModel == null)
@@ -128,7 +129,7 @@ namespace nvidiaProfileInspector.UI.Views.Dialogs
             if (!_selectionViewModel.HasSelectedProfiles)
             {
                 if (Owner is MainWindow mainWindow && mainWindow.DataContext is MainViewModel mainViewModel)
-                    mainViewModel.ShowSnackbar("Please select at least one profile to export.", "Warning");
+                    mainViewModel.ShowSnackbar(L.Get("Please_select_at_least_one_profile_081542"), "Warning");
                 return;
             }
 
@@ -136,7 +137,7 @@ namespace nvidiaProfileInspector.UI.Views.Dialogs
 
             var dialog = new SaveFileDialog
             {
-                Filter = "NVIDIA PROFILE INSPECTOR Profiles|*.nip",
+                Filter = L.Get("NVIDIA_PROFILE_INSPECTOR_Profiles_nip_12629c"),
                 DefaultExt = "*.nip",
                 FileName = ProfileExportFileNames.ForSelectedProfiles()
             };
@@ -146,7 +147,7 @@ namespace nvidiaProfileInspector.UI.Views.Dialogs
                 _selectionViewModel.ExportSelectedProfiles(dialog.FileName);
 
                 if (Owner is MainWindow mainWindow && mainWindow.DataContext is MainViewModel mainViewModel)
-                    mainViewModel.ShowSnackbar("All selected profiles exported successfully!", "Success");
+                    mainViewModel.ShowSnackbar(L.Get("All_selected_profiles_exported_successfully_e68537"), "Success");
 
                 DialogResult = true;
                 Close();

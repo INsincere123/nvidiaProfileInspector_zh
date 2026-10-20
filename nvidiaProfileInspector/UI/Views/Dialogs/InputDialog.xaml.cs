@@ -1,3 +1,4 @@
+using L = nvidiaProfileInspector.Localization.Localizer;
 namespace nvidiaProfileInspector.UI.Views.Dialogs
 {
     using nvidiaProfileInspector.UI.ViewModels;
@@ -25,8 +26,8 @@ namespace nvidiaProfileInspector.UI.Views.Dialogs
         {
             var dialog = new Microsoft.Win32.OpenFileDialog
             {
-                Filter = "Executables (*.exe)|*.exe|All files (*.*)|*.*",
-                Title = "Select Application Absolute Path"
+                Filter = L.Get("Executables_exe_exe_All_files_a31d23"),
+                Title = L.Get("Select_Application_Absolute_Path_b0f93a")
             };
 
             if (dialog.ShowDialog() == true)

@@ -1,3 +1,4 @@
+using L = nvidiaProfileInspector.Localization.Localizer;
 using System;
 using System.Linq;
 using System.Reflection;
@@ -32,7 +33,7 @@ namespace nvidiaProfileInspector.Common.Updates
                     .FirstOrDefault();
 
                 if (latestRelease == null)
-                    return UpdateCheckResult.Unavailable("No release information is available.");
+                    return UpdateCheckResult.Unavailable(L.Get("No_release_information_is_available_229f04"));
 
                 return latestRelease.Version > GetCurrentVersion()
                     ? UpdateCheckResult.Available(latestRelease)
@@ -40,14 +41,14 @@ namespace nvidiaProfileInspector.Common.Updates
             }
             catch
             {
-                return UpdateCheckResult.Unavailable("Could not read release information.");
+                return UpdateCheckResult.Unavailable(L.Get("Could_not_read_release_information_79f9a4"));
             }
         }
 
         public Task PrepareInstallAsync(UpdateRelease release)
         {
             if (release == null || !release.IsInstallable)
-                throw new InvalidOperationException("The selected release does not contain a downloadable update package.");
+                throw new InvalidOperationException(L.Get("The_selected_release_does_not_contain_ba3d9c"));
 
             return _installer.PrepareAndRunAsync(release);
         }

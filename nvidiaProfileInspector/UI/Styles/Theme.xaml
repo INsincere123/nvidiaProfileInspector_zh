@@ -18,13 +18,13 @@
 
     <!--  Font used by the settings list and value list. Switches to Consolas together with
           the "Add setting id to name" option, since only then does monospace alignment matter.  -->
-    <FontFamily x:Key="SettingsFontFamily">Segoe UI Variable Text, Segoe UI</FontFamily>
+    <FontFamily x:Key="SettingsFontFamily">Segoe UI Variable Text, Segoe UI, Microsoft YaHei UI</FontFamily>
 
     <!--  Window Style  -->
     <Style x:Key="DarkWindowStyle" TargetType="Window">
         <Setter Property="Background" Value="{DynamicResource WindowBackgroundBrush}" />
         <Setter Property="Foreground" Value="{DynamicResource TextPrimaryBrush}" />
-        <Setter Property="FontFamily" Value="Segoe UI Variable Text, Segoe UI" />
+        <Setter Property="FontFamily" Value="Segoe UI Variable Text, Segoe UI, Microsoft YaHei UI" />
         <Setter Property="FontSize" Value="14" />
         <Setter Property="UseLayoutRounding" Value="True" />
         <Setter Property="WindowStyle" Value="None" />

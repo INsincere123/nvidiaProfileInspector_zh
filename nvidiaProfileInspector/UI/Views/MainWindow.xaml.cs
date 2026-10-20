@@ -1,3 +1,4 @@
+using L = nvidiaProfileInspector.Localization.Localizer;
 namespace nvidiaProfileInspector.UI.Views
 {
     using nvidiaProfileInspector;
@@ -203,13 +204,13 @@ namespace nvidiaProfileInspector.UI.Views
             {
                 var profile = profiles.Split(';')[0];
                 _viewModel.SelectProfile(profile);
-                _viewModel.ShowSnackbar($"Profile for '{applicationName}' has been selected!", "Success");
+                _viewModel.ShowSnackbar(L.Format("Profile_for_0_has_been_selected_6af509", applicationName), "Success");
                 return;
             }
 
             var result = MessageBoxViewModel.Show(
-                "Would you like to create a new profile for this application?",
-                "Profile not found!",
+                L.Get("Would_you_like_to_create_a_2f0b70"),
+                L.Get("Profile_not_found_54cd7c"),
                 MessageBoxButton.YesNo,
                 MessageBoxImage.Question);
 
@@ -378,15 +379,8 @@ namespace nvidiaProfileInspector.UI.Views
         private void CustomSettingsOverrideChip_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxEx.Show(
-                "CustomSettingNames.xml is being loaded from the application directory instead of the embedded default resource.\r\n\r\n" +
-                "This means the custom setting metadata has been overridden locally. That can be intentional, but names, groups, descriptions, and values may no longer match the embedded defaults shipped with this build.\r\n\r\n" +
-                "Possible consequences:\r\n" +
-                "- outdated or mismatched setting names\r\n" +
-                "- stale descriptions or value labels\r\n" +
-                "- missing newer embedded settings or metadata fixes\r\n" +
-                "- grouping differences compared to the embedded defaults\r\n\r\n" +
-                "If that is not intended, remove or rename the external CustomSettingNames.xml in the application folder so the embedded resource is used again.",
-                "Custom Settings Override",
+                L.Get("ExternalCustomSettingsWarning"),
+                L.Get("Custom_Settings_Override_dcc6f5"),
                 MessageBoxButton.OK,
                 MessageBoxImage.Warning);
         }
@@ -413,7 +407,7 @@ namespace nvidiaProfileInspector.UI.Views
             if (string.Equals(message, App.LegacyProfilesImportedMessage, StringComparison.InvariantCulture))
             {
                 _viewModel.RefreshCommand.Execute(null);
-                _viewModel.ShowSnackbar("Profile(s) imported successfully!", "Success");
+                _viewModel.ShowSnackbar(L.Get("Profile_s_imported_successfully_b13032"), "Success");
                 return true;
             }
 
@@ -457,16 +451,16 @@ namespace nvidiaProfileInspector.UI.Views
                 if (string.IsNullOrWhiteSpace(report))
                 {
                     if (showSuccessNotification)
-                        _viewModel.ShowSnackbar("Profile(s) imported successfully!", "Success");
+                        _viewModel.ShowSnackbar(L.Get("Profile_s_imported_successfully_b13032"), "Success");
                 }
                 else
                 {
-                    MessageBoxViewModel.Show($"Some profile(s) could not be imported!\r\n\r\n{report}", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBoxViewModel.Show(L.Format("Some_profile_s_could_not_be_0051ad", report), L.Get("WarningTitle"), MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
             }
             catch (Exception ex)
             {
-                MessageBoxViewModel.Show($"Import Error: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBoxViewModel.Show(L.Format("Import_Error_0_f44201", ex.Message), L.Get("Error_7f2f6a"), MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -544,47 +538,47 @@ namespace nvidiaProfileInspector.UI.Views
             {
                 new ActionCardsDialog.ActionCardItem
                 {
-                    Title = "Export current profile only",
-                    Description = "Export only the settings you have changed for the currently selected profile.",
+                    Title = L.Get("Export_current_profile_only_a307ef"),
+                    Description = L.Get("Export_only_the_settings_you_have_c88cfc"),
                     IconPath = (Geometry)Application.Current.Resources["IconExport"],
                     IconFill = (Brush)Application.Current.Resources["TextSecondaryBrush"],
                     Command = () => ExportCurrentOnly_Click(null, null)
                 },
                 new ActionCardsDialog.ActionCardItem
                 {
-                    Title = "Export current profile including predefined",
-                    Description = "Export the current profile with all its settings, including those not modified by you.",
+                    Title = L.Get("Export_current_profile_including_predefined_abaa3e"),
+                    Description = L.Get("Export_the_current_profile_with_all_c267e7"),
                     IconPath = (Geometry)Application.Current.Resources["IconExport"],
                     IconFill = (Brush)Application.Current.Resources["TextSecondaryBrush"],
                     Command = () => ExportCurrentWithPredefined_Click(null, null)
                 },
                 new ActionCardsDialog.ActionCardItem
                 {
-                    Title = "Select profiles to export",
-                    Description = "Select multiple modified profiles from a list to export them into a single file.",
+                    Title = L.Get("Select_profiles_to_export_4049fd"),
+                    Description = L.Get("Select_multiple_modified_profiles_from_a_3092fe"),
                     IconPath = (Geometry)Application.Current.Resources["IconUser"],
                     IconFill = (Brush)Application.Current.Resources["TextSecondaryBrush"],
                     ShowProfileSelection = true
                 },
                 new ActionCardsDialog.ActionCardItem
                 {
-                    Title = "Export all customized profiles",
-                    Description = "Export all profiles that contain user-defined or modified settings.",
+                    Title = L.Get("Export_all_customized_profiles_1b1d9f"),
+                    Description = L.Get("Export_all_profiles_that_contain_user_5bda53"),
                     IconPath = (Geometry)Application.Current.Resources["IconUser"],
                     IconFill = (Brush)Application.Current.Resources["TextSecondaryBrush"],
                     Command = () => ExportAllCustomized_Click(null, null)
                 },
                 new ActionCardsDialog.ActionCardItem
                 {
-                    Title = "Export all profiles (NVIDIA Text Format)",
-                    Description = "Export the entire profile database in the official NVIDIA text format.",
+                    Title = L.Get("Export_all_profiles_NVIDIA_Text_Format_e55156"),
+                    Description = L.Get("Export_the_entire_profile_database_in_9a269d"),
                     IconPath = (Geometry)Application.Current.Resources["IconNvidia"],
                     IconFill = (Brush)Application.Current.Resources["TextSecondaryBrush"],
                     Command = () => ExportAllNVIDIA_Click(null, null)
                 }
             };
 
-            var dialog = new ActionCardsDialog("Export Profiles", items, "Choose how you want to export your profiles:");
+            var dialog = new ActionCardsDialog(L.Get("Export_Profiles_6f6f72"), items, L.Get("Choose_how_you_want_to_export_bb12b6"));
             dialog.Owner = this;
             if (dialog.ShowDialog() == true && dialog.SelectedItem != null)
             {
@@ -598,31 +592,31 @@ namespace nvidiaProfileInspector.UI.Views
             {
                 new ActionCardsDialog.ActionCardItem
                 {
-                    Title = "Replace imported profile(s)",
-                    Description = "Import one or more .nip files and replace each imported profile's current apps and settings with the file contents.",
+                    Title = L.Get("Replace_imported_profile_s_ad5878"),
+                    Description = L.Get("Import_one_or_more_nip_files_b685fd"),
                     IconPath = (Geometry)Application.Current.Resources["IconImport"],
                     IconFill = (Brush)Application.Current.Resources["TextSecondaryBrush"],
                     Command = () => ImportProfiles_Click(null, null)
                 },
                 new ActionCardsDialog.ActionCardItem
                 {
-                    Title = "Merge imported profile(s)",
-                    Description = "Import one or more .nip files and merge them into the profile targets named inside the files. Existing target values stay unless the import contains the same setting, in which case the imported value wins.",
+                    Title = L.Get("Merge_imported_profile_s_3c565b"),
+                    Description = L.Get("Import_one_or_more_nip_files_564c74"),
                     IconPath = (Geometry)Application.Current.Resources["IconUser"],
                     IconFill = (Brush)Application.Current.Resources["TextSecondaryBrush"],
                     Command = () => MergeImportedProfiles_Click(null, null)
                 },
                 new ActionCardsDialog.ActionCardItem
                 {
-                    Title = "Import (replace) all driver profiles",
-                    Description = "Restore or replace all profiles from an NVIDIA Text Format file.",
+                    Title = L.Get("Import_replace_all_driver_profiles_b7d0c1"),
+                    Description = L.Get("Restore_or_replace_all_profiles_from_89e23e"),
                     IconPath = (Geometry)Application.Current.Resources["IconNvidia"],
                     IconFill = (Brush)Application.Current.Resources["TextSecondaryBrush"],
                     Command = () => ImportAllNVIDIA_Click(null, null)
                 }
             };
 
-            var dialog = new ActionCardsDialog("Import Profiles", items, "Choose how you want to import profiles:");
+            var dialog = new ActionCardsDialog(L.Get("Import_Profiles_c97e7b"), items, L.Get("Choose_how_you_want_to_import_717cc4"));
             dialog.Owner = this;
             if (dialog.ShowDialog() == true && dialog.SelectedItem != null)
             {

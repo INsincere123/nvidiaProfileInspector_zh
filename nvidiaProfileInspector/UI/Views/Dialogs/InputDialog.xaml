@@ -1,6 +1,7 @@
 <Window
     x:Class="nvidiaProfileInspector.UI.Views.Dialogs.InputDialog"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:loc="clr-namespace:nvidiaProfileInspector.Localization"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:controls="clr-namespace:nvidiaProfileInspector.UI.Controls"
     xmlns:vm="clr-namespace:nvidiaProfileInspector.UI.ViewModels"
@@ -47,7 +48,7 @@
                     <Button
                         Click="Cancel_Click"
                         Style="{StaticResource CloseWindowButtonStyle}"
-                        ToolTip="Close">
+                        ToolTip="{loc:Text Close_bbfa77}">
                         <Path
                             Width="10"
                             Height="10"
@@ -104,7 +105,7 @@
                 HorizontalAlignment="Left"
                 Click="BrowseButton_Click"
                 Style="{StaticResource DarkButtonStyle}"
-                ToolTip="Browse for application absolute path"
+                ToolTip="{loc:Text Browse_for_application_absolute_path_d1bc68}"
                 Visibility="{Binding AllowBrowse, Converter={StaticResource BoolToVisibilityConverter}}">
                 <StackPanel Orientation="Horizontal">
                     <Path
@@ -115,7 +116,7 @@
                         Data="{DynamicResource IconFolder}"
                         Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=Button}}"
                         Stretch="Uniform" />
-                    <TextBlock VerticalAlignment="Center" Text="Browse absolute path..." />
+                    <TextBlock VerticalAlignment="Center" Text="{loc:Text Browse_absolute_path_083435}" />
                 </StackPanel>
             </Button>
         </Grid>
@@ -132,17 +133,17 @@
                     MinWidth="80"
                     Margin="0,0,8,0"
                     Click="Cancel_Click"
-                    Content="Cancel"
+                    Content="{loc:Text Cancel_77dfd2}"
                     Style="{StaticResource DarkButtonStyle}"
-                    ToolTip="Cancel and close" />
+                    ToolTip="{loc:Text Cancel_and_close_9fa770}" />
                 <Button
                     MinWidth="80"
                     IsDefault="True"
                     Click="OK_Click"
-                    Content="OK"
+                    Content="{loc:Text OK_9ce3bd}"
                     IsEnabled="{Binding CanSubmit}"
                     Style="{StaticResource AccentButtonStyle}"
-                    ToolTip="Confirm and save" />
+                    ToolTip="{loc:Text Confirm_and_save_845c61}" />
             </StackPanel>
         </Border>
     </Grid>

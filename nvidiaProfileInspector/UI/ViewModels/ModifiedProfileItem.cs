@@ -1,3 +1,4 @@
+using L = nvidiaProfileInspector.Localization.Localizer;
 namespace nvidiaProfileInspector.UI.ViewModels
 {
     public class ModifiedProfileItem
@@ -12,7 +13,7 @@ namespace nvidiaProfileInspector.UI.ViewModels
 
         public bool IsUserDefined { get; }
 
-        public string ProfileTypeLabel => IsUserDefined ? "User-created profile" : "NVIDIA predefined profile";
+        public string ProfileTypeLabel => IsUserDefined ? L.Get("User_created_profile_fb1707") : L.Get("NVIDIA_predefined_profile_1052aa");
 
         public override string ToString()
         {

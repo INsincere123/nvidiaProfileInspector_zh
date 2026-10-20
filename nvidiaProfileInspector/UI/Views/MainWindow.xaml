@@ -1,6 +1,7 @@
 <Window
     x:Class="nvidiaProfileInspector.UI.Views.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:loc="clr-namespace:nvidiaProfileInspector.Localization"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:behaviors="clr-namespace:nvidiaProfileInspector.UI.Behaviors"
     xmlns:controls="clr-namespace:nvidiaProfileInspector.UI.Controls"
@@ -52,7 +53,7 @@
                                      IsEditable="True"
                                      ItemsSource="{Binding ValueNameItems, Mode=OneWay}"
                                      MaxDropDownHeight="400"
-                                     Placeholder="Search values..."
+                                     Placeholder="{loc:Text Search_values_7096b3}"
                                      PreserveSelectionOnKeyboardFocus="True"
                                      SyncSelectedItemToText="False"
                                      Text="{Binding SelectedValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
@@ -153,7 +154,7 @@
                         Margin="0,0,8,0"
                         Command="{Binding NavigateToGlobalCommand}"
                         Style="{StaticResource HeaderIconButtonStyle}"
-                        ToolTip="Navigate to Global Profile">
+                        ToolTip="{loc:Text Navigate_to_Global_Profile_674438}">
                         <Path
                             Width="18"
                             Height="18"
@@ -172,7 +173,7 @@
                         IsSynchronizedWithCurrentItem="False"
                         ItemsSource="{Binding ProfileNames}"
                         MaxDropDownHeight="500"
-                        Placeholder="Search profiles..."
+                        Placeholder="{loc:Text Search_profiles_17cd68}"
                         SelectedValue="{Binding CurrentProfile}"
                         SelectedValuePath="ProfileName"
                         SyncSelectedItemToText="True">
@@ -221,12 +222,12 @@
                         Margin="8,0,0,0"
                         ItemsSource="{Binding ModifiedProfiles}"
                         MaxDropDownHeight="500"
-                        Placeholder="Search modified profiles..."
+                        Placeholder="{loc:Text Search_modified_profiles_08f1a2}"
                         PreviewKeyDown="ModifiedProfilesCombo_PreviewKeyDown"
                         SelectionChanged="ModifiedProfilesCombo_SelectionChanged"
                         Style="{DynamicResource IconSearchableComboBoxStyle}"
                         SyncSelectedItemToText="True"
-                        ToolTip="View Modified Profiles">
+                        ToolTip="{loc:Text View_Modified_Profiles_ac9cd5}">
                         <controls:SearchableComboBox.ItemTemplate>
                             <DataTemplate DataType="{x:Type vm:ModifiedProfileItem}">
                                 <Grid ToolTip="{Binding ProfileTypeLabel}">
@@ -277,7 +278,7 @@
                             BorderThickness="1"
                             Command="{Binding ToggleAppearanceMenuCommand}"
                             Cursor="Hand"
-                            ToolTip="Appearance">
+                            ToolTip="{loc:Text Appearance_41def7}">
                             <Button.Template>
                                 <ControlTemplate TargetType="Button">
                                     <Border
@@ -334,14 +335,25 @@
                                         Opacity="0.25"
                                         ShadowDepth="4" />
                                 </Border.Effect>
-                                <StackPanel Width="168">
+                                <StackPanel Width="196">
+                                    <TextBlock Margin="6,4" FontSize="10" FontWeight="Bold"
+                                               Foreground="{DynamicResource TextSecondaryBrush}" Text="{loc:Text LanguageMenuTitle}" />
+                                    <RadioButton Margin="6,5" GroupName="Language" Content="简体中文"
+                                                 Foreground="{DynamicResource TextPrimaryBrush}"
+                                                 IsChecked="{Binding IsChineseLanguage, Mode=OneWay}"
+                                                 Command="{Binding SetLanguageCommand}" CommandParameter="zh-CN" />
+                                    <RadioButton Margin="6,5" GroupName="Language" Content="{loc:Text LanguageEnglish}"
+                                                 Foreground="{DynamicResource TextPrimaryBrush}"
+                                                 IsChecked="{Binding IsEnglishLanguage, Mode=OneWay}"
+                                                 Command="{Binding SetLanguageCommand}" CommandParameter="en" />
+                                    <Border Height="1" Margin="6,6" Background="{DynamicResource ControlBorderBrush}" />
                                     <!--  Theme Section  -->
                                     <TextBlock
                                         Margin="6,4,6,4"
                                         FontSize="10"
                                         FontWeight="Bold"
                                         Foreground="{DynamicResource TextSecondaryBrush}"
-                                        Text="THEME" />
+                                        Text="{loc:Text THEME_d91e30}" />
                                     <Button
                                         Margin="0,1"
                                         Padding="6,5"
@@ -387,7 +399,7 @@
                                                 VerticalAlignment="Center"
                                                 FontSize="12"
                                                 Foreground="{DynamicResource TextPrimaryBrush}"
-                                                Text="Midnight" />
+                                                Text="{loc:Text Midnight_558287}" />
                                         </StackPanel>
                                     </Button>
                                     <Button
@@ -435,7 +447,7 @@
                                                 VerticalAlignment="Center"
                                                 FontSize="12"
                                                 Foreground="{DynamicResource TextPrimaryBrush}"
-                                                Text="Dark" />
+                                                Text="{loc:Text Dark_ae1ef0}" />
                                         </StackPanel>
                                     </Button>
                                     <Button
@@ -483,7 +495,7 @@
                                                 VerticalAlignment="Center"
                                                 FontSize="12"
                                                 Foreground="{DynamicResource TextPrimaryBrush}"
-                                                Text="Slate" />
+                                                Text="{loc:Text Slate_26d7b2}" />
                                         </StackPanel>
                                     </Button>
                                     <Button
@@ -531,7 +543,7 @@
                                                 VerticalAlignment="Center"
                                                 FontSize="12"
                                                 Foreground="{DynamicResource TextPrimaryBrush}"
-                                                Text="Clean White" />
+                                                Text="{loc:Text Clean_White_6530fa}" />
                                         </StackPanel>
                                     </Button>
                                     <!--  Separator  -->
@@ -545,7 +557,7 @@
                                         FontSize="10"
                                         FontWeight="Bold"
                                         Foreground="{DynamicResource TextSecondaryBrush}"
-                                        Text="DENSITY" />
+                                        Text="{loc:Text DENSITY_151232}" />
                                     <Button
                                         Margin="0,1"
                                         Padding="6,5"
@@ -591,7 +603,7 @@
                                                 VerticalAlignment="Center"
                                                 FontSize="12"
                                                 Foreground="{DynamicResource TextPrimaryBrush}"
-                                                Text="Modern" />
+                                                Text="{loc:Text Modern_3a4e44}" />
                                         </StackPanel>
                                     </Button>
                                     <Button
@@ -639,7 +651,7 @@
                                                 VerticalAlignment="Center"
                                                 FontSize="12"
                                                 Foreground="{DynamicResource TextPrimaryBrush}"
-                                                Text="Compact" />
+                                                Text="{loc:Text Compact_1df39a}" />
                                         </StackPanel>
                                     </Button>
                                     <Border
@@ -651,7 +663,7 @@
                                         FontSize="10"
                                         FontWeight="Bold"
                                         Foreground="{DynamicResource TextSecondaryBrush}"
-                                        Text="BACKDROP" />
+                                        Text="{loc:Text BACKDROP_e3f737}" />
                                     <Button
                                         Margin="0,1"
                                         Padding="6,5"
@@ -698,7 +710,7 @@
                                                 VerticalAlignment="Center"
                                                 FontSize="12"
                                                 Foreground="{DynamicResource TextPrimaryBrush}"
-                                                Text="Glass" />
+                                                Text="{loc:Text Glass_745b5a}" />
                                         </StackPanel>
                                     </Button>
                                     <Button
@@ -747,7 +759,7 @@
                                                 VerticalAlignment="Center"
                                                 FontSize="12"
                                                 Foreground="{DynamicResource TextPrimaryBrush}"
-                                                Text="Mica" />
+                                                Text="{loc:Text Mica_3ccf84}" />
                                         </StackPanel>
                                     </Button>
                                     <Button
@@ -796,7 +808,7 @@
                                                 VerticalAlignment="Center"
                                                 FontSize="12"
                                                 Foreground="{DynamicResource TextPrimaryBrush}"
-                                                Text="Mica Variant" />
+                                                Text="{loc:Text Mica_Variant_bb8213}" />
                                         </StackPanel>
                                     </Button>
                                     <Button
@@ -845,7 +857,7 @@
                                                 VerticalAlignment="Center"
                                                 FontSize="12"
                                                 Foreground="{DynamicResource TextPrimaryBrush}"
-                                                Text="Acrylic" />
+                                                Text="{loc:Text Acrylic_f39ce1}" />
                                         </StackPanel>
                                     </Button>
                                     <Button
@@ -893,7 +905,7 @@
                                                 VerticalAlignment="Center"
                                                 FontSize="12"
                                                 Foreground="{DynamicResource TextPrimaryBrush}"
-                                                Text="Disabled" />
+                                                Text="{loc:Text Disabled_f4f447}" />
                                         </StackPanel>
                                     </Button>
                                 </StackPanel>
@@ -904,7 +916,7 @@
                         Margin="4,0"
                         Command="{Binding ShowAboutCommand}"
                         Style="{StaticResource HeaderIconButtonStyle}"
-                        ToolTip="About">
+                        ToolTip="{loc:Text About_6b21fb}">
                         <Grid>
                             <Path
                                 Width="18"
@@ -1014,37 +1026,37 @@
                                 Command="{Binding RestoreProfileCommand}"
                                 IconFill="{DynamicResource TextSecondaryBrush}"
                                 IconPath="{DynamicResource IconNvidia}"
-                                Text="Defaults"
-                                ToolTip="Restore profile to NVIDIA default settings" />
+                                Text="{loc:Text Defaults_428819}"
+                                ToolTip="{loc:Text Restore_profile_to_NVIDIA_default_settings_f6e542}" />
 
                             <controls:ActionBarButton
                                 Command="{Binding CreateProfileCommand}"
                                 Cursor="Hand"
                                 IconFill="{DynamicResource TextSecondaryBrush}"
                                 IconPath="{DynamicResource IconAdd}"
-                                Text="New"
-                                ToolTip="Create a new profile" />
+                                Text="{loc:Text New_6403f2}"
+                                ToolTip="{loc:Text Create_a_new_profile_2037ab}" />
 
                             <controls:ActionBarButton
                                 Command="{Binding DeleteProfileCommand}"
                                 IconFill="{DynamicResource TextSecondaryBrush}"
                                 IconPath="{DynamicResource IconDelete}"
-                                Text="Delete"
-                                ToolTip="Delete the current profile" />
+                                Text="{loc:Text Delete_f6fdbe}"
+                                ToolTip="{loc:Text Delete_the_current_profile_3694b4}" />
 
                             <controls:ActionBarButton
                                 Command="{Binding CopySettingsCommand}"
                                 IconFill="{DynamicResource TextSecondaryBrush}"
                                 IconPath="{DynamicResource IconCopy}"
-                                Text="Copy"
-                                ToolTip="Copy settings to clipboard" />
+                                Text="{loc:Text Copy_af74f7}"
+                                ToolTip="{loc:Text Copy_settings_to_clipboard_7d532f}" />
 
                             <controls:ActionBarButton
                                 Command="{Binding OpenBitEditorCommand}"
                                 IconFill="{DynamicResource TextSecondaryBrush}"
                                 IconPath="{DynamicResource IconBitEditor}"
-                                Text="Bit Editor"
-                                ToolTip="Open the Bit Value Editor" />
+                                Text="{loc:Text Bit_Editor_835f28}"
+                                ToolTip="{loc:Text Open_the_Bit_Value_Editor_0d74a7}" />
 
                             <Separator Style="{StaticResource ToolBarSeparatorStyle}" />
 
@@ -1053,16 +1065,16 @@
                                 Click="ExportButton_Click"
                                 IconFill="{DynamicResource TextSecondaryBrush}"
                                 IconPath="{DynamicResource IconExport}"
-                                Text="Export"
-                                ToolTip="Export profiles to file" />
+                                Text="{loc:Text Export_f3e4fa}"
+                                ToolTip="{loc:Text Export_profiles_to_file_18c7f8}" />
 
                             <controls:ActionBarButton
                                 x:Name="ImportButton"
                                 Click="ImportButton_Click"
                                 IconFill="{DynamicResource TextSecondaryBrush}"
                                 IconPath="{DynamicResource IconImport}"
-                                Text="Import"
-                                ToolTip="Import profiles from file" />
+                                Text="{loc:Text Import_d6fbc9}"
+                                ToolTip="{loc:Text Import_profiles_from_file_a834a0}" />
                         </StackPanel>
 
                         <StackPanel Grid.Column="2" Orientation="Horizontal">
@@ -1070,14 +1082,14 @@
                                 Command="{Binding RefreshCommand}"
                                 IconFill="{DynamicResource TextSecondaryBrush}"
                                 IconPath="{DynamicResource IconRefresh}"
-                                Text="Refresh"
-                                ToolTip="Refresh all profiles" />
+                                Text="{loc:Text Refresh_56e3ba}"
+                                ToolTip="{loc:Text Refresh_all_profiles_80fa19}" />
 
                             <controls:ActionBarButton
                                 Command="{Binding RefreshCurrentProfileCommand}"
                                 IconPath="{DynamicResource IconRestore}"
-                                Text="Reset"
-                                ToolTip="Reset current profile changes">
+                                Text="{loc:Text Reset_44c57a}"
+                                ToolTip="{loc:Text Reset_current_profile_changes_7d56ad}">
                                 <controls:ActionBarButton.Style>
                                     <Style BasedOn="{StaticResource {x:Type controls:ActionBarButton}}" TargetType="controls:ActionBarButton">
                                         <Setter Property="IconFill" Value="{DynamicResource TextSecondaryBrush}" />
@@ -1097,9 +1109,9 @@
                                 Cursor="Hand"
                                 FontWeight="Bold"
                                 IconPath="{DynamicResource IconApply}"
-                                Text="Apply Changes"
+                                Text="{loc:Text Apply_Changes_362bcd}"
                                 TextFontSize="11"
-                                ToolTip="Apply all changes and save">
+                                ToolTip="{loc:Text Apply_all_changes_and_save_e498f2}">
                                 <controls:ActionBarButton.Style>
                                     <Style BasedOn="{StaticResource {x:Type controls:ActionBarButton}}" TargetType="controls:ActionBarButton">
                                         <Setter Property="IconFill" Value="{DynamicResource TextSecondaryBrush}" />
@@ -1142,9 +1154,9 @@
                             Orientation="Horizontal">
                             <Button
                                 Click="AddApplication_Click"
-                                Content="Add Application"
+                                Content="{loc:Text Add_Application_b4f9f2}"
                                 Style="{StaticResource AddApplicationButtonStyle}"
-                                ToolTip="Add a new application to this profile" />
+                                ToolTip="{loc:Text Add_a_new_application_to_this_c64533}" />
                             <Separator Margin="0,4,0,4" Style="{StaticResource ToolBarSeparatorStyle}" />
                         </StackPanel>
 
@@ -1177,7 +1189,7 @@
                             Grid.Column="2"
                             IsChecked="{Binding ApplicationsExpanded}"
                             Style="{StaticResource ApplicationsExpandToggleStyle}"
-                            ToolTip="Show all applications / collapse to a single row"
+                            ToolTip="{loc:Text Show_all_applications_collapse_to_a_355c48}"
                             Visibility="{Binding ApplicationsHasOverflow, Converter={StaticResource BoolToVisibilityConverter}}" />
                     </Grid>
                 </Border>
@@ -1201,9 +1213,9 @@
                         <controls:SearchableTextBox
                             x:Name="FilterTextBox"
                             Grid.Column="0"
-                            Placeholder="Search settings..."
+                            Placeholder="{loc:Text Search_settings_d25add}"
                             Text="{Binding FilterText, UpdateSourceTrigger=PropertyChanged}"
-                            ToolTip="Search settings by name (Ctrl+F)" />
+                            ToolTip="{loc:Text Search_settings_by_name_Ctrl_F_9d900e}" />
 
                         <!--  Source Filter Flyout  -->
                         <Grid Grid.Column="1" Margin="12,0,0,0">
@@ -1211,7 +1223,7 @@
                                 x:Name="FilterSourceButton"
                                 Command="{Binding ToggleFilterMenuCommand}"
                                 Style="{StaticResource FilterSourceButtonStyle}"
-                                ToolTip="Filter setting and value sources">
+                                ToolTip="{loc:Text Filter_setting_and_value_sources_99201b}">
                                 <Path
                                     Width="16"
                                     Height="16"
@@ -1243,7 +1255,7 @@
                                             ShadowDepth="4" />
                                     </Border.Effect>
                                     <StackPanel Width="252">
-                                        <TextBlock Style="{StaticResource FilterFlyoutCategoryHeaderStyle}" Text="SETTING SOURCE" />
+                                        <TextBlock Style="{StaticResource FilterFlyoutCategoryHeaderStyle}" Text="{loc:Text SETTING_SOURCE_22a5da}" />
                                         <CheckBox IsChecked="{Binding SettingSourceCommon}" Style="{StaticResource FilterFlyoutCheckBoxStyle}">
                                             <StackPanel Orientation="Horizontal">
                                                 <Path
@@ -1257,7 +1269,7 @@
                                                 <TextBlock
                                                     VerticalAlignment="Center"
                                                     FontSize="12"
-                                                    Text="Common (CSN)" />
+                                                    Text="{loc:Text Common_CSN_2f2361}" />
                                             </StackPanel>
                                         </CheckBox>
                                         <CheckBox IsChecked="{Binding SettingSourceDriver}" Style="{StaticResource FilterFlyoutCheckBoxStyle}">
@@ -1273,7 +1285,7 @@
                                                 <TextBlock
                                                     VerticalAlignment="Center"
                                                     FontSize="12"
-                                                    Text="Driver API" />
+                                                    Text="{loc:Text Driver_API_d4a775}" />
                                             </StackPanel>
                                         </CheckBox>
                                         <CheckBox IsChecked="{Binding SettingSourceConstants}" Style="{StaticResource FilterFlyoutCheckBoxStyle}">
@@ -1289,7 +1301,7 @@
                                                 <TextBlock
                                                     VerticalAlignment="Center"
                                                     FontSize="12"
-                                                    Text="Driver Constants" />
+                                                    Text="{loc:Text Driver_Constants_69de72}" />
                                             </StackPanel>
                                         </CheckBox>
                                         <CheckBox IsChecked="{Binding SettingSourceReference}" IsEnabled="{Binding IsReferenceAvailable}" Style="{StaticResource FilterFlyoutCheckBoxStyle}">
@@ -1305,7 +1317,7 @@
                                                 <TextBlock
                                                     VerticalAlignment="Center"
                                                     FontSize="12"
-                                                    Text="Reference" />
+                                                    Text="{loc:Text Reference_db1c78}" />
                                             </StackPanel>
                                         </CheckBox>
                                         <CheckBox IsChecked="{Binding SettingSourceScan}" IsEnabled="{Binding IsScanAvailable}" Style="{StaticResource FilterFlyoutCheckBoxStyle}">
@@ -1321,7 +1333,7 @@
                                                 <TextBlock
                                                     VerticalAlignment="Center"
                                                     FontSize="12"
-                                                    Text="Predefined Scan" />
+                                                    Text="{loc:Text Predefined_Scan_89daae}" />
                                             </StackPanel>
                                         </CheckBox>
 
@@ -1333,34 +1345,34 @@
                                         <CheckBox
                                             IsChecked="{Binding ShowActiveFromDisabledSources}"
                                             Style="{StaticResource FilterFlyoutCheckBoxStyle}"
-                                            ToolTip="Even if a setting source is off, show its settings when they are active in the current profile (predefined, global, or user value).">
+                                            ToolTip="{loc:Text Even_if_a_setting_source_is_b7ceb5}">
                                             <TextBlock
                                                 VerticalAlignment="Center"
                                                 FontSize="11"
                                                 Foreground="{DynamicResource TextSecondaryBrush}"
-                                                Text="Show active settings from disabled sources"
+                                                Text="{loc:Text Show_active_settings_from_disabled_sources_3bc4d4}"
                                                 TextWrapping="Wrap" />
                                         </CheckBox>
                                         <CheckBox
                                             IsChecked="{Binding AllowMetaFromInactiveSources}"
                                             Style="{StaticResource FilterFlyoutCheckBoxStyle}"
-                                            ToolTip="Allow a setting's name and description to come from sources that are currently disabled.">
+                                            ToolTip="{loc:Text Allow_a_setting_s_name_and_b13e36}">
                                             <TextBlock
                                                 VerticalAlignment="Center"
                                                 FontSize="11"
                                                 Foreground="{DynamicResource TextSecondaryBrush}"
-                                                Text="Name &amp; description from inactive sources"
+                                                Text="{loc:Text Name_description_from_inactive_sources_4b5aba}"
                                                 TextWrapping="Wrap" />
                                         </CheckBox>
                                         <CheckBox
                                             IsChecked="{Binding ShowSettingIdInName}"
                                             Style="{StaticResource FilterFlyoutCheckBoxStyle}"
-                                            ToolTip="Prefix the setting id to the setting name in the list (double-click a name to copy its id).">
+                                            ToolTip="{loc:Text Prefix_the_setting_id_to_the_145138}">
                                             <TextBlock
                                                 VerticalAlignment="Center"
                                                 FontSize="11"
                                                 Foreground="{DynamicResource TextSecondaryBrush}"
-                                                Text="Add setting ID to name"
+                                                Text="{loc:Text Add_setting_ID_to_name_7fabb1}"
                                                 TextWrapping="Wrap" />
                                         </CheckBox>
 
@@ -1369,7 +1381,7 @@
                                             Margin="6,8"
                                             Background="{DynamicResource ControlBorderBrush}" />
 
-                                        <TextBlock Style="{StaticResource FilterFlyoutCategoryHeaderStyle}" Text="VALUE SOURCE" />
+                                        <TextBlock Style="{StaticResource FilterFlyoutCategoryHeaderStyle}" Text="{loc:Text VALUE_SOURCE_e86206}" />
                                         <CheckBox IsChecked="{Binding ValueSourceCommon}" Style="{StaticResource FilterFlyoutCheckBoxStyle}">
                                             <StackPanel Orientation="Horizontal">
                                                 <Path
@@ -1383,7 +1395,7 @@
                                                 <TextBlock
                                                     VerticalAlignment="Center"
                                                     FontSize="12"
-                                                    Text="Common (CSN)" />
+                                                    Text="{loc:Text Common_CSN_2f2361}" />
                                             </StackPanel>
                                         </CheckBox>
                                         <CheckBox IsChecked="{Binding ValueSourceDriver}" Style="{StaticResource FilterFlyoutCheckBoxStyle}">
@@ -1399,7 +1411,7 @@
                                                 <TextBlock
                                                     VerticalAlignment="Center"
                                                     FontSize="12"
-                                                    Text="Driver API" />
+                                                    Text="{loc:Text Driver_API_d4a775}" />
                                             </StackPanel>
                                         </CheckBox>
                                         <CheckBox IsChecked="{Binding ValueSourceConstants}" Style="{StaticResource FilterFlyoutCheckBoxStyle}">
@@ -1415,7 +1427,7 @@
                                                 <TextBlock
                                                     VerticalAlignment="Center"
                                                     FontSize="12"
-                                                    Text="Driver Constants" />
+                                                    Text="{loc:Text Driver_Constants_69de72}" />
                                             </StackPanel>
                                         </CheckBox>
                                         <CheckBox IsChecked="{Binding ValueSourceReference}" IsEnabled="{Binding IsReferenceAvailable}" Style="{StaticResource FilterFlyoutCheckBoxStyle}">
@@ -1431,7 +1443,7 @@
                                                 <TextBlock
                                                     VerticalAlignment="Center"
                                                     FontSize="12"
-                                                    Text="Reference" />
+                                                    Text="{loc:Text Reference_db1c78}" />
                                             </StackPanel>
                                         </CheckBox>
                                         <CheckBox IsChecked="{Binding ValueSourceScan}" IsEnabled="{Binding IsScanAvailable}" Style="{StaticResource FilterFlyoutCheckBoxStyle}">
@@ -1447,7 +1459,7 @@
                                                 <TextBlock
                                                     VerticalAlignment="Center"
                                                     FontSize="12"
-                                                    Text="Predefined Scan" />
+                                                    Text="{loc:Text Predefined_Scan_89daae}" />
                                             </StackPanel>
                                         </CheckBox>
 
@@ -1459,35 +1471,35 @@
                                         <CheckBox
                                             IsChecked="{Binding MergeDistinctValues}"
                                             Style="{StaticResource FilterFlyoutCheckBoxStyle}"
-                                            ToolTip="Merge entries with the same value from different sources into one (highest-priority name wins).">
+                                            ToolTip="{loc:Text Merge_entries_with_the_same_value_ccc278}">
                                             <TextBlock
                                                 VerticalAlignment="Center"
                                                 FontSize="11"
                                                 Foreground="{DynamicResource TextSecondaryBrush}"
-                                                Text="Merge distinct values"
+                                                Text="{loc:Text Merge_distinct_values_c54ee5}"
                                                 TextWrapping="Wrap" />
                                         </CheckBox>
                                         <CheckBox
                                             IsChecked="{Binding AddPredefinedAppListToCommon}"
                                             IsEnabled="{Binding IsScanAvailable}"
                                             Style="{StaticResource FilterFlyoutCheckBoxStyle}"
-                                            ToolTip="Let the predefined scan (app list) values merge into the matching common values instead of showing as separate rows.">
+                                            ToolTip="{loc:Text Let_the_predefined_scan_app_list_ccf4a6}">
                                             <TextBlock
                                                 VerticalAlignment="Center"
                                                 FontSize="11"
                                                 Foreground="{DynamicResource TextSecondaryBrush}"
-                                                Text="Add predefined app list to common values"
+                                                Text="{loc:Text Add_predefined_app_list_to_common_e138b2}"
                                                 TextWrapping="Wrap" />
                                         </CheckBox>
                                         <CheckBox
                                             IsChecked="{Binding AddRawValueToCommon}"
                                             Style="{StaticResource FilterFlyoutCheckBoxStyle}"
-                                            ToolTip="Prefix the raw value to common (CSN) value names, the way the other sources already show it.">
+                                            ToolTip="{loc:Text Prefix_the_raw_value_to_common_62e0cf}">
                                             <TextBlock
                                                 VerticalAlignment="Center"
                                                 FontSize="11"
                                                 Foreground="{DynamicResource TextSecondaryBrush}"
-                                                Text="Add raw value to common values"
+                                                Text="{loc:Text Add_raw_value_to_common_values_4d75a3}"
                                                 TextWrapping="Wrap" />
                                         </CheckBox>
 
@@ -1498,7 +1510,7 @@
                                         <Button
                                             Command="{Binding ResetFilterDefaultsCommand}"
                                             Style="{StaticResource FilterFlyoutResetButtonStyle}"
-                                            ToolTip="Reset all filter and value options to their defaults">
+                                            ToolTip="{loc:Text Reset_all_filter_and_value_options_05fbc5}">
                                             <StackPanel Orientation="Horizontal">
                                                 <Path
                                                     Width="13"
@@ -1511,7 +1523,7 @@
                                                 <TextBlock
                                                     VerticalAlignment="Center"
                                                     FontSize="12"
-                                                    Text="Restore defaults" />
+                                                    Text="{loc:Text Restore_defaults_894a58}" />
                                             </StackPanel>
                                         </Button>
                                     </StackPanel>
@@ -1525,7 +1537,7 @@
                             Margin="8,0,0,0"
                             IsChecked="{Binding ModifiedOnly}"
                             Style="{StaticResource ModifiedOnlyToggleStyle}"
-                            ToolTip="Show active or modified settings only" />
+                            ToolTip="{loc:Text Show_active_or_modified_settings_only_dc3c69}" />
                     </Grid>
 
                     <!--  Settings ListView  -->
@@ -1660,7 +1672,7 @@
                                                 CommandParameter="{Binding}"
                                                 Cursor="Hand"
                                                 Style="{StaticResource IconButtonStyle}"
-                                                ToolTip="Toggle Favorite">
+                                                ToolTip="{loc:Text Toggle_Favorite_f2b402}">
                                                 <Path
                                                     Width="14"
                                                     Height="14"
@@ -1718,7 +1730,7 @@
                                             Command="{Binding DataContext.ResetValueCommand, RelativeSource={RelativeSource AncestorType=ListBox}}"
                                             CommandParameter="{Binding}"
                                             Style="{StaticResource IconButtonStyle}"
-                                            ToolTip="Reset setting to default value"
+                                            ToolTip="{loc:Text Reset_setting_to_default_value_e40066}"
                                             Visibility="Collapsed">
                                             <Path
                                                 x:Name="RestoreButtonIcon"
@@ -1789,7 +1801,7 @@
                             FontSize="10"
                             FontWeight="Bold"
                             Foreground="{DynamicResource NvidiaGreenBrush}"
-                            Text="DESCRIPTION" />
+                            Text="{loc:Text DESCRIPTION_0ceecb}" />
                         <TextBox
                             MaxHeight="80"
                             Padding="0"
@@ -1822,7 +1834,7 @@
                                 FontSize="11"
                                 FontWeight="SemiBold"
                                 Foreground="{DynamicResource NvidiaGreenBrush}"
-                                Text="Scanning profiles" />
+                                Text="{loc:Text Scanning_profiles_bb618c}" />
                             <ProgressBar
                                 Grid.Column="1"
                                 Height="12"
@@ -1857,7 +1869,7 @@
                                     Visibility="{Binding StatusModeText, Converter={StaticResource StringNotEmptyToVisibilityConverter}}"
                                     WindowChrome.IsHitTestVisibleInChrome="True">
                                     <Button.ToolTip>
-                                        <ToolTip Content="Custom settings are loaded from an external CustomSettingNames.xml file" />
+                                        <ToolTip Content="{loc:Text Custom_settings_are_loaded_from_an_3efe1a}" />
                                     </Button.ToolTip>
                                 </Button>
                                 <Button

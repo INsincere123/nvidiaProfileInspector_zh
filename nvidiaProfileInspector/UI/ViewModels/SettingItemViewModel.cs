@@ -1,3 +1,4 @@
+using L = nvidiaProfileInspector.Localization.Localizer;
 namespace nvidiaProfileInspector.UI.ViewModels
 {
     using nvidiaProfileInspector.Common;
@@ -39,7 +40,7 @@ namespace nvidiaProfileInspector.UI.ViewModels
         private void UpdateGroupNameForDisplay()
         {
             if (_isFavorite)
-                _cachedGroupNameForDisplay = "⭐ Favorites";
+                _cachedGroupNameForDisplay = L.Get("Favorites_7f6d0c");
             else
                 _cachedGroupNameForDisplay = GroupName;
         }

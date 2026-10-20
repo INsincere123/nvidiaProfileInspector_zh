@@ -1,4 +1,5 @@
-<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:loc="clr-namespace:nvidiaProfileInspector.Localization"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/UI/Styles/Colors.xaml" />
@@ -328,10 +329,10 @@
                         </DataTemplate>
                     </Setter.Value>
                 </Setter>
-                <Setter Property="ToolTip" Value="Restore Down" />
+                <Setter Property="ToolTip" Value="{loc:Text Restore_Down_c9f7ca}" />
             </DataTrigger>
             <DataTrigger Binding="{Binding WindowState, RelativeSource={RelativeSource AncestorType=Window}}" Value="Normal">
-                <Setter Property="ToolTip" Value="Maximize" />
+                <Setter Property="ToolTip" Value="{loc:Text Maximize_35afae}" />
             </DataTrigger>
         </Style.Triggers>
     </Style>

@@ -1,3 +1,4 @@
+using L = nvidiaProfileInspector.Localization.Localizer;
 using nvidiaProfileInspector.Common.Helper;
 using nvidiaProfileInspector.Common.Import;
 using nvidiaProfileInspector.Native.NVAPI2;
@@ -223,12 +224,12 @@ namespace nvidiaProfileInspector.Common
                                 nvw.Instance.DRS_DeleteProfile(hSession, hProfile);
                             }
 
-                            sbFailedProfilesMessage.AppendLine(string.Format("Failed to import profile '{0}'", profile.ProfileName));
+                            sbFailedProfilesMessage.AppendLine(string.Format(L.Get("ImportProfileFailed"), profile.ProfileName));
                             var appEx = nex as NvapiAddApplicationException;
                             if (appEx != null)
                             {
                                 var profilesWithThisApp = _ScannerService.FindProfilesUsingApplication(appEx.ApplicationName);
-                                sbFailedProfilesMessage.AppendLine(string.Format("- application '{0}' is already in use by profile '{1}'", appEx.ApplicationName, profilesWithThisApp));
+                                sbFailedProfilesMessage.AppendLine(string.Format(L.Get("ApplicationConflict"), appEx.ApplicationName, profilesWithThisApp));
                                 appInUseHint = true;
                             }
                             else
@@ -244,7 +245,7 @@ namespace nvidiaProfileInspector.Common
 
             if (appInUseHint)
             {
-                sbFailedProfilesMessage.AppendLine("Hint: If just the profile name has been changed by nvidia, consider to manually modify the profile name inside the import file using a text editor.");
+                sbFailedProfilesMessage.AppendLine(L.Get("ImportRenameHint"));
             }
 
             return sbFailedProfilesMessage.ToString();
@@ -279,12 +280,12 @@ namespace nvidiaProfileInspector.Common
                         if (profileCreated)
                             nvw.Instance.DRS_DeleteProfile(hSession, hProfile);
 
-                        sbFailedMessage.AppendLine(string.Format("Failed to merge import into profile '{0}'", profile.ProfileName));
+                        sbFailedMessage.AppendLine(string.Format(L.Get("MergeProfileFailed"), profile.ProfileName));
                         var appEx = nex as NvapiAddApplicationException;
                         if (appEx != null)
                         {
                             var profilesWithThisApp = _ScannerService.FindProfilesUsingApplication(appEx.ApplicationName);
-                            sbFailedMessage.AppendLine(string.Format("- application '{0}' is already in use by profile '{1}'", appEx.ApplicationName, profilesWithThisApp));
+                            sbFailedMessage.AppendLine(string.Format(L.Get("ApplicationConflict"), appEx.ApplicationName, profilesWithThisApp));
                             appInUseHint = true;
                         }
                         else
@@ -300,7 +301,7 @@ namespace nvidiaProfileInspector.Common
 
             if (appInUseHint)
             {
-                sbFailedMessage.AppendLine("Hint: Remove conflicting applications from the other profile first, then retry the merge.");
+                sbFailedMessage.AppendLine(L.Get("MergeConflictHint"));
             }
 
             return sbFailedMessage.ToString();

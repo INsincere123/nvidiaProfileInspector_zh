@@ -1,8 +1,9 @@
 <Window
     x:Class="nvidiaProfileInspector.UI.Views.SplashWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:loc="clr-namespace:nvidiaProfileInspector.Localization"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    Width="508"
+    Width="550"
     Height="187"
     AllowsTransparency="True"
     Background="Transparent"
@@ -175,7 +176,7 @@
                             Margin="0,8,0,0"
                             FontSize="12"
                             Foreground="{DynamicResource TextSecondaryBrush}"
-                            Text="Preparing driver profiles and settings..." />
+                            Text="{loc:Text Preparing_driver_profiles_and_settings_afb135}" />
 
                         <Grid Margin="0,28,0,0" Height="2">
                             <Border Background="{DynamicResource Layer3BackgroundBrush}" CornerRadius="3" />
@@ -193,7 +194,7 @@
                                 FontSize="11"
                                 FontWeight="SemiBold"
                                 Foreground="{DynamicResource TextPrimaryBrush}"
-                                Text="Loading application" />
+                                Text="{loc:Text Loading_application_4e6dc1}" />
                         </StackPanel>
                     </StackPanel>
                 </Grid>

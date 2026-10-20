@@ -1,3 +1,4 @@
+using L = nvidiaProfileInspector.Localization.Localizer;
 namespace nvidiaProfileInspector.UI.ViewModels
 {
     using nvidiaProfileInspector.Common;
@@ -46,7 +47,7 @@ namespace nvidiaProfileInspector.UI.ViewModels
             _scannerService = scannerService;
             _referenceSettings = referenceSettings;
 
-            Title = $"Bit Value Editor - {settingName}";
+            Title = L.Format("Bit_Value_Editor_0_5ce872", settingName);
 
             if (_scannerService == null)
                 LoadDesignTimeData();
@@ -389,11 +390,11 @@ namespace nvidiaProfileInspector.UI.ViewModels
                 // Note: This would need the current profile from MainViewModel
                 // For now, just update the display
                 OnValueChanged?.Invoke(_currentValue);
-                StatusMessage = "Value applied to profile.";
+                StatusMessage = L.Get("Value_applied_to_profile_eb57d8");
             }
             catch (Exception ex)
             {
-                StatusMessage = $"Error: {ex.Message}";
+                StatusMessage = L.Format("Error_0_f93e65", ex.Message);
                 OnShowMessage?.Invoke(StatusMessage);
             }
         }
@@ -410,7 +411,7 @@ namespace nvidiaProfileInspector.UI.ViewModels
             }
 
             if (!string.IsNullOrWhiteSpace(GamePath))
-                StatusMessage = "Game executable not found.";
+                StatusMessage = L.Get("Game_executable_not_found_2625f7");
         }
     }
 

@@ -1,3 +1,4 @@
+using L = nvidiaProfileInspector.Localization.Localizer;
 namespace nvidiaProfileInspector.Common.Updates
 {
     public sealed class UpdateCheckResult
@@ -21,14 +22,14 @@ namespace nvidiaProfileInspector.Common.Updates
         public static UpdateCheckResult Available(UpdateRelease release)
         {
             var message = release?.IsInstallable == true
-                ? "A newer version is ready to install."
-                : "A newer version is available, but it does not contain a supported update package.";
+                ? L.Get("A_newer_version_is_ready_to_b2a0a3")
+                : L.Get("A_newer_version_is_available_but_871bc1");
             return new UpdateCheckResult(true, true, release, message, null);
         }
 
         public static UpdateCheckResult UpToDate(UpdateRelease release)
         {
-            return new UpdateCheckResult(true, false, release, "You are already on the latest version for this channel.", null);
+            return new UpdateCheckResult(true, false, release, L.Get("You_are_already_on_the_latest_ec9db9"), null);
         }
 
         public static UpdateCheckResult Unavailable(string message)

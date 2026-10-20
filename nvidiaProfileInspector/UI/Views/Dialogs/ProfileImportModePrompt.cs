@@ -1,3 +1,4 @@
+using L = nvidiaProfileInspector.Localization.Localizer;
 namespace nvidiaProfileInspector.UI.Views.Dialogs
 {
     using nvidiaProfileInspector.Common;
@@ -13,30 +14,29 @@ namespace nvidiaProfileInspector.UI.Views.Dialogs
     {
         public static ProfileImportMode? Ask(Window owner, int fileCount)
         {
-            var noun = fileCount == 1 ? "profile" : "profiles";
             var items = new List<ActionCardsDialog.ActionCardItem>
             {
                 new ActionCardsDialog.ActionCardItem
                 {
-                    Title = "Replace",
-                    Description = $"Reset each target {noun} and write only the imported apps and settings.",
+                    Title = L.Get("Replace_a7cf7b"),
+                    Description = L.Get("Reset_each_target_0_and_write_011684"),
                     IconPath = Application.Current.Resources["IconImport"] as Geometry,
                     IconFill = Application.Current.Resources["TextSecondaryBrush"] as Brush,
                 },
                 new ActionCardsDialog.ActionCardItem
                 {
-                    Title = "Merge",
-                    Description = $"Keep the existing values in each target {noun} and overwrite only the settings contained in the import.",
+                    Title = L.Get("Merge_ea8f0d"),
+                    Description = L.Get("Keep_the_existing_values_in_each_708f79"),
                     IconPath = Application.Current.Resources["IconUser"] as Geometry,
                     IconFill = Application.Current.Resources["TextSecondaryBrush"] as Brush,
                 },
             };
 
             var subtitle = fileCount == 1
-                ? "Choose how this .nip file should be imported:"
-                : $"Choose how these {fileCount} .nip files should be imported:";
+                ? L.Get("Choose_how_this_nip_file_should_5ac068")
+                : L.Format("Choose_how_these_0_nip_files_44e5a4", fileCount);
 
-            var dialog = new ActionCardsDialog("Import Profiles", items, subtitle);
+            var dialog = new ActionCardsDialog(L.Get("Import_Profiles_c97e7b"), items, subtitle);
             if (owner != null && owner.IsLoaded)
                 dialog.Owner = owner;
             else
@@ -45,7 +45,7 @@ namespace nvidiaProfileInspector.UI.Views.Dialogs
             if (dialog.ShowDialog() != true || dialog.SelectedItem == null)
                 return null;
 
-            return dialog.SelectedItem.Title == "Merge"
+            return ReferenceEquals(dialog.SelectedItem, items[1])
                 ? ProfileImportMode.Merge
                 : ProfileImportMode.Replace;
         }

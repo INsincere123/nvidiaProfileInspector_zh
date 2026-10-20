@@ -63,12 +63,8 @@ namespace nvidiaProfileInspector.UI.ViewModels
 
             if (e.Item is SettingItemViewModel item)
             {
-                var matches = item.DisplayName.IndexOf(_filterText, System.StringComparison.OrdinalIgnoreCase) >= 0;
-                if (!matches && !string.IsNullOrEmpty(item.AlternateNames))
-                    matches = item.AlternateNames.IndexOf(_filterText, System.StringComparison.OrdinalIgnoreCase) >= 0;
-                if (!matches)
-                    matches = item.SettingIdHex.IndexOf(_filterText, System.StringComparison.OrdinalIgnoreCase) >= 0;
-                e.Accepted = matches;
+                e.Accepted = Localization.SettingSearch.Matches(item.SettingId, item.DisplayName,
+                    item.AlternateNames, item.SettingIdHex, _filterText);
             }
         }
 

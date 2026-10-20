@@ -1,3 +1,4 @@
+using L = nvidiaProfileInspector.Localization.Localizer;
 namespace nvidiaProfileInspector.UI.Converters
 {
     using nvidiaProfileInspector.Common;
@@ -94,16 +95,16 @@ namespace nvidiaProfileInspector.UI.Converters
                 switch (state)
                 {
                     case SettingState.NvidiaSetting:
-                        return "Nvidia Setting - Defined by NVIDIA driver";
+                        return L.Get("NvidiaSettingTooltip");
                     case SettingState.UserdefinedSetting:
-                        return "User-defined Setting - Custom setting added by user";
+                        return L.Get("UserSettingTooltip");
                     case SettingState.GlobalSetting:
-                        return "Global Setting - Applies to all applications";
+                        return L.Get("GlobalSettingTooltip");
                     default:
-                        return "Setting";
+                        return L.Get("SettingLabel");
                 }
             }
-            return "Setting";
+            return L.Get("SettingLabel");
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
